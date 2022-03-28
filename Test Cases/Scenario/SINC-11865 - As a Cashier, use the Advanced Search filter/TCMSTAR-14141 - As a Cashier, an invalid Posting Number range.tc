@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>(-)As a Cashier, I want to add an invalid 'Posting Number' range on 'Advanced Search' criteria</description>
+   <name>TCMSTAR-14141 - As a Cashier, an invalid Posting Number range</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>bd469400-1557-45d6-987c-78fe05099ff6</testCaseGuid>
+</TestCaseEntity>

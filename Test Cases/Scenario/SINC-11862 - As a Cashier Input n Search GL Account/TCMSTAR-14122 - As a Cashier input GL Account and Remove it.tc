@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>(+)As a Cashier, I want to Input and Search GL Account Number by typing 4 digit number or more and that character is exist on GL Description and select the suggestion and remove selected GL item</description>
+   <name>TCMSTAR-14122 - As a Cashier input GL Account and Remove it</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>528bbf9b-025f-43e9-bde8-cb0c1e07da04</testCaseGuid>
+</TestCaseEntity>

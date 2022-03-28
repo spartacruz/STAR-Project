@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>(+)As a Cashier, I want to Input and Search GL Account Number by typing 4 character or more and that character is exist on GL Description and select the suggestion</description>
+   <name>TCMSTAR-14120 - Input 4 Character (exist) and Select The Sugesstion</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>79d88170-4c8d-4f4e-98bd-2aff28fda013</testCaseGuid>
+</TestCaseEntity>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>(-)As a Cashier, I want to limit 'Max Item Row' only show 2000 row result</description>
+   <name>TCMSTAR-14388 - As a Cashier, limit Max Item Row only show 2000 row result</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>e4c9793f-3a4d-4ccb-a5a7-47c348291b14</testCaseGuid>
+</TestCaseEntity>

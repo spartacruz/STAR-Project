@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>(+)As a Cashier, I want to check for selected GL Account will not appear again on suggestion box</description>
+   <name>TCMSTAR-14125 - As a Cashier Check Selected GL Not Appear in Suggestion Box</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>c09f926b-db75-4047-93e8-3018ff933673</testCaseGuid>
+</TestCaseEntity>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>(+)As a Cashier, I want to add only 'Debit' transaction on 'Advanced Search' criteria</description>
+   <name>TCMSTAR-14131 - As a Cashier, add only Debit transaction</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>8051e7a2-aefd-4522-9f37-a9cd3544ad85</testCaseGuid>
+</TestCaseEntity>

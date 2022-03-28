@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>(-)As a Cashier, I want to Input and Search GL Account Number by typing 1 digit number and system not show any sugesstion</description>
+   <name>TCMSTAR-14097 - Input 1 Digit Num n System Not Give Recomendation</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>80e25c20-0830-47e0-ac96-94d964af4329</testCaseGuid>
+</TestCaseEntity>

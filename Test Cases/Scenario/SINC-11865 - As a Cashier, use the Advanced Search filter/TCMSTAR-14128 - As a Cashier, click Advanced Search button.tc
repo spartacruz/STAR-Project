@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>(+)As a Cashier, I want to see 'Advanced Search' button on Monitoring GL Account Menu and click on it</description>
+   <name>TCMSTAR-14128 - As a Cashier, click Advanced Search button</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>f6335cb9-85ec-49e8-8115-7f60d21145b9</testCaseGuid>
+</TestCaseEntity>
