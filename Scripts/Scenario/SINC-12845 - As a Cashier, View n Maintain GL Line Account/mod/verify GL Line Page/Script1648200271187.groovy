@@ -10,12 +10,18 @@ import com.kms.katalon.core.model.FailureHandling as FailureHandling
 import com.kms.katalon.core.testcase.TestCase as TestCase
 import com.kms.katalon.core.testdata.TestData as TestData
 import com.kms.katalon.core.testng.keyword.TestNGBuiltinKeywords as TestNGKW
-import com.kms.katalon.core.testobject.TestObject as TestObject
+import com.kms.katalon.core.testobject.TestObject
+import com.kms.katalon.core.util.KeywordUtil
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
+import com.kms.katalon.core.webui.keyword.internal.WebUIAbstractKeyword
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
+import org.openqa.selenium.By
+import org.openqa.selenium.WebElement
+import com.kms.katalon.core.testobject.ConditionType
+import com.kms.katalon.core.testobject.TestObject as TestObject
 
 WebUI.verifyElementPresent(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/btn Show Result/btn BackButton'), 
     GlobalVariable.waitPresentTimeout)
@@ -50,3 +56,116 @@ WebUI.verifyElementPresent(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR
 WebUI.verifyElementPresent(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/btn Show Result/div table content'), 
     GlobalVariable.waitPresentTimeout)
 
+String docStatus = "$ndocStatus"
+String docType = "$ndocType"
+String maxRowItem = "$nmaxRowItem"
+String selectDateRangeStartDate = "$nselectDateRangeStartDate"
+String selectDateRangeEndDate = "$nselectDateRangeEndDate"
+String GLAccountNumber = "$nGLAccountNumber"
+
+//Document Status Validation
+switch (docStatus) {
+    case 'all':
+        WebUI.verifyElementPresent(findTestObject('Object Repository/Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/radioButton All item ticked'), 
+            GlobalVariable.waitPresentTimeout)
+
+        break
+    case 'openItem':
+        WebUI.verifyElementPresent(findTestObject('Object Repository/Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/radioButton Open Item ticked'), 
+            GlobalVariable.waitPresentTimeout)
+
+        break
+    case 'clearItem':
+        WebUI.verifyElementPresent(findTestObject('Object Repository/Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/radioButton Clear Item ticked'), 
+            GlobalVariable.waitPresentTimeout)
+
+        break
+}
+
+//Document Type Validation
+switch (docType) {
+    case 'postedItem':
+        WebUI.verifyElementPresent(findTestObject('Object Repository/Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/radioButton Posted item ticked'), 
+            GlobalVariable.waitPresentTimeout)
+        break
+}
+
+//Max Row Item Validation
+String maxRowItemValue = WebUI.getAttribute(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/btn Show Result/input Max Row Item Disabled'), 'value')
+println(maxRowItemValue)
+
+if (maxRowItemValue == maxRowItem) {
+	KeywordUtil.markPassed("Max Row Item awal dan show result sama")
+} else {
+	KeywordUtil.markFailedAndStop("Max Row Item awal dan show result TIDAK sama")
+}
+
+//Select Date Range Validation
+String selectDateRangeStartDateValue = WebUI.getAttribute(findTestObject('Object Repository/Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/btn Show Result/input Select Date Range Start Date disabled'), 'value')
+println(selectDateRangeStartDateValue)
+
+String selectDateRangeEndDateValue = WebUI.getAttribute(findTestObject('Object Repository/Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/btn Show Result/input Select Date Range End Date disabled'), 'value')
+println(selectDateRangeEndDateValue)
+
+if (selectDateRangeStartDate == "0") {
+	//pass, no validation
+	assert true;
+} else {
+	
+	if (selectDateRangeStartDate == selectDateRangeStartDateValue) {
+		KeywordUtil.markPassed("select Date Range StartDate : awal dan show result sama")
+	} else {
+		KeywordUtil.markFailedAndStop("select Date Range StartDate : awal dan show result TIDAK sama")
+	}
+}
+
+if (selectDateRangeEndDate == "0") {
+	//pass, no validation
+	assert true;
+} else {
+	
+	if (selectDateRangeEndDate == selectDateRangeEndDateValue) {
+		KeywordUtil.markPassed("select Date Range EndDate : awal dan show result sama")
+	} else {
+		KeywordUtil.markFailedAndStop("select Date Range EndDate : awal dan show result TIDAK sama")
+	}
+}
+
+//GL Account Validation
+String[] GLAccountNumberArray = new String[50]
+GLAccountNumberArray = GLAccountNumber.split(",")
+println(GLAccountNumberArray.length)
+
+if (GLAccountNumber == "0") {
+	//pass, no validation
+	assert true;
+} else {
+	
+	TestObject selectorTagGLAccount = new TestObject()
+	selectorTagGLAccount.addProperty("xpath", ConditionType.EQUALS, "//div[contains(@class, 'DisplayGLLineitem_wrapper')]//span[contains(@class, 'DisplayGLLineitem_tag-gl-account')]")
+	
+	// find the list of tagGLAccountList elements
+	List<WebElement> tagGLAccountList = WebUI.findWebElements(selectorTagGLAccount, 30)
+	println(tagGLAccountList.size())
+	
+	//if count GL Account param array equal to
+	if (GLAccountNumberArray.length == tagGLAccountList.size()) {
+		KeywordUtil.markPassed("Count Tag GL Account : Awal and Show Result equal")
+	} else {
+		KeywordUtil.markFailedAndStop("Count Tag GL Account : Awal and Show Result NOT equal")
+	}
+	
+	//iterating each Tag GL Account List, to be matched with GL Account Param(s)
+	for (int i = 1; i <= tagGLAccountList.size(); i++) {
+		String new_xpath = "//div[contains(@class, 'DisplayGLLineitem_wrapper')]//div[@class='ant-space-item'][${i}]//span[contains(@class, 'DisplayGLLineitem_tag-gl-account')]"
+		TestObject dynamicObject = new TestObject('dynamicObject').addProperty('xpath', ConditionType.EQUALS, new_xpath)
+	
+		println(WebUI.getText(dynamicObject))
+		
+		if (WebUI.getText(dynamicObject).contains(GLAccountNumber[i-1])) {
+			KeywordUtil.markPassed("List COA GL Account : Awal and Show Result equal")
+		} else {
+			KeywordUtil.markFailedAndStop("List COA GL Account : Awal and Show Result NOT equal")
+		}
+	}
+}
