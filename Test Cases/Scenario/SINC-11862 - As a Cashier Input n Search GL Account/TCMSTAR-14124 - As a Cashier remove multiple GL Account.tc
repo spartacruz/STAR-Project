@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>(+)As a Cashier, I want to select multiple GL Account in one box</description>
+   <name>TCMSTAR-14124 - As a Cashier remove multiple GL Account</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>cd658e2e-8460-4894-9792-58b54a3a6152</testCaseGuid>
+</TestCaseEntity>

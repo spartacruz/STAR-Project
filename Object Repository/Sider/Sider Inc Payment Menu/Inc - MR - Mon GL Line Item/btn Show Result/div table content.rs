@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>div table content</name>
+   <tag></tag>
+   <elementGuidId>863c4bd7-1133-41e9-b3f0-b019aede0ac1</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>CSS</key>
+         <value>div.ant-table-content</value>
+      </entry>
+      <entry>
+         <key>XPATH</key>
+         <value>//div[@class='ant-table-content']</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>XPATH</selectorMethod>
+   <useRalativeImagePath>true</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>tag</name>
+      <type>Main</type>
+      <value>div</value>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>class</name>
+      <type>Main</type>
+      <value>ant-table-content</value>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>text</name>
+      <type>Main</type>
+      <value>NoGL AccountGL DescriptionPKPosting NumberPosting DateDoc. ReferenceDoc. DateAmountBA CodeCost CenterProfit CenterClearing No.Clearing DateStatusBaseline DateAssignmentTextTax CodeDivisionNotice/UnoticeHeader TextFiscal YearPeriodDoc. CurrencyDoc. Type                           11240100995Inventory:NewUnit (Synchronization)40H10A-2100008326 Jan 2022H10A-2100008322 Feb 2021Rp 100.000H10A----Open-LKADO-1/LKA/UNIT DESCRIPTIONM001--20212IDRZU22020100000Good Receipt/Invoice Receipt-Trade-NewUnit50H10A-2100008326 Jan 2022H10A-2100008322 Feb 2021Rp 135.000 -H10A----Open-MESIN-1DO-1/LKA/UNIT DESCRIPTIONM001--20212IDRZU31310100000Price Variance-NewUnit40H10A-2100008326 Jan 2022H10A-2100008322 Feb 2021Rp 35.000H10A----Open-LKADO-1/LKA/UNIT DESCRIPTIONM001--20212IDRZU41240400995Inventory:Accessories (Synchronization)40H765-GR-2100046626 Jan 2022H765-GR-2100046622 Feb 2021Rp 10.000H765----Open-H765-GR-210004666100075621/Inti MotorM002--20212IDRZU52020400000Good Receipt/Invoice Receipt-Trade-Accessories50H765-GR-2100046626 Jan 2022H765-GR-2100046622 Feb 2021Rp 7.000 -H765----Open-H765-GR-210004666100075621/Inti MotorM002--20212IDRZU61310400000Price Variance-Accessories50H765-GR-2100046626 Jan 2022H765-GR-2100046622 Feb 2021Rp 3.000 -H765----Open-H765-GR-210004666100075621/Inti MotorM002--20212IDRZU71240200995Inventory:Spareparts (Sychronization)40H765-GR-2100046626 Jan 2022H765-GR-2100046622 Feb 2021Rp 6.000H765----Open-H765-GR-210004666100075621/Inti MotorM002--20212IDRZU82020200000Good Receipt/Invoice Receipt-Trade-Spareparts50H765-GR-2100046626 Jan 2022H765-GR-2100046622 Feb 2021Rp 6.000 -H765----Open-H765-GR-210004666100075621/Inti MotorM002--20212IDRZU91002100100Cash on Hand:IDR:Collection Indonesian Rupiah40H383-I-2290000103 Mar 2022H383-202200000106 Mar 2022Rp 7.400.000H383----Open-H383-I-22900001-M099--20223IDRZU102120102000Customer Guarantee:NewUnit-3rd Party19H383-I-2290000103 Mar 2022H383-202200000106 Mar 2022Rp 7.400.000 -H383--H383-I-2290000212 Mar 2022Clear-04013-SPK-21000091bayar pertamaM001--20223IDRZURp 0</value>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath</name>
+      <type>Main</type>
+      <value>id(&quot;root&quot;)/section[@class=&quot;ant-layout&quot;]/div[@class=&quot;Layout_layout-content__niO9D&quot;]/section[@class=&quot;ant-layout Layout_layout-transition__cFus6 Layout_collapsed__2476s&quot;]/section[@class=&quot;ant-layout Layout_content__1pwzV&quot;]/main[@class=&quot;ant-layout-content&quot;]/div[@class=&quot;layout-wrapper&quot;]/div[@class=&quot;layout-content-wrapper&quot;]/div[6]/div[@class=&quot;ant-row&quot;]/div[@class=&quot;ant-col ant-col-24&quot;]/div[@class=&quot;DisplayGLLineitem_wrapper-table-display-gl__2uTQs&quot;]/div[1]/div[@class=&quot;ant-table-wrapper&quot;]/div[@class=&quot;ant-spin-nested-loading&quot;]/div[@class=&quot;ant-spin-container&quot;]/div[@class=&quot;ant-table ant-table-ping-right ant-table-scroll-horizontal&quot;]/div[@class=&quot;ant-table-container&quot;]/div[@class=&quot;ant-table-content&quot;]</value>
+   </webElementProperties>
+   <webElementXpaths>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:idRelative</name>
+      <type>Main</type>
+      <value>//div[@id='root']/section/div/section/section/main/div/div/div[6]/div[3]/div/div/div/div/div/div/div/div/div</value>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Data GL Line Item'])[1]/following::div[13]</value>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Max Row Item'])[1]/following::div[19]</value>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:position</name>
+      <type>Main</type>
+      <value>//div[3]/div/div/div/div/div/div/div/div/div</value>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:customAttributes</name>
+      <type>Main</type>
+      <value>//div[(text() = 'NoGL AccountGL DescriptionPKPosting NumberPosting DateDoc. ReferenceDoc. DateAmountBA CodeCost CenterProfit CenterClearing No.Clearing DateStatusBaseline DateAssignmentTextTax CodeDivisionNotice/UnoticeHeader TextFiscal YearPeriodDoc. CurrencyDoc. Type                           11240100995Inventory:NewUnit (Synchronization)40H10A-2100008326 Jan 2022H10A-2100008322 Feb 2021Rp 100.000H10A----Open-LKADO-1/LKA/UNIT DESCRIPTIONM001--20212IDRZU22020100000Good Receipt/Invoice Receipt-Trade-NewUnit50H10A-2100008326 Jan 2022H10A-2100008322 Feb 2021Rp 135.000 -H10A----Open-MESIN-1DO-1/LKA/UNIT DESCRIPTIONM001--20212IDRZU31310100000Price Variance-NewUnit40H10A-2100008326 Jan 2022H10A-2100008322 Feb 2021Rp 35.000H10A----Open-LKADO-1/LKA/UNIT DESCRIPTIONM001--20212IDRZU41240400995Inventory:Accessories (Synchronization)40H765-GR-2100046626 Jan 2022H765-GR-2100046622 Feb 2021Rp 10.000H765----Open-H765-GR-210004666100075621/Inti MotorM002--20212IDRZU52020400000Good Receipt/Invoice Receipt-Trade-Accessories50H765-GR-2100046626 Jan 2022H765-GR-2100046622 Feb 2021Rp 7.000 -H765----Open-H765-GR-210004666100075621/Inti MotorM002--20212IDRZU61310400000Price Variance-Accessories50H765-GR-2100046626 Jan 2022H765-GR-2100046622 Feb 2021Rp 3.000 -H765----Open-H765-GR-210004666100075621/Inti MotorM002--20212IDRZU71240200995Inventory:Spareparts (Sychronization)40H765-GR-2100046626 Jan 2022H765-GR-2100046622 Feb 2021Rp 6.000H765----Open-H765-GR-210004666100075621/Inti MotorM002--20212IDRZU82020200000Good Receipt/Invoice Receipt-Trade-Spareparts50H765-GR-2100046626 Jan 2022H765-GR-2100046622 Feb 2021Rp 6.000 -H765----Open-H765-GR-210004666100075621/Inti MotorM002--20212IDRZU91002100100Cash on Hand:IDR:Collection Indonesian Rupiah40H383-I-2290000103 Mar 2022H383-202200000106 Mar 2022Rp 7.400.000H383----Open-H383-I-22900001-M099--20223IDRZU102120102000Customer Guarantee:NewUnit-3rd Party19H383-I-2290000103 Mar 2022H383-202200000106 Mar 2022Rp 7.400.000 -H383--H383-I-2290000212 Mar 2022Clear-04013-SPK-21000091bayar pertamaM001--20223IDRZURp 0' or . = 'NoGL AccountGL DescriptionPKPosting NumberPosting DateDoc. ReferenceDoc. DateAmountBA CodeCost CenterProfit CenterClearing No.Clearing DateStatusBaseline DateAssignmentTextTax CodeDivisionNotice/UnoticeHeader TextFiscal YearPeriodDoc. CurrencyDoc. Type                           11240100995Inventory:NewUnit (Synchronization)40H10A-2100008326 Jan 2022H10A-2100008322 Feb 2021Rp 100.000H10A----Open-LKADO-1/LKA/UNIT DESCRIPTIONM001--20212IDRZU22020100000Good Receipt/Invoice Receipt-Trade-NewUnit50H10A-2100008326 Jan 2022H10A-2100008322 Feb 2021Rp 135.000 -H10A----Open-MESIN-1DO-1/LKA/UNIT DESCRIPTIONM001--20212IDRZU31310100000Price Variance-NewUnit40H10A-2100008326 Jan 2022H10A-2100008322 Feb 2021Rp 35.000H10A----Open-LKADO-1/LKA/UNIT DESCRIPTIONM001--20212IDRZU41240400995Inventory:Accessories (Synchronization)40H765-GR-2100046626 Jan 2022H765-GR-2100046622 Feb 2021Rp 10.000H765----Open-H765-GR-210004666100075621/Inti MotorM002--20212IDRZU52020400000Good Receipt/Invoice Receipt-Trade-Accessories50H765-GR-2100046626 Jan 2022H765-GR-2100046622 Feb 2021Rp 7.000 -H765----Open-H765-GR-210004666100075621/Inti MotorM002--20212IDRZU61310400000Price Variance-Accessories50H765-GR-2100046626 Jan 2022H765-GR-2100046622 Feb 2021Rp 3.000 -H765----Open-H765-GR-210004666100075621/Inti MotorM002--20212IDRZU71240200995Inventory:Spareparts (Sychronization)40H765-GR-2100046626 Jan 2022H765-GR-2100046622 Feb 2021Rp 6.000H765----Open-H765-GR-210004666100075621/Inti MotorM002--20212IDRZU82020200000Good Receipt/Invoice Receipt-Trade-Spareparts50H765-GR-2100046626 Jan 2022H765-GR-2100046622 Feb 2021Rp 6.000 -H765----Open-H765-GR-210004666100075621/Inti MotorM002--20212IDRZU91002100100Cash on Hand:IDR:Collection Indonesian Rupiah40H383-I-2290000103 Mar 2022H383-202200000106 Mar 2022Rp 7.400.000H383----Open-H383-I-22900001-M099--20223IDRZU102120102000Customer Guarantee:NewUnit-3rd Party19H383-I-2290000103 Mar 2022H383-202200000106 Mar 2022Rp 7.400.000 -H383--H383-I-2290000212 Mar 2022Clear-04013-SPK-21000091bayar pertamaM001--20223IDRZURp 0')]</value>
+   </webElementXpaths>
+</WebElementEntity>

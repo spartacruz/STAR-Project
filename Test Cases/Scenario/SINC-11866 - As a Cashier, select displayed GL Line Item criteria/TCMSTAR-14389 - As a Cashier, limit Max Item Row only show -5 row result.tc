@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>(-)As a Cashier, I want to limit 'Max Item Row' only show -5 row result</description>
+   <name>TCMSTAR-14389 - As a Cashier, limit Max Item Row only show -5 row result</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>5f97bfed-77f6-4226-9794-51ee19e35386</testCaseGuid>
+</TestCaseEntity>

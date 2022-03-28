@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>(-)As a Cashier, I want to Input and Search GL Account Number by typing 1 upper case character and that character is exist on GL Description</description>
+   <name>TCMSTAR-14112 - Input 1 Upper Case n System Not Give Recomendation</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>067fe12b-2ba4-44a4-8372-e3abf30a22bf</testCaseGuid>
+</TestCaseEntity>

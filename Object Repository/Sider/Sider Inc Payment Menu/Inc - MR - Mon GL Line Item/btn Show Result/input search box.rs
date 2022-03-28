@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>input search box</name>
+   <tag></tag>
+   <elementGuidId>e21fff98-a114-42e1-a438-69bfc7e12d36</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>CSS</key>
+         <value>input.ant-input.ant-input-lg</value>
+      </entry>
+      <entry>
+         <key>XPATH</key>
+         <value>//input[@class='ant-input ant-input-lg' and @placeholder = 'Cari Data']</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>XPATH</selectorMethod>
+   <useRalativeImagePath>true</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>tag</name>
+      <type>Main</type>
+      <value>input</value>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>class</name>
+      <type>Main</type>
+      <value>ant-input ant-input-lg</value>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>placeholder</name>
+      <type>Main</type>
+      <value>Cari Data</value>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>type</name>
+      <type>Main</type>
+      <value>text</value>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath</name>
+      <type>Main</type>
+      <value>id(&quot;root&quot;)/section[@class=&quot;ant-layout&quot;]/div[@class=&quot;Layout_layout-content__niO9D&quot;]/section[@class=&quot;ant-layout Layout_layout-transition__cFus6 Layout_collapsed__2476s&quot;]/section[@class=&quot;ant-layout Layout_content__1pwzV&quot;]/main[@class=&quot;ant-layout-content&quot;]/div[@class=&quot;layout-wrapper&quot;]/div[@class=&quot;layout-content-wrapper&quot;]/div[6]/div[@class=&quot;ant-row ant-row-space-between ant-row-middle&quot;]/div[@class=&quot;ant-col&quot;]/div[@class=&quot;SearchInput_div__2qJYZ&quot;]/span[@class=&quot;ant-input-affix-wrapper ant-input-affix-wrapper-focused ant-input-affix-wrapper-lg&quot;]/input[@class=&quot;ant-input ant-input-lg&quot;]</value>
+   </webElementProperties>
+   <webElementXpaths>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:attributes</name>
+      <type>Main</type>
+      <value>(//input[@value=''])[4]</value>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:idRelative</name>
+      <type>Main</type>
+      <value>//div[@id='root']/section/div/section/section/main/div/div/div[6]/div/div[2]/div/span/input</value>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:position</name>
+      <type>Main</type>
+      <value>//div/span/input</value>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:customAttributes</name>
+      <type>Main</type>
+      <value>//input[@placeholder = 'Cari Data' and @type = 'text']</value>
+   </webElementXpaths>
+</WebElementEntity>

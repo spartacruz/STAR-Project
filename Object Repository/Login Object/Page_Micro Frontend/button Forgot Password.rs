@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>button Forgot Password</name>
+   <tag></tag>
+   <elementGuidId>49e73116-73f6-4a22-9943-37619a7c0188</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>XPATH</key>
+         <value>//a[@id='forgotPassword']</value>
+      </entry>
+      <entry>
+         <key>CSS</key>
+         <value>#forgotPassword</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>XPATH</selectorMethod>
+   <useRalativeImagePath>true</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>tag</name>
+      <type>Main</type>
+      <value>a</value>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>id</name>
+      <type>Main</type>
+      <value>forgotPassword</value>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>href</name>
+      <type>Main</type>
+      <value>/starorgb2c.onmicrosoft.com/B2C_1_SignIn/api/CombinedSigninAndSignup/forgotPassword?csrf_token=emIvY1JWbzFnWVd4TmhYSjQxQ0tHWlhuNzk0QloxREQ0RFVmK0ZoWmF2M2h0TWtEYnhTaWhPS2JLYnJmZjVNZlh3M2xrNENSamh6aFdIL1VxRmwrQ1E9PTsyMDIyLTAyLTAzVDEwOjIxOjE4LjEyMTczMjZaO0VqcEVVZlFpTEdYZE44VDNDMDBJbUE9PTt7Ik9yY2hlc3RyYXRpb25TdGVwIjoxfQ==&amp;tx=StateProperties=eyJUSUQiOiJlNzUxNjYzZi05MWQ4LTQ2MWYtYmU0Yy02NTY1MTU5Y2M1ODUifQ&amp;p=B2C_1_SignIn</value>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>text</name>
+      <type>Main</type>
+      <value>Forgot your password?</value>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath</name>
+      <type>Main</type>
+      <value>id(&quot;forgotPassword&quot;)</value>
+   </webElementProperties>
+   <webElementXpaths>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:attributes</name>
+      <type>Main</type>
+      <value>//a[@id='forgotPassword']</value>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:idRelative</name>
+      <type>Main</type>
+      <value>//form[@id='localAccountForm']/div[3]/div[2]/div/a</value>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:link</name>
+      <type>Main</type>
+      <value>//a[contains(text(),'Forgot your password?')]</value>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Password'])[1]/following::a[1]</value>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Username'])[1]/following::a[1]</value>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Sign in'])[1]/preceding::a[1]</value>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>//*/text()[normalize-space(.)='Forgot your password?']/parent::*</value>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:href</name>
+      <type>Main</type>
+      <value>//a[contains(@href, '/starorgb2c.onmicrosoft.com/B2C_1_SignIn/api/CombinedSigninAndSignup/forgotPassword?csrf_token=emIvY1JWbzFnWVd4TmhYSjQxQ0tHWlhuNzk0QloxREQ0RFVmK0ZoWmF2M2h0TWtEYnhTaWhPS2JLYnJmZjVNZlh3M2xrNENSamh6aFdIL1VxRmwrQ1E9PTsyMDIyLTAyLTAzVDEwOjIxOjE4LjEyMTczMjZaO0VqcEVVZlFpTEdYZE44VDNDMDBJbUE9PTt7Ik9yY2hlc3RyYXRpb25TdGVwIjoxfQ==&amp;tx=StateProperties=eyJUSUQiOiJlNzUxNjYzZi05MWQ4LTQ2MWYtYmU0Yy02NTY1MTU5Y2M1ODUifQ&amp;p=B2C_1_SignIn')]</value>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:position</name>
+      <type>Main</type>
+      <value>//div[2]/div/a</value>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:customAttributes</name>
+      <type>Main</type>
+      <value>//a[@id = 'forgotPassword' and @href = '/starorgb2c.onmicrosoft.com/B2C_1_SignIn/api/CombinedSigninAndSignup/forgotPassword?csrf_token=emIvY1JWbzFnWVd4TmhYSjQxQ0tHWlhuNzk0QloxREQ0RFVmK0ZoWmF2M2h0TWtEYnhTaWhPS2JLYnJmZjVNZlh3M2xrNENSamh6aFdIL1VxRmwrQ1E9PTsyMDIyLTAyLTAzVDEwOjIxOjE4LjEyMTczMjZaO0VqcEVVZlFpTEdYZE44VDNDMDBJbUE9PTt7Ik9yY2hlc3RyYXRpb25TdGVwIjoxfQ==&amp;tx=StateProperties=eyJUSUQiOiJlNzUxNjYzZi05MWQ4LTQ2MWYtYmU0Yy02NTY1MTU5Y2M1ODUifQ&amp;p=B2C_1_SignIn' and (text() = 'Forgot your password?' or . = 'Forgot your password?')]</value>
+   </webElementXpaths>
+</WebElementEntity>
