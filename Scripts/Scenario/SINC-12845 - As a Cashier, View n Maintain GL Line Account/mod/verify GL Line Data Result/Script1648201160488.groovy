@@ -101,11 +101,9 @@ for (int i = 1; i <= selectorTheadGLTableList.size(); i++) {
 }
 
 
-
-//GL Account validation
-//GL Account validation
-//GL Account validation
-
+//count table rows, can be reuse
+//count table rows, can be reuse
+//count table rows, can be reuse
 TestObject selectorContentGLTable = new TestObject()
 selectorContentGLTable.addProperty("xpath", ConditionType.EQUALS, "//table//tbody/tr")
 
@@ -113,6 +111,10 @@ selectorContentGLTable.addProperty("xpath", ConditionType.EQUALS, "//table//tbod
 List<WebElement> selectorContentGLTableList = WebUI.findWebElements(selectorContentGLTable, 30)
 println(selectorContentGLTableList.size())
 
+
+//GL Account validation
+//GL Account validation
+//GL Account validation
 if (nGLAccountNumber == "0") {
 	//pass, no validation
 	assert true;
@@ -138,6 +140,8 @@ if (nGLAccountNumber == "0") {
 	}
 	
 }
+
+
 
 
 
