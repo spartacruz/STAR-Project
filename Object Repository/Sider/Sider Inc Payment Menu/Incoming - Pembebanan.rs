@@ -7,11 +7,10 @@
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//div[@href = '/incomingpayment#' and (text() = 'Pembebanan' or . = 'Pembebanan')]</value>
+         <value>//div[@href = '/incomingpayment/pembebanan' and (text() = 'Pembebanan' or . = 'Pembebanan')]</value>
       </entry>
       <entry>
          <key>CSS</key>
-         <value></value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

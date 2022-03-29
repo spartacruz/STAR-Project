@@ -7,11 +7,10 @@
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//div[@href = '/incomingpayment#' and (text() = 'Pengeluaran Pembayaran' or . = 'Pengeluaran Pembayaran')]</value>
+         <value>//div[@href = '/incomingpayment/pengeluaranpembayaran' and (text() = 'Pengeluaran Pembayaran' or . = 'Pengeluaran Pembayaran')]</value>
       </entry>
       <entry>
          <key>CSS</key>
-         <value></value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>
