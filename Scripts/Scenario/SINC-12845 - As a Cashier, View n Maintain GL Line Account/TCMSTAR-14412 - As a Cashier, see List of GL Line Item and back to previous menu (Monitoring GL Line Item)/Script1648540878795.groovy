@@ -20,14 +20,8 @@ import org.openqa.selenium.Keys as Keys
 WebUI.callTestCase(findTestCase('Scenario/SINC-12845 - As a Cashier, View n Maintain GL Line Account/TCMSTAR-14409 - As a Cashier, see List of GL Line Item based on defined filter'), 
     [:], FailureHandling.STOP_ON_FAILURE)
 
-WebUI.scrollToElement(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/btn Show Result/div table content'), 
-    0)
-
 WebUI.verifyElementPresent(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/btn Show Result/btn BackButton'), 
     GlobalVariable.waitPresentTimeout)
-
-WebUI.scrollToElement(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/btn Show Result/btn BackButton'), 
-    3)
 
 WebUI.click(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/btn Show Result/btn BackButton'))
 
