@@ -20,67 +20,33 @@ import org.openqa.selenium.Keys as Keys
 
 String choice = "$nKeyword"
 
-if (choice == 'DebitCredit') {
-    try {
-        WebUI.verifyElementVisible(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/btn Advanced Search modal/div Debit unticked'), 
-            FailureHandling.STOP_ON_FAILURE)
+try {
+	WebUI.verifyElementVisible(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/btn Advanced Search modal/div Debit unticked'),
+		FailureHandling.STOP_ON_FAILURE)
+	WebUI.verifyElementVisible(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/btn Advanced Search modal/div Credit unticked'),
+		FailureHandling.STOP_ON_FAILURE)
+}
+catch (Exception e) {
+	KeywordUtil.logInfo('Debit atau kredit masih ter-tick atau elemen tidak ada')
+	KeywordUtil.markFailedAndStop('Debit atau kredit masih ter-tick atau elemen tidak ada')
+}
 
-        WebUI.verifyElementVisible(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/btn Advanced Search modal/div Credit unticked'), 
-            FailureHandling.STOP_ON_FAILURE)
-    }
-    catch (Exception e) {
-        KeywordUtil.logInfo('Debit atau kredit masih ter-tick atau elemen tidak ada')
-
-        KeywordUtil.markFailedAndStop('Debit atau kredit masih ter-tick atau elemen tidak ada')
-    } 
-    
-    WebUI.click(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/btn Advanced Search modal/div Debit unticked'))
-
-    WebUI.click(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/btn Advanced Search modal/div Credit unticked'))
-
-    WebUI.verifyElementVisible(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/btn Advanced Search modal/div Debit ticked'))
-
-    WebUI.verifyElementVisible(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/btn Advanced Search modal/div Credit ticked'))
-
-    WebUI.verifyElementNotVisible(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/btn Advanced Search modal/div DebitCredit_warning'))
-
-} else if ('DebitOnly') {
-	try {
-		WebUI.verifyElementVisible(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/btn Advanced Search modal/div Debit unticked'),
-			FailureHandling.STOP_ON_FAILURE)
-
-		WebUI.verifyElementVisible(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/btn Advanced Search modal/div Credit unticked'),
-			FailureHandling.STOP_ON_FAILURE)
-	}
-	catch (Exception e) {
-		KeywordUtil.logInfo('Debit atau kredit masih ter-tick atau elemen tidak ada')
-
-		KeywordUtil.markFailedAndStop('Debit atau kredit masih ter-tick atau elemen tidak ada')
-	}
+switch (choice) {
+	case 'DebitCredit':
+		WebUI.click(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/btn Advanced Search modal/div Debit unticked'))
+		WebUI.click(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/btn Advanced Search modal/div Credit unticked'))
+		WebUI.verifyElementVisible(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/btn Advanced Search modal/div Debit ticked'))
+		WebUI.verifyElementVisible(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/btn Advanced Search modal/div Credit ticked'))
+		WebUI.verifyElementNotVisible(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/btn Advanced Search modal/div DebitCredit_warning'))
 	
-	WebUI.click(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/btn Advanced Search modal/div Debit unticked'))
-	
-	WebUI.verifyElementVisible(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/btn Advanced Search modal/div Debit ticked'))
-	
-	WebUI.verifyElementNotVisible(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/btn Advanced Search modal/div DebitCredit_warning'))
-} else if ('CreditOnly') {
-	try {
-		WebUI.verifyElementVisible(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/btn Advanced Search modal/div Debit unticked'),
-			FailureHandling.STOP_ON_FAILURE)
-
-		WebUI.verifyElementVisible(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/btn Advanced Search modal/div Credit unticked'),
-			FailureHandling.STOP_ON_FAILURE)
-	}
-	catch (Exception e) {
-		KeywordUtil.logInfo('Debit atau kredit masih ter-tick atau elemen tidak ada')
-
-		KeywordUtil.markFailedAndStop('Debit atau kredit masih ter-tick atau elemen tidak ada')
-	}
-	
-	WebUI.click(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/btn Advanced Search modal/div Credit unticked'))
-	
-	WebUI.verifyElementVisible(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/btn Advanced Search modal/div Credit ticked'))
-	
-	WebUI.verifyElementNotVisible(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/btn Advanced Search modal/div DebitCredit_warning'))
+	case 'DebitOnly':
+		WebUI.click(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/btn Advanced Search modal/div Debit unticked'))
+		WebUI.verifyElementVisible(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/btn Advanced Search modal/div Debit ticked'))
+		WebUI.verifyElementNotVisible(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/btn Advanced Search modal/div DebitCredit_warning'))
+		
+	case 'CreditOnly':
+		WebUI.click(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/btn Advanced Search modal/div Credit unticked'))
+		WebUI.verifyElementVisible(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/btn Advanced Search modal/div Credit ticked'))
+		WebUI.verifyElementNotVisible(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/btn Advanced Search modal/div DebitCredit_warning'))
 }
 
