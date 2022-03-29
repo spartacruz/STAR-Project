@@ -31,12 +31,10 @@ WebUI.verifyElementClickable(findTestObject('Sider/Sider Inc Payment Menu/Inc - 
 
 WebUI.click(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/button Show Result Enable'))
 
-WebUI.verifyElementNotPresent(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/btn Show Result/span dot spinning_fetching data'), 
-    GlobalVariable.waitPresentTimeout)
-
 WebUI.callTestCase(findTestCase('Scenario/SINC-12845 - As a Cashier, View n Maintain GL Line Account/mod/verify GL Line Page'), 
-    [:], FailureHandling.STOP_ON_FAILURE)
+    [('ndocStatus') : 'all', ('ndocType') : 'postedItem', ('nmaxRowItem') : '1000', ('nselectDateRangeStartDate') : '0', ('nselectDateRangeEndDate') : '0'
+        , ('nGLAccountNumber') : '0'], FailureHandling.STOP_ON_FAILURE)
 
 WebUI.callTestCase(findTestCase('Scenario/SINC-12845 - As a Cashier, View n Maintain GL Line Account/mod/verify GL Line Data Result'), 
-    [:], FailureHandling.STOP_ON_FAILURE)
+    [('nGLAccountNumber') : '0', ('ndebitCredit') : 'debitOnly'], FailureHandling.STOP_ON_FAILURE)
 
