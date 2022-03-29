@@ -23,6 +23,32 @@ import org.openqa.selenium.WebElement
 import com.kms.katalon.core.testobject.ConditionType
 import com.kms.katalon.core.testobject.TestObject as TestObject
 
+/* This validation needs 6 param as a
+ * Param Type : Map
+ * Value Type : Map
+ * 
+ * (String) $ndocStatus : 
+ * 		Value have to be one of this : 'all', 'openItem', 'clearItem'
+ * 
+ * (String) $ndocType : 
+ * 		Value have to be one of this : 'postedItem' (parkeditem is not developed yet)
+ * 
+ * (String) $nmaxRowItem : 
+ * 		count of Max Row. 0 < x <= 1000
+ * 
+ * (String) $nselectDateRangeStartDate : 
+ * 		Value have to be one of this : (1)dd-mm-yyyy OR (2)0 for no validation
+ * 
+ * (String) $nselectDateRangeEndDate : 
+ * 		Value have to be one of this : (1)dd-mm-yyyy OR (2)0 for no validation
+ * 
+ * (String) $nGLAccountNumber" : 
+ * 		list of inputted GL Account. If more than 1 GL, separate it with comma. No space.
+ * 		WARNING: order matters! if the first GL insert are x and followed by y, then the param have to follow it as well (x comma y)
+ * 		eg. 1002100100,2120102000
+ * 
+ * */
+
 WebUI.verifyElementPresent(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/btn Show Result/btn BackButton'), 
     GlobalVariable.waitPresentTimeout)
 
@@ -68,17 +94,16 @@ switch (docStatus) {
     case 'all':
         WebUI.verifyElementPresent(findTestObject('Object Repository/Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/radioButton All item ticked'), 
             GlobalVariable.waitPresentTimeout)
-
         break
+		
     case 'openItem':
         WebUI.verifyElementPresent(findTestObject('Object Repository/Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/radioButton Open Item ticked'), 
             GlobalVariable.waitPresentTimeout)
-
         break
+		
     case 'clearItem':
         WebUI.verifyElementPresent(findTestObject('Object Repository/Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/radioButton Clear Item ticked'), 
             GlobalVariable.waitPresentTimeout)
-
         break
 }
 
