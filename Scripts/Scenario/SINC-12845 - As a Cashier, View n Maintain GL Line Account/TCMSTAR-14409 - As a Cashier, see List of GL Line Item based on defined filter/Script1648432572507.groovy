@@ -41,9 +41,6 @@ WebUI.verifyElementVisible(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR
 
 WebUI.click(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/button Show Result Enable'))
 
-WebUI.scrollToElement(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/btn Show Result/div table content'), 
-    0)
-
 WebUI.callTestCase(findTestCase('Scenario/SINC-12845 - As a Cashier, View n Maintain GL Line Account/mod/verify GL Line Page'), 
     [('ndocStatus') : 'all', ('ndocType') : 'postedItem', ('nmaxRowItem') : '1000', ('nselectDateRangeStartDate') : '0', ('nselectDateRangeEndDate') : '0'
         , ('nGLAccountNumber') : '8991600000'], FailureHandling.STOP_ON_FAILURE)

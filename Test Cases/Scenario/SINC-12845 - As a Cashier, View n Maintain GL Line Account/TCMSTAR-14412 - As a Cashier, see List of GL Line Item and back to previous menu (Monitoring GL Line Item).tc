@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>(+)As a Cashier, I want to see List of GL Line Item based on defined filter and back to previous menu (Monitoring GL Line Item)</description>
+   <name>TCMSTAR-14412 - As a Cashier, see List of GL Line Item and back to previous menu (Monitoring GL Line Item)</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>360bc620-0fd9-42c5-a4e2-60072a1e2671</testCaseGuid>
+</TestCaseEntity>
