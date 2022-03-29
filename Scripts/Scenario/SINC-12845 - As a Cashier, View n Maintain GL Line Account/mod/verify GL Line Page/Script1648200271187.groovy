@@ -49,6 +49,13 @@ import com.kms.katalon.core.testobject.TestObject as TestObject
  * 
  * */
 
+String docStatus = "$ndocStatus"
+String docType = "$ndocType"
+String maxRowItem = "$nmaxRowItem"
+String selectDateRangeStartDate = "$nselectDateRangeStartDate"
+String selectDateRangeEndDate = "$nselectDateRangeEndDate"
+String GLAccountNumber = "$nGLAccountNumber"
+
 WebUI.verifyElementPresent(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/btn Show Result/btn BackButton'), 
     GlobalVariable.waitPresentTimeout)
 
@@ -81,13 +88,6 @@ WebUI.verifyElementPresent(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR
 
 WebUI.verifyElementPresent(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/btn Show Result/div table content'), 
     GlobalVariable.waitPresentTimeout)
-
-String docStatus = "$ndocStatus"
-String docType = "$ndocType"
-String maxRowItem = "$nmaxRowItem"
-String selectDateRangeStartDate = "$nselectDateRangeStartDate"
-String selectDateRangeEndDate = "$nselectDateRangeEndDate"
-String GLAccountNumber = "$nGLAccountNumber"
 
 //Document Status Validation
 switch (docStatus) {
@@ -173,12 +173,12 @@ if (GLAccountNumber == "0") {
 	List<WebElement> tagGLAccountList = WebUI.findWebElements(selectorTagGLAccount, 30)
 	println(tagGLAccountList.size())
 	
-	//if count GL Account param array equal to
-	if (GLAccountNumberArray.length == tagGLAccountList.size()) {
-		KeywordUtil.markPassed("Count Tag GL Account : Awal and Show Result equal")
-	} else {
-		KeywordUtil.markFailedAndStop("Count Tag GL Account : Awal and Show Result NOT equal")
-	}
+//	//if count GL Account param array equal to
+//	if (GLAccountNumberArray.length == tagGLAccountList.size()) {
+//		KeywordUtil.markPassed("Count Tag GL Account : Awal and Show Result equal")
+//	} else {
+//		KeywordUtil.markFailedAndStop("Count Tag GL Account : Awal and Show Result NOT equal")
+//	}
 	
 	//iterating each Tag GL Account List, to be matched with GL Account Param(s)
 	for (int i = 1; i <= tagGLAccountList.size(); i++) {

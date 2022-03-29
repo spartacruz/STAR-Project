@@ -40,3 +40,6 @@ WebUI.callTestCase(findTestCase('Scenario/SINC-12845 - As a Cashier, View n Main
     [('ndocStatus') : 'all', ('ndocType') : 'postedItem', ('nmaxRowItem') : '1000', ('nselectDateRangeStartDate') : '0', ('nselectDateRangeEndDate') : '0'
         , ('nGLAccountNumber') : '8991600000'], FailureHandling.STOP_ON_FAILURE)
 
+WebUI.callTestCase(findTestCase('Scenario/SINC-12845 - As a Cashier, View n Maintain GL Line Account/mod/verify GL Line Data Result'), 
+    [('nGLAccountNumber') : '8991600000'], FailureHandling.STOP_ON_FAILURE)
+
