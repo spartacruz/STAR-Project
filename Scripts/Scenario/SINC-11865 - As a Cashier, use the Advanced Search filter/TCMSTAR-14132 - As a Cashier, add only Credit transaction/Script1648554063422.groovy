@@ -21,7 +21,7 @@ WebUI.callTestCase(findTestCase('Scenario/SINC-11865 - As a Cashier, use the Adv
     [:], FailureHandling.STOP_ON_FAILURE)
 
 WebUI.callTestCase(findTestCase('Scenario/SINC-11865 - As a Cashier, use the Advanced Search filter/mod/tickDebitCredit'), 
-    [('nKeyword') : 'DebitOnly'], FailureHandling.STOP_ON_FAILURE)
+    [('nKeyword') : 'CreditOnly'], FailureHandling.STOP_ON_FAILURE)
 
 WebUI.verifyElementClickable(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/btn Advanced Search modal/button Terapkan Filter enabled'))
 
@@ -36,5 +36,5 @@ WebUI.callTestCase(findTestCase('Scenario/SINC-12845 - As a Cashier, View n Main
         , ('nGLAccountNumber') : '0'], FailureHandling.STOP_ON_FAILURE)
 
 WebUI.callTestCase(findTestCase('Scenario/SINC-12845 - As a Cashier, View n Maintain GL Line Account/mod/verify GL Line Data Result'), 
-    [('nGLAccountNumber') : '0', ('ndebitCredit') : 'debitOnly'], FailureHandling.STOP_ON_FAILURE)
+    [('nGLAccountNumber') : '0', ('ndebitCredit') : 'creditOnly'], FailureHandling.STOP_ON_FAILURE)
 
