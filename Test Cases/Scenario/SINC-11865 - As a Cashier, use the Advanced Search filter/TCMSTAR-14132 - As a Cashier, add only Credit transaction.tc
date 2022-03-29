@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>(+)As a Cashier, I want to add only 'Credit' transaction on 'Advanced Search' criteria</description>
+   <name>TCMSTAR-14132 - As a Cashier, add only Credit transaction</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>c23745b8-a0c6-4e5d-969d-6ca8e4652e31</testCaseGuid>
+</TestCaseEntity>

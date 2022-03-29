@@ -151,7 +151,7 @@ if (GLAccountNumber == '0') {
 //Debit/Credit validation
 //Debit/Credit validation
 //Debit/Credit validation
-if (debitCredit == '0') {
+if (debitCredit == 'DebitCredit') {
 	//pass, no validation
 	assert true 
 	
