@@ -260,14 +260,34 @@ public static String rangeStartEnd(String startRange, String endRange){
 	return temporary_string;
 }
 
-public static void postingAndDocRefValidation(String postingNumberFrom, String postingNumberTo, String[] postingNumberArray, List<WebElement> selectorContentGLTableList) {
+public static void postingAndDocRefValidation(String postingNumberFrom, String postingNumberTo, String[] postingNumberArray, List<WebElement> selectorContentGLTableList, String option) {
+	
+	String choice = option
+	int scan_column = 0
+	String wording_invalid_range = ''
+	String wording_valid_render = ''
+	String wording_invalid_render = ''
+	
+	switch (choice) {
+		case 'postingNumber':
+			scan_column = 5
+			wording_invalid_range = 'Posting Number (Advanced Search) validation : Invalid range posting number from params'
+			wording_valid_render = 'Posting Number (Advanced Search) validation : Expected Result and rendered table head are equal'
+			wording_invalid_render = 'Posting Number (Advanced Search) validation : Expected Result and rendered table head are NOT equal'
+		
+		case 'docReference':
+			scan_column = 7
+			wording_invalid_range = 'Doc. Reference (Advanced Search) validation : Invalid range posting number from params'
+			wording_valid_render = 'Doc. Reference (Advanced Search) validation : Expected Result and rendered table head are equal'
+			wording_invalid_render = 'Doc. Reference (Advanced Search) validation : Expected Result and rendered table head are NOT equal'
+	}
 	
 	if (postingNumberFrom == '0' && postingNumberTo != '0') {
-		KeywordUtil.markFailedAndStop('Posting Number or Doc. Ref (Advanced Search) validation : Invalid range posting number from params')
+		KeywordUtil.markFailedAndStop(wording_invalid_range)
 	}
 	
 	if (postingNumberFrom != '0' && postingNumberTo == '0') {
-		KeywordUtil.markFailedAndStop('Posting Number or Doc. Ref (Advanced Search) validation : Invalid range posting number from params')
+		KeywordUtil.markFailedAndStop(wording_invalid_range)
 	}
 	
 	if (postingNumberFrom == '0' && postingNumberTo == '0') {
@@ -288,16 +308,17 @@ public static void postingAndDocRefValidation(String postingNumberFrom, String p
 		//iterating each Posting Number Row, to be matched with expected result
 		//i start from 2, because the first tr is nbsp
 		for (int i = 2; i <= (selectorContentGLTableList.size()); i++) {
-			String new_xpath = "//table//tbody/tr[$i]/td[5]"
+			
+			String new_xpath = "//table//tbody/tr[$i]/td[$scan_column]"
 	
 			TestObject dynamicObject = new TestObject('dynamicObject').addProperty('xpath', ConditionType.EQUALS, new_xpath)
 	
 			println(WebUI.getText(dynamicObject))
 	
 			if (postingNumberArray.contains(WebUI.getText(dynamicObject))) {
-				KeywordUtil.markPassed('Posting Number or Doc. Ref (Advanced Search) validation : Expected Result and rendered table head are equal')
+				KeywordUtil.markPassed(wording_valid_render)
 			} else {
-				KeywordUtil.markFailedAndStop('Posting Number or Doc. Ref (Advanced Search) validation : Expected Result and rendered table head are NOT equal')
+				KeywordUtil.markFailedAndStop(wording_invalid_render)
 			}
 		}
 	}
@@ -310,7 +331,7 @@ public static void postingAndDocRefValidation(String postingNumberFrom, String p
 //String postingNumberFrom = "$npostingNumberFrom"
 //String postingNumberTo = "$npostingNumberTo"
 String[] postingNumberArray = new String[1]
-postingAndDocRefValidation(postingNumberFrom, postingNumberTo, postingNumberArray, selectorContentGLTableList)
+postingAndDocRefValidation(postingNumberFrom, postingNumberTo, postingNumberArray, selectorContentGLTableList, 'postingNumber')
 
 
 //Doc. Reference (Advanced Search) validation
@@ -320,7 +341,7 @@ postingAndDocRefValidation(postingNumberFrom, postingNumberTo, postingNumberArra
 //String docReferenceFrom = "$ndocReferenceFrom"
 //String docReferenceTo = "$ndocReferenceTo"
 String[] DocReferenceArray = new String[1]
-postingAndDocRefValidation(docReferenceFrom, docReferenceTo, DocReferenceArray, selectorContentGLTableList)
+postingAndDocRefValidation(docReferenceFrom, docReferenceTo, DocReferenceArray, selectorContentGLTableList, 'docReference')
 
 
 
