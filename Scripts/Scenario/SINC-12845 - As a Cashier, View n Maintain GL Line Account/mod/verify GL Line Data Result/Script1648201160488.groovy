@@ -61,6 +61,8 @@ String GLAccountNumber = "$nGLAccountNumber"
 String debitCredit = "$ndebitCredit"
 String postingNumberFrom = "$npostingNumberFrom"
 String postingNumberTo = "$npostingNumberTo"
+String docReferenceFrom = "$ndocReferenceFrom"
+String docReferenceTo = "$ndocReferenceTo"
 
 //columns validation
 //columns validation
@@ -261,11 +263,11 @@ public static String rangeStartEnd(String startRange, String endRange){
 public static void postingAndDocRefValidation(String postingNumberFrom, String postingNumberTo, String[] postingNumberArray, List<WebElement> selectorContentGLTableList) {
 	
 	if (postingNumberFrom == '0' && postingNumberTo != '0') {
-		KeywordUtil.markFailedAndStop('Posting Number and/or Doc. Ref (Advanced Search) validation : Invalid range posting number from params')
+		KeywordUtil.markFailedAndStop('Posting Number or Doc. Ref (Advanced Search) validation : Invalid range posting number from params')
 	}
 	
 	if (postingNumberFrom != '0' && postingNumberTo == '0') {
-		KeywordUtil.markFailedAndStop('Posting Number and/or Doc. Ref (Advanced Search) validation : Invalid range posting number from params')
+		KeywordUtil.markFailedAndStop('Posting Number or Doc. Ref (Advanced Search) validation : Invalid range posting number from params')
 	}
 	
 	if (postingNumberFrom == '0' && postingNumberTo == '0') {
@@ -293,9 +295,9 @@ public static void postingAndDocRefValidation(String postingNumberFrom, String p
 			println(WebUI.getText(dynamicObject))
 	
 			if (postingNumberArray.contains(WebUI.getText(dynamicObject))) {
-				KeywordUtil.markPassed('Posting Number and/or Doc. Ref (Advanced Search) validation : Expected Result and rendered table head are equal')
+				KeywordUtil.markPassed('Posting Number or Doc. Ref (Advanced Search) validation : Expected Result and rendered table head are equal')
 			} else {
-				KeywordUtil.markFailedAndStop('Posting Number and/or Doc. Ref (Advanced Search) validation : Expected Result and rendered table head are NOT equal')
+				KeywordUtil.markFailedAndStop('Posting Number or Doc. Ref (Advanced Search) validation : Expected Result and rendered table head are NOT equal')
 			}
 		}
 	}
@@ -309,5 +311,17 @@ public static void postingAndDocRefValidation(String postingNumberFrom, String p
 //String postingNumberTo = "$npostingNumberTo"
 String[] postingNumberArray = new String[1]
 postingAndDocRefValidation(postingNumberFrom, postingNumberTo, postingNumberArray, selectorContentGLTableList)
+
+
+//Doc. Reference (Advanced Search) validation
+//Doc. Reference (Advanced Search) validation
+//Doc. Reference (Advanced Search) validation
+//Need param :
+//String docReferenceFrom = "$ndocReferenceFrom"
+//String docReferenceTo = "$ndocReferenceTo"
+String[] DocReferenceArray = new String[1]
+postingAndDocRefValidation(docReferenceFrom, docReferenceTo, DocReferenceArray, selectorContentGLTableList)
+
+
 
 
