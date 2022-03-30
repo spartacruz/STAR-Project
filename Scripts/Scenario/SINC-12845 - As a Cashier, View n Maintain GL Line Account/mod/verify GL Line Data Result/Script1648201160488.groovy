@@ -226,14 +226,6 @@ if (debitCredit == 'DebitCredit') {
 	
 }
 
-//Posting Number (Advanced Search) validation
-//Posting Number (Advanced Search) validation
-//Posting Number (Advanced Search) validation
-//Need param :
-//String postingNumberFrom = "$npostingNumberFrom"
-//String postingNumberTo = "$npostingNumberTo"
-
-String[] postingNumberArray = new String[1]
 
 //for counting range eg. H383-I-22000002 to H383-I-22000010
 //will return string with comma : H383-I-22000002,H383-I-22000003,H383-I-22000004,H383-I-22000005,H383-I-22000006,H383-I-22000007,H383-I-22000008,H383-I-22000009,H383-I-22000010
@@ -266,43 +258,56 @@ public static String rangeStartEnd(String startRange, String endRange){
 	return temporary_string;
 }
 
-if (postingNumberFrom == '0' && postingNumberTo != '0') {
-	KeywordUtil.markFailedAndStop('Posting Number (Advanced Search) validation : Invalid range posting number from params')
-}
-
-if (postingNumberFrom != '0' && postingNumberTo == '0') {
-	KeywordUtil.markFailedAndStop('Posting Number (Advanced Search) validation : Invalid range posting number from params')
-}
-
-if (postingNumberFrom == '0' && postingNumberTo == '0') {
-	//pass, no validation
-	assert true
+public static void postingAndDocRefValidation(String postingNumberFrom, String postingNumberTo, String[] postingNumberArray, List<WebElement> selectorContentGLTableList) {
 	
-} else {
+	if (postingNumberFrom == '0' && postingNumberTo != '0') {
+		KeywordUtil.markFailedAndStop('Posting Number and/or Doc. Ref (Advanced Search) validation : Invalid range posting number from params')
+	}
 	
-	//if user wants to find the same posting number
-	if (postingNumberFrom == postingNumberTo) {
-		postingNumberArray[0] = postingNumberFrom
+	if (postingNumberFrom != '0' && postingNumberTo == '0') {
+		KeywordUtil.markFailedAndStop('Posting Number and/or Doc. Ref (Advanced Search) validation : Invalid range posting number from params')
+	}
+	
+	if (postingNumberFrom == '0' && postingNumberTo == '0') {
+		//pass, no validation
+		assert true
 		
 	} else {
-		postingNumberArray = rangeStartEnd(postingNumberFrom, postingNumberTo).split(",")
 		
-	}
-
-	//iterating each Posting Number Row, to be matched with expected result
-	//i start from 2, because the first tr is nbsp
-	for (int i = 2; i <= (selectorContentGLTableList.size()); i++) {
-		String new_xpath = "//table//tbody/tr[$i]/td[5]"
-
-		TestObject dynamicObject = new TestObject('dynamicObject').addProperty('xpath', ConditionType.EQUALS, new_xpath)
-
-		println(WebUI.getText(dynamicObject))
-
-		if (postingNumberArray.contains(WebUI.getText(dynamicObject))) {
-			KeywordUtil.markPassed('Posting Number (Advanced Search) validation : Expected Result and rendered table head are equal')
+		//if user wants to find the same posting number
+		if (postingNumberFrom == postingNumberTo) {
+			postingNumberArray[0] = postingNumberFrom
+			
 		} else {
-			KeywordUtil.markFailedAndStop('Posting Number (Advanced Search) validation : Expected Result and rendered table head are NOT equal')
+			postingNumberArray = rangeStartEnd(postingNumberFrom, postingNumberTo).split(",")
+			
+		}
+	
+		//iterating each Posting Number Row, to be matched with expected result
+		//i start from 2, because the first tr is nbsp
+		for (int i = 2; i <= (selectorContentGLTableList.size()); i++) {
+			String new_xpath = "//table//tbody/tr[$i]/td[5]"
+	
+			TestObject dynamicObject = new TestObject('dynamicObject').addProperty('xpath', ConditionType.EQUALS, new_xpath)
+	
+			println(WebUI.getText(dynamicObject))
+	
+			if (postingNumberArray.contains(WebUI.getText(dynamicObject))) {
+				KeywordUtil.markPassed('Posting Number and/or Doc. Ref (Advanced Search) validation : Expected Result and rendered table head are equal')
+			} else {
+				KeywordUtil.markFailedAndStop('Posting Number and/or Doc. Ref (Advanced Search) validation : Expected Result and rendered table head are NOT equal')
+			}
 		}
 	}
 }
+
+//Posting Number (Advanced Search) validation
+//Posting Number (Advanced Search) validation
+//Posting Number (Advanced Search) validation
+//Need param :
+//String postingNumberFrom = "$npostingNumberFrom"
+//String postingNumberTo = "$npostingNumberTo"
+String[] postingNumberArray = new String[1]
+postingAndDocRefValidation(postingNumberFrom, postingNumberTo, postingNumberArray, selectorContentGLTableList)
+
 
