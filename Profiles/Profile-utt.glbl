@@ -119,4 +119,9 @@
       <initValue>'1080'</initValue>
       <name>InputFourDigit</name>
    </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>2</initValue>
+      <name>delayStep</name>
+   </GlobalVariableEntity>
 </GlobalVariableEntities>

@@ -233,6 +233,39 @@ if (debitCredit == 'DebitCredit') {
 //String postingNumberFrom = "$npostingNumberFrom"
 //String postingNumberTo = "$npostingNumberTo"
 
+String[] postingNumberArray = new String[1]
+
+//for counting range eg. H383-I-22000002 to H383-I-22000010
+//will return string with comma : H383-I-22000002,H383-I-22000003,H383-I-22000004,H383-I-22000005,H383-I-22000006,H383-I-22000007,H383-I-22000008,H383-I-22000009,H383-I-22000010
+public static String rangeStartEnd(String startRange, String endRange){
+	String variable1 = startRange;
+	String variable2 = endRange;
+
+	String[] temp1 = variable1.split("-");
+	String[] temp2 = variable2.split("-");
+
+	Integer last1 = Integer.parseInt(temp1[temp1.length - 1]);
+	Integer last2 = Integer.parseInt(temp2[temp1.length - 1]);
+
+	Integer prefix_length = variable1.length() - String.valueOf(last1).length();
+	String concat_prefix = variable1.substring(0, prefix_length);
+
+	Integer temporary = last1;
+	String temporary_string = "";
+	Integer count_array = 0;
+
+	while (temporary <= last2){
+		temporary_string = temporary_string + concat_prefix + String.valueOf(temporary);
+		if (temporary < last2) {
+			temporary_string = temporary_string + ",";
+		}
+		temporary = temporary + 1;
+		count_array = count_array + 1;
+	}
+
+	return temporary_string;
+}
+
 if (postingNumberFrom == '0' && postingNumberTo != '0') {
 	KeywordUtil.markFailedAndStop('Posting Number (Advanced Search) validation : Invalid range posting number from params')
 }
@@ -245,23 +278,18 @@ if (postingNumberFrom == '0' && postingNumberTo == '0') {
 	//pass, no validation
 	assert true
 	
-	
 } else {
 	
 	//if user wants to find the same posting number
 	if (postingNumberFrom == postingNumberTo) {
-		String[] postingNumberArray = new String[1]
 		postingNumberArray[0] = postingNumberFrom
 		
 	} else {
-		//pass, untuk sementara waktu
-		assert true
+		postingNumberArray = rangeStartEnd(postingNumberFrom, postingNumberTo).split(",")
+		
 	}
-	
-//	String[] postingNumberArray = new String[3]
-//	postingNumberArray[0] = GLAccountNumber.split(',')
 
-	//iterating each GL Account Row, to be matched with expected result
+	//iterating each Posting Number Row, to be matched with expected result
 	//i start from 2, because the first tr is nbsp
 	for (int i = 2; i <= (selectorContentGLTableList.size()); i++) {
 		String new_xpath = "//table//tbody/tr[$i]/td[5]"
