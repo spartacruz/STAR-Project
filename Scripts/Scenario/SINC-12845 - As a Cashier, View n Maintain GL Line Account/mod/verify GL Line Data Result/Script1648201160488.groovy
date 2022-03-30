@@ -59,6 +59,8 @@ WebUI.verifyElementNotPresent(findTestObject('Sider/Sider Inc Payment Menu/Inc -
 
 String GLAccountNumber = "$nGLAccountNumber"
 String debitCredit = "$ndebitCredit"
+String postingNumberFrom = "$npostingNumberFrom"
+String postingNumberTo = "$npostingNumberTo"
 
 //columns validation
 //columns validation
@@ -119,6 +121,8 @@ println(selectorContentGLTableList.size())
 //GL Account validation
 //GL Account validation
 //GL Account validation
+//Need param :
+//String GLAccountNumber = "$nGLAccountNumber"
 if (GLAccountNumber == '0') {
     //pass, no validation
     assert true 
@@ -151,6 +155,8 @@ if (GLAccountNumber == '0') {
 //Debit/Credit validation
 //Debit/Credit validation
 //Debit/Credit validation
+//Need param :
+//String debitCredit = "$ndebitCredit"
 if (debitCredit == 'DebitCredit') {
 	//pass, no validation
 	assert true 
@@ -219,3 +225,56 @@ if (debitCredit == 'DebitCredit') {
 	}
 	
 }
+
+//Posting Number (Advanced Search) validation
+//Posting Number (Advanced Search) validation
+//Posting Number (Advanced Search) validation
+//Need param :
+//String postingNumberFrom = "$npostingNumberFrom"
+//String postingNumberTo = "$npostingNumberTo"
+
+if (postingNumberFrom == '0' && postingNumberTo != '0') {
+	KeywordUtil.markFailedAndStop('Posting Number (Advanced Search) validation : Invalid range posting number from params')
+}
+
+if (postingNumberFrom != '0' && postingNumberTo == '0') {
+	KeywordUtil.markFailedAndStop('Posting Number (Advanced Search) validation : Invalid range posting number from params')
+}
+
+if (postingNumberFrom == '0' && postingNumberTo == '0') {
+	//pass, no validation
+	assert true
+	
+	
+} else {
+	
+	//if user wants to find the same posting number
+	if (postingNumberFrom == postingNumberTo) {
+		String[] postingNumberArray = new String[1]
+		postingNumberArray[0] = postingNumberFrom
+		
+	} else {
+		//pass, untuk sementara waktu
+		assert true
+	}
+	
+//	String[] postingNumberArray = new String[3]
+//	postingNumberArray[0] = GLAccountNumber.split(',')
+
+	//iterating each GL Account Row, to be matched with expected result
+	//i start from 2, because the first tr is nbsp
+	for (int i = 2; i <= (selectorContentGLTableList.size()); i++) {
+		String new_xpath = "//table//tbody/tr[$i]/td[5]"
+
+		TestObject dynamicObject = new TestObject('dynamicObject').addProperty('xpath', ConditionType.EQUALS, new_xpath)
+
+		println(WebUI.getText(dynamicObject))
+
+		if (postingNumberArray.contains(WebUI.getText(dynamicObject))) {
+			KeywordUtil.markPassed('Posting Number (Advanced Search) validation : Expected Result and rendered table head are equal')
+		} else {
+			KeywordUtil.markFailedAndStop('Posting Number (Advanced Search) validation : Expected Result and rendered table head are NOT equal')
+		}
+	}
+}
+
