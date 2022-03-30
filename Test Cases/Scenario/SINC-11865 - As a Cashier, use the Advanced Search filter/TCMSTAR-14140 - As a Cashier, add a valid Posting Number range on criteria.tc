@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>(+)As a Cashier, I want to add a valid 'Posting Number' range on 'Advanced Search' criteria</description>
+   <name>TCMSTAR-14140 - As a Cashier, add a valid Posting Number range on criteria</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>f3d1a7df-3837-4837-a47f-c5c20a137e7c</testCaseGuid>
+</TestCaseEntity>

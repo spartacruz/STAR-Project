@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>(+)As a Cashier, I want to add a valid 'Document Reference' range on 'Advanced Search' criteria</description>
+   <name>TCMSTAR-14142 - As a Cashier, add a valid Document Reference range on criteria</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>cdfed467-4ff3-47c6-967b-9b697d8a1aed</testCaseGuid>
+</TestCaseEntity>

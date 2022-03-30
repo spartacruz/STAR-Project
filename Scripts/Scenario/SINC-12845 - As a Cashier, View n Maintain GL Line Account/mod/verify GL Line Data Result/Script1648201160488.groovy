@@ -3,6 +3,10 @@ import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
 import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
 import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
 import static com.kms.katalon.core.testobject.ObjectRepository.findWindowsObject
+
+import java.time.LocalDate
+import java.time.format.DateTimeFormatter
+
 import com.github.kklisura.cdt.protocol.types.runtime.Evaluate as Evaluate
 import com.kms.katalon.core.checkpoint.Checkpoint as Checkpoint
 import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as CucumberKW
@@ -59,6 +63,10 @@ WebUI.verifyElementNotPresent(findTestObject('Sider/Sider Inc Payment Menu/Inc -
 
 String GLAccountNumber = "$nGLAccountNumber"
 String debitCredit = "$ndebitCredit"
+String postingNumberFrom = "$npostingNumberFrom"
+String postingNumberTo = "$npostingNumberTo"
+String docReferenceFrom = "$ndocReferenceFrom"
+String docReferenceTo = "$ndocReferenceTo"
 
 //columns validation
 //columns validation
@@ -119,6 +127,8 @@ println(selectorContentGLTableList.size())
 //GL Account validation
 //GL Account validation
 //GL Account validation
+//Need param :
+//String GLAccountNumber = "$nGLAccountNumber"
 if (GLAccountNumber == '0') {
     //pass, no validation
     assert true 
@@ -151,6 +161,8 @@ if (GLAccountNumber == '0') {
 //Debit/Credit validation
 //Debit/Credit validation
 //Debit/Credit validation
+//Need param :
+//String debitCredit = "$ndebitCredit"
 if (debitCredit == 'DebitCredit') {
 	//pass, no validation
 	assert true 
@@ -219,3 +231,154 @@ if (debitCredit == 'DebitCredit') {
 	}
 	
 }
+
+
+//for counting range eg. H383-I-22000002 to H383-I-22000010
+//will return string with comma : H383-I-22000002,H383-I-22000003,H383-I-22000004,H383-I-22000005,H383-I-22000006,H383-I-22000007,H383-I-22000008,H383-I-22000009,H383-I-22000010
+public static String rangeStartEnd(String startRange, String endRange){
+	String variable1 = startRange;
+	String variable2 = endRange;
+
+	String[] temp1 = variable1.split("-");
+	String[] temp2 = variable2.split("-");
+
+	Integer last1 = Integer.parseInt(temp1[temp1.length - 1]);
+	Integer last2 = Integer.parseInt(temp2[temp1.length - 1]);
+
+	Integer prefix_length = variable1.length() - String.valueOf(last1).length();
+	String concat_prefix = variable1.substring(0, prefix_length);
+
+	Integer temporary = last1;
+	String temporary_string = "";
+	Integer count_array = 0;
+
+	while (temporary <= last2){
+		temporary_string = temporary_string + concat_prefix + String.valueOf(temporary);
+		if (temporary < last2) {
+			temporary_string = temporary_string + ",";
+		}
+		temporary = temporary + 1;
+		count_array = count_array + 1;
+	}
+
+	return temporary_string;
+}
+
+public static void postingAndDocRefValidation(String postingNumberFrom, String postingNumberTo, String[] postingNumberArray, List<WebElement> selectorContentGLTableList, String option) {
+	
+	String choice = option
+	int scan_column = 0
+	String wording_invalid_range = ''
+	String wording_valid_render = ''
+	String wording_invalid_render = ''
+	
+	switch (choice) {
+		case 'postingNumber':
+			scan_column = 5
+			wording_invalid_range = 'Posting Number (Advanced Search) validation : Invalid range posting number from params'
+			wording_valid_render = 'Posting Number (Advanced Search) validation : Expected Result and rendered table head are equal'
+			wording_invalid_render = 'Posting Number (Advanced Search) validation : Expected Result and rendered table head are NOT equal'
+			break
+		
+		case 'docReference':
+			scan_column = 7
+			wording_invalid_range = 'Doc. Reference (Advanced Search) validation : Invalid range posting number from params'
+			wording_valid_render = 'Doc. Reference (Advanced Search) validation : Expected Result and rendered table head are equal'
+			wording_invalid_render = 'Doc. Reference (Advanced Search) validation : Expected Result and rendered table head are NOT equal'
+			break
+	}
+	
+	if (postingNumberFrom == '0' && postingNumberTo != '0') {
+		KeywordUtil.markFailedAndStop(wording_invalid_range)
+	}
+	
+	if (postingNumberFrom != '0' && postingNumberTo == '0') {
+		KeywordUtil.markFailedAndStop(wording_invalid_range)
+	}
+	
+	if (postingNumberFrom == '0' && postingNumberTo == '0') {
+		//pass, no validation
+		assert true
+		
+	} else {
+		
+		//if user wants to find the same posting number
+		if (postingNumberFrom == postingNumberTo) {
+			postingNumberArray[0] = postingNumberFrom
+			
+		} else {
+			postingNumberArray = rangeStartEnd(postingNumberFrom, postingNumberTo).split(",")
+			
+		}
+	
+		//iterating each Posting Number Row, to be matched with expected result
+		//i start from 2, because the first tr is nbsp
+		for (int i = 2; i <= (selectorContentGLTableList.size()); i++) {
+			
+			String new_xpath = "//table//tbody/tr[$i]/td[$scan_column]"
+	
+			TestObject dynamicObject = new TestObject('dynamicObject').addProperty('xpath', ConditionType.EQUALS, new_xpath)
+	
+			println(WebUI.getText(dynamicObject))
+	
+			if (postingNumberArray.contains(WebUI.getText(dynamicObject))) {
+				KeywordUtil.markPassed(wording_valid_render)
+			} else {
+				KeywordUtil.markFailedAndStop(wording_invalid_render)
+			}
+		}
+	}
+}
+
+//Posting Number (Advanced Search) validation
+//Posting Number (Advanced Search) validation
+//Posting Number (Advanced Search) validation
+//Need param :
+//String postingNumberFrom = "$npostingNumberFrom"
+//String postingNumberTo = "$npostingNumberTo"
+String[] postingNumberArray = new String[1]
+postingAndDocRefValidation(postingNumberFrom, postingNumberTo, postingNumberArray, selectorContentGLTableList, 'postingNumber')
+
+
+//Doc. Reference (Advanced Search) validation
+//Doc. Reference (Advanced Search) validation
+//Doc. Reference (Advanced Search) validation
+//Need param :
+//String docReferenceFrom = "$ndocReferenceFrom"
+//String docReferenceTo = "$ndocReferenceTo"
+String[] DocReferenceArray = new String[1]
+postingAndDocRefValidation(docReferenceFrom, docReferenceTo, DocReferenceArray, selectorContentGLTableList, 'docReference')
+
+//for convert string_date to java format date and check whether target date is :
+//in between or equal
+//will return boolean true if (in between or equal). Otherwise, false
+public static Boolean isWithinRange(String paramRange1, String paramRange2, String paramTargetDate) {
+	DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd MMM yyyy");
+	String targetDate = paramTargetDate;
+	LocalDate localDate_targetDate = LocalDate.parse(targetDate, formatter);
+
+	DateTimeFormatter formatter2 = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+	String range1 = paramRange1;
+	String range2 = paramRange2;
+	LocalDate localDate_range1 = LocalDate.parse(range1, formatter2);
+	LocalDate localDate_range2 = LocalDate.parse(range2, formatter2);
+
+	boolean isAfter = localDate_targetDate.isAfter(localDate_range1);
+	boolean isBefore = localDate_targetDate.isBefore(localDate_range2);
+
+	if (isAfter && isBefore) {
+		return true;
+	}
+
+	boolean isEqualStart = localDate_targetDate.isEqual(localDate_range1);
+	boolean isEqualEnd = localDate_targetDate.isEqual(localDate_range2);
+
+	if (isEqualStart || isEqualEnd) {
+		return true;
+	} else {
+		return false;
+	}
+}
+
+
+
