@@ -3,6 +3,10 @@ import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
 import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
 import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
 import static com.kms.katalon.core.testobject.ObjectRepository.findWindowsObject
+
+import java.time.LocalDate
+import java.time.format.DateTimeFormatter
+
 import com.github.kklisura.cdt.protocol.types.runtime.Evaluate as Evaluate
 import com.kms.katalon.core.checkpoint.Checkpoint as Checkpoint
 import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as CucumberKW
@@ -274,12 +278,14 @@ public static void postingAndDocRefValidation(String postingNumberFrom, String p
 			wording_invalid_range = 'Posting Number (Advanced Search) validation : Invalid range posting number from params'
 			wording_valid_render = 'Posting Number (Advanced Search) validation : Expected Result and rendered table head are equal'
 			wording_invalid_render = 'Posting Number (Advanced Search) validation : Expected Result and rendered table head are NOT equal'
+			break
 		
 		case 'docReference':
 			scan_column = 7
 			wording_invalid_range = 'Doc. Reference (Advanced Search) validation : Invalid range posting number from params'
 			wording_valid_render = 'Doc. Reference (Advanced Search) validation : Expected Result and rendered table head are equal'
 			wording_invalid_render = 'Doc. Reference (Advanced Search) validation : Expected Result and rendered table head are NOT equal'
+			break
 	}
 	
 	if (postingNumberFrom == '0' && postingNumberTo != '0') {
@@ -343,6 +349,36 @@ postingAndDocRefValidation(postingNumberFrom, postingNumberTo, postingNumberArra
 String[] DocReferenceArray = new String[1]
 postingAndDocRefValidation(docReferenceFrom, docReferenceTo, DocReferenceArray, selectorContentGLTableList, 'docReference')
 
+//for convert string_date to java format date and check whether target date is :
+//in between or equal
+//will return boolean true if (in between or equal). Otherwise, false
+public static Boolean isWithinRange(String paramRange1, String paramRange2, String paramTargetDate) {
+	DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd MMM yyyy");
+	String targetDate = paramTargetDate;
+	LocalDate localDate_targetDate = LocalDate.parse(targetDate, formatter);
+
+	DateTimeFormatter formatter2 = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+	String range1 = paramRange1;
+	String range2 = paramRange2;
+	LocalDate localDate_range1 = LocalDate.parse(range1, formatter2);
+	LocalDate localDate_range2 = LocalDate.parse(range2, formatter2);
+
+	boolean isAfter = localDate_targetDate.isAfter(localDate_range1);
+	boolean isBefore = localDate_targetDate.isBefore(localDate_range2);
+
+	if (isAfter && isBefore) {
+		return true;
+	}
+
+	boolean isEqualStart = localDate_targetDate.isEqual(localDate_range1);
+	boolean isEqualEnd = localDate_targetDate.isEqual(localDate_range2);
+
+	if (isEqualStart || isEqualEnd) {
+		return true;
+	} else {
+		return false;
+	}
+}
 
 
 
