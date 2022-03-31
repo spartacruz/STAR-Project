@@ -26,38 +26,6 @@ import org.openqa.selenium.By as By
 import org.openqa.selenium.WebElement as WebElement
 import com.kms.katalon.core.testobject.ConditionType as ConditionType
 
-//static void iterator(String selectedObjXpathSelector, String[] dataGLLineItemColumns, String iterateObjXpathSelector) {
-////	System.out.println("I just got executed!");
-//	
-//	TestObject selectorTheadGLTable = new TestObject()
-//	selectorTheadGLTable.addProperty("xpath", ConditionType.EQUALS, selectedObjXpathSelector)
-//	
-//	// find the row header of result table elements
-//	List<WebElement> selectorTheadGLTableList = WebUI.findWebElements(selectorTheadGLTable, 30)
-//	println(selectorTheadGLTableList.size())
-//	
-//	if (dataGLLineItemColumns.length == selectorTheadGLTableList.size()) {
-//		KeywordUtil.markPassed("Count Table head GL Account : Expected Result and rendered table head are equal")
-//	} else {
-//		KeywordUtil.markFailedAndStop("Count Table head GL Account : Expected Result and rendered table head are NOT equal")
-//	}
-//	
-//	iterateObjXpathSelector = iterateObjXpathSelector.replace("\\", "")
-//	
-//	//iterating each Thead GL Account List, to be matched with expected result
-//	for (int i = 1; i <= selectorTheadGLTableList.size(); i++) {
-//		String new_xpath = Eval.me(iterateObjXpathSelector)
-//		TestObject dynamicObject = new TestObject('dynamicObject').addProperty('xpath', ConditionType.EQUALS, new_xpath)
-//	
-//		println(WebUI.getText(dynamicObject))
-//		
-//		if (WebUI.getText(dynamicObject).equals(dataGLLineItemColumns[i-1])) {
-//			KeywordUtil.markPassed("Table head GL Account Name : Expected Result and rendered table head are equal")
-//		} else {
-//			KeywordUtil.markFailedAndStop("Table head GL Account Name : Expected Result and rendered table head are NOT equal")
-//		}
-//	}
-//}
 WebUI.verifyElementNotPresent(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/btn Show Result/span dot spinning_fetching data'), 
     GlobalVariable.waitPresentTimeout)
 
@@ -67,6 +35,10 @@ String postingNumberFrom = "$npostingNumberFrom"
 String postingNumberTo = "$npostingNumberTo"
 String docReferenceFrom = "$ndocReferenceFrom"
 String docReferenceTo = "$ndocReferenceTo"
+String postingDateFrom = "$npostingDateFrom"
+String postingDateTo = "$npostingDateTo"
+String docDateFrom = "$ndocDateFrom"
+String docDateTo = "$ndocDateTo"
 
 //columns validation
 //columns validation
@@ -352,7 +324,7 @@ postingAndDocRefValidation(docReferenceFrom, docReferenceTo, DocReferenceArray, 
 //for convert string_date to java format date and check whether target date is :
 //in between or equal
 //will return boolean true if (in between or equal). Otherwise, false
-public static Boolean isWithinRange(String paramRange1, String paramRange2, String paramTargetDate) {
+public static Boolean isWithinDateRange(String paramRange1, String paramRange2, String paramTargetDate) {
 	DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd MMM yyyy");
 	String targetDate = paramTargetDate;
 	LocalDate localDate_targetDate = LocalDate.parse(targetDate, formatter);
@@ -380,5 +352,82 @@ public static Boolean isWithinRange(String paramRange1, String paramRange2, Stri
 	}
 }
 
+public static void postingAndDocDateValidation(String paramFromDate, String paramEndDate, List<WebElement> selectorContentGLTableList, String option) {
+	
+	String choice = option
+	int scan_column = 0
+	String wording_invalid_range = ''
+	String wording_valid_render = ''
+	String wording_invalid_render = ''
+	Boolean withinDateRange = true
+	
+	switch (choice) {
+		case 'postingDate':
+			scan_column = 6
+			wording_invalid_range = 'Posting Date (Advanced Search) validation : Invalid range Posting Date from params'
+			wording_valid_render = 'Posting Date (Advanced Search) validation : Expected Result and rendered table head are equal'
+			wording_invalid_render = 'Posting Date (Advanced Search) validation : Expected Result and rendered table head are NOT equal'
+			break
+		
+		case 'docDate':
+			scan_column = 8
+			wording_invalid_range = 'Doc. Date (Advanced Search) validation : Invalid range Doc. Date from params'
+			wording_valid_render = 'Doc. Date (Advanced Search) validation : Expected Result and rendered table head are equal'
+			wording_invalid_render = 'Doc. Date (Advanced Search) validation : Expected Result and rendered table head are NOT equal'
+			break
+	}
+	
+	if (paramFromDate == '0' && paramEndDate != '0') {
+		KeywordUtil.markFailedAndStop(wording_invalid_range)
+	}
+	
+	if (paramFromDate != '0' && paramEndDate == '0') {
+		KeywordUtil.markFailedAndStop(wording_invalid_range)
+	}
+	
+	if (paramFromDate == '0' && paramEndDate == '0') {
+		//pass, no validation
+		assert true
+		
+	} else {
+	
+		//iterating each Posting Number Row, to be matched with expected result
+		//i start from 2, because the first tr is nbsp
+		for (int i = 2; i <= (selectorContentGLTableList.size()); i++) {
+			
+			String new_xpath = "//table//tbody/tr[$i]/td[$scan_column]"
+	
+			TestObject dynamicObject = new TestObject('dynamicObject').addProperty('xpath', ConditionType.EQUALS, new_xpath)
+	
+			println(WebUI.getText(dynamicObject))
+			
+			//Boolean isWithinDateRange(String paramRange1, String paramRange2, String paramTargetDate)
+			withinDateRange = isWithinDateRange(paramFromDate, paramEndDate, dynamicObject)
+	
+			if (withinDateRange) {
+				KeywordUtil.markPassed(wording_valid_render)
+			} else {
+				KeywordUtil.markFailedAndStop(wording_invalid_render)
+			}
+		}
+	}
+}
 
+
+
+//Posting Date (Advanced Search) validation
+//Posting Date (Advanced Search) validation
+//Posting Date (Advanced Search) validation
+//Need param :
+//String postingDateFrom = "$npostingDateFrom"
+//String postingDateTo = "$npostingDateTo"
+postingAndDocDateValidation(postingDateFrom, postingDateTo, selectorContentGLTableList, 'postingDate')
+
+//Doc. Date (Advanced Search) validation
+//Doc. Date (Advanced Search) validation
+//Doc. Date (Advanced Search) validation
+//Need param :
+//String docDateFrom = "$ndocDateFrom"
+//String docDateTo = "$ndocDateFrom"
+postingAndDocDateValidation(docDateFrom, docDateTo, selectorContentGLTableList, 'docDate')
 
