@@ -394,15 +394,11 @@ public static void postingAndDocDateValidation(String paramFromDate, String para
 		//iterating each Posting Number Row, to be matched with expected result
 		//i start from 2, because the first tr is nbsp
 		for (int i = 2; i <= (selectorContentGLTableList.size()); i++) {
-			
 			String new_xpath = "//table//tbody/tr[$i]/td[$scan_column]"
-	
 			TestObject dynamicObject = new TestObject('dynamicObject').addProperty('xpath', ConditionType.EQUALS, new_xpath)
-	
 			println(WebUI.getText(dynamicObject))
 			
-			//Boolean isWithinDateRange(String paramRange1, String paramRange2, String paramTargetDate)
-			withinDateRange = isWithinDateRange(paramFromDate, paramEndDate, dynamicObject)
+			withinDateRange = isWithinDateRange(paramFromDate, paramEndDate, WebUI.getText(dynamicObject))
 	
 			if (withinDateRange) {
 				KeywordUtil.markPassed(wording_valid_render)
@@ -428,6 +424,6 @@ postingAndDocDateValidation(postingDateFrom, postingDateTo, selectorContentGLTab
 //Doc. Date (Advanced Search) validation
 //Need param :
 //String docDateFrom = "$ndocDateFrom"
-//String docDateTo = "$ndocDateFrom"
+//String docDateTo = "$ndocDateTo"
 postingAndDocDateValidation(docDateFrom, docDateTo, selectorContentGLTableList, 'docDate')
 
