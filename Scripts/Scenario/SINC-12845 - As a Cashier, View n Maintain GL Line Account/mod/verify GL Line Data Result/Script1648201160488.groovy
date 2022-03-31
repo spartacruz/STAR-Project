@@ -39,6 +39,8 @@ String postingDateFrom = "$npostingDateFrom"
 String postingDateTo = "$npostingDateTo"
 String docDateFrom = "$ndocDateFrom"
 String docDateTo = "$ndocDateTo"
+String costCenter = "$ncostCenter"
+String profitCenter = "$ncostCenter"
 
 //columns validation
 //columns validation
@@ -96,38 +98,73 @@ List<WebElement> selectorContentGLTableList = WebUI.findWebElements(selectorCont
 println(selectorContentGLTableList.size())
 
 
+public static void glAccountCostAndProfitCenterValidation(String paramCOAorCost, List<WebElement> selectorContentGLTableList, String option) {
+	
+	String wording_for = ''
+	String for_column = ''
+	
+	switch (option) {
+		case 'GLAccount':
+			wording_for = 'GL Account'
+			for_column = '2'
+		
+		case 'costCenter':
+			wording_for = 'Cost Center'
+			for_column = '10'
+		
+		case 'profitCenter':
+			wording_for = 'Profit Center'
+			for_column = '11'
+		
+	}
+	
+	if (paramCOAorCost == '0') {
+		//pass, no validation
+		assert true
+		
+		
+	} else {
+		String[] GLOrCoaArray = new String[50]
+		GLOrCoaArray = paramCOAorCost.split(',')
+	
+		
+		//collect GL Account from params, and convert it into Array
+		//iterating each GL Account Row, to be matched with expected result
+		//i start from 2, because the first tr is nbsp
+		for (int i = 2; i <= (selectorContentGLTableList.size()); i++) {
+			String new_xpath = "//table//tbody/tr[$i]/td[$for_column]"
+	
+			TestObject dynamicObject = new TestObject('dynamicObject').addProperty('xpath', ConditionType.EQUALS, new_xpath)
+	
+			println(WebUI.getText(dynamicObject))
+	
+			if (GLOrCoaArray.contains(WebUI.getText(dynamicObject))) {
+				KeywordUtil.markPassed("$wording_for Validation : Expected Result and rendered table head are equal")
+			} else {
+				KeywordUtil.markFailedAndStop("$wording_for Validation : Expected Result and rendered table head are NOT equal")
+			}
+		}
+	}
+}
+
 //GL Account validation
 //GL Account validation
 //GL Account validation
 //Need param :
 //String GLAccountNumber = "$nGLAccountNumber"
-if (GLAccountNumber == '0') {
-    //pass, no validation
-    assert true 
-	
-	
-} else {
-    String[] GLAccountNumberArray = new String[50]
-    GLAccountNumberArray = GLAccountNumber.split(',')
+glAccountCostAndProfitCenterValidation(GLAccountNumber, selectorContentGLTableList, 'GLAccount')
 
-	
-	//collect GL Account from params, and convert it into Array
-	//iterating each GL Account Row, to be matched with expected result
-	//i start from 2, because the first tr is nbsp
-    for (int i = 2; i <= (selectorContentGLTableList.size()); i++) {
-        String new_xpath = "//table//tbody/tr[$i]/td[2]"
+//Cost Center (Advanced Search) validation
+//Cost Center (Advanced Search) validation
+//Cost Center (Advanced Search) validation
+glAccountCostAndProfitCenterValidation(costCenter, selectorContentGLTableList, 'costCenter')
 
-        TestObject dynamicObject = new TestObject('dynamicObject').addProperty('xpath', ConditionType.EQUALS, new_xpath)
+//Cost Center (Advanced Search) validation
+//Cost Center (Advanced Search) validation
+//Cost Center (Advanced Search) validation
+glAccountCostAndProfitCenterValidation(profitCenter, selectorContentGLTableList, 'profitCenter')
 
-        println(WebUI.getText(dynamicObject))
 
-        if (GLAccountNumberArray.contains(WebUI.getText(dynamicObject))) {
-            KeywordUtil.markPassed('GL Account Validation : Expected Result and rendered table head are equal')
-        } else {
-            KeywordUtil.markFailedAndStop('GL Account Validation : Expected Result and rendered table head are NOT equal')
-        }
-    }
-}
 
 
 //Debit/Credit validation
@@ -408,8 +445,6 @@ public static void postingAndDocDateValidation(String paramFromDate, String para
 		}
 	}
 }
-
-
 
 //Posting Date (Advanced Search) validation
 //Posting Date (Advanced Search) validation
