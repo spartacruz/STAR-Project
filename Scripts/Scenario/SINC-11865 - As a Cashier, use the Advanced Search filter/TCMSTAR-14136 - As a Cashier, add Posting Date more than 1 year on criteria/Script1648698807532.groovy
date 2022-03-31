@@ -30,7 +30,7 @@ WebUI.delay(GlobalVariable.delayStep)
 WebUI.click(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/btn Advanced Search modal/input postingDateEndDate'))
 
 WebUI.setText(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/btn Advanced Search modal/input postingDateEndDate'), 
-    '28-03-2022')
+    '28-02-2022')
 
 WebUI.sendKeys(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/btn Advanced Search modal/input postingDateEndDate'), 
     Keys.chord(Keys.ENTER))
