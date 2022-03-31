@@ -32,7 +32,8 @@ WebUI.click(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line 
 WebUI.setText(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/btn Advanced Search modal/input postingDateEndDate'), 
     '28-03-2022')
 
-WebUI.sendKeys(findTestObject(null), Keys.chord(Keys.ENTER))
+WebUI.sendKeys(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/btn Advanced Search modal/input postingDateEndDate'), 
+    Keys.chord(Keys.ENTER))
 
 WebUI.callTestCase(findTestCase('Scenario/SINC-11865 - As a Cashier, use the Advanced Search filter/mod/tickDebitCredit'), 
     [('nKeyword') : 'DebitCredit'], FailureHandling.STOP_ON_FAILURE)
