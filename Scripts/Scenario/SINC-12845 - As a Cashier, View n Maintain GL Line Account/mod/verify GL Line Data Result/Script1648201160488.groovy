@@ -248,15 +248,15 @@ public static void postingAndDocRefValidation(String postingNumberFrom, String p
 		case 'postingNumber':
 			scan_column = 5
 			wording_invalid_range = 'Posting Number (Advanced Search) validation : Invalid range posting number from params'
-			wording_valid_render = 'Posting Number (Advanced Search) validation : Expected Result and rendered table head are equal'
-			wording_invalid_render = 'Posting Number (Advanced Search) validation : Expected Result and rendered table head are NOT equal'
+			wording_valid_render = 'Posting Number (Advanced Search) validation : Expected Result and rendered result are equal'
+			wording_invalid_render = 'Posting Number (Advanced Search) validation : Expected Result and rendered result are NOT equal'
 			break
 		
 		case 'docReference':
 			scan_column = 7
 			wording_invalid_range = 'Doc. Reference (Advanced Search) validation : Invalid range posting number from params'
-			wording_valid_render = 'Doc. Reference (Advanced Search) validation : Expected Result and rendered table head are equal'
-			wording_invalid_render = 'Doc. Reference (Advanced Search) validation : Expected Result and rendered table head are NOT equal'
+			wording_valid_render = 'Doc. Reference (Advanced Search) validation : Expected Result and rendered result are equal'
+			wording_invalid_render = 'Doc. Reference (Advanced Search) validation : Expected Result and rendered result are NOT equal'
 			break
 	}
 	
@@ -365,15 +365,15 @@ public static void postingAndDocDateValidation(String paramFromDate, String para
 		case 'postingDate':
 			scan_column = 6
 			wording_invalid_range = 'Posting Date (Advanced Search) validation : Invalid range Posting Date from params'
-			wording_valid_render = 'Posting Date (Advanced Search) validation : Expected Result and rendered table head are equal'
-			wording_invalid_render = 'Posting Date (Advanced Search) validation : Expected Result and rendered table head are NOT equal'
+			wording_valid_render = 'Posting Date (Advanced Search) validation : Expected Result and rendered result are equal'
+			wording_invalid_render = 'Posting Date (Advanced Search) validation : Expected Result and rendered result are NOT equal'
 			break
 		
 		case 'docDate':
 			scan_column = 8
 			wording_invalid_range = 'Doc. Date (Advanced Search) validation : Invalid range Doc. Date from params'
-			wording_valid_render = 'Doc. Date (Advanced Search) validation : Expected Result and rendered table head are equal'
-			wording_invalid_render = 'Doc. Date (Advanced Search) validation : Expected Result and rendered table head are NOT equal'
+			wording_valid_render = 'Doc. Date (Advanced Search) validation : Expected Result and rendered result are equal'
+			wording_invalid_render = 'Doc. Date (Advanced Search) validation : Expected Result and rendered result are NOT equal'
 			break
 	}
 	
