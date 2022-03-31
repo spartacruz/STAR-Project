@@ -23,7 +23,7 @@ WebUI.callTestCase(findTestCase('Scenario/SINC-11865 - As a Cashier, use the Adv
 WebUI.click(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/btn Advanced Search modal/input documentDateStartDate'))
 
 WebUI.setText(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/btn Advanced Search modal/input documentDateStartDate'), 
-    '01-02-2022')
+    '01-02-2021')
 
 WebUI.delay(GlobalVariable.delayStep)
 
@@ -54,6 +54,6 @@ WebUI.callTestCase(findTestCase('Scenario/SINC-12845 - As a Cashier, View n Main
 
 WebUI.callTestCase(findTestCase('Scenario/SINC-12845 - As a Cashier, View n Maintain GL Line Account/mod/verify GL Line Data Result'), 
     [('nGLAccountNumber') : '0', ('ndebitCredit') : 'DebitCredit', ('npostingNumberFrom') : '0', ('npostingNumberTo') : '0'
-        , ('ndocReferenceFrom') : '0', ('ndocReferenceTo') : '0', ('npostingDateFrom') : '0', ('npostingDateTo') : '0', ('ndocDateFrom') : '01-02-2022'
+        , ('ndocReferenceFrom') : '0', ('ndocReferenceTo') : '0', ('npostingDateFrom') : '0', ('npostingDateTo') : '0', ('ndocDateFrom') : '01-02-2021'
         , ('ndocDateTo') : '28-02-2022'], FailureHandling.STOP_ON_FAILURE)
 
