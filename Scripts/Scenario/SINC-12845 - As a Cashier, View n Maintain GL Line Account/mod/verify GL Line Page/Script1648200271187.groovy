@@ -173,13 +173,6 @@ if (GLAccountNumber == "0") {
 	List<WebElement> tagGLAccountList = WebUI.findWebElements(selectorTagGLAccount, 30)
 	println(tagGLAccountList.size())
 	
-//	//if count GL Account param array equal to
-//	if (GLAccountNumberArray.length == tagGLAccountList.size()) {
-//		KeywordUtil.markPassed("Count Tag GL Account : Awal and Show Result equal")
-//	} else {
-//		KeywordUtil.markFailedAndStop("Count Tag GL Account : Awal and Show Result NOT equal")
-//	}
-	
 	//iterating each Tag GL Account List, to be matched with GL Account Param(s)
 	for (int i = 1; i <= tagGLAccountList.size(); i++) {
 		String new_xpath = "//div[contains(@class, 'DisplayGLLineitem_wrapper')]//div[@class='ant-space-item'][${i}]//span[contains(@class, 'DisplayGLLineitem_tag-gl-account')]"
