@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>(+)As a Cashier, I want to add 'Posting Date' (range more than 1 year and 'start date' smaller than 'end date' on 'Advanced Search' criteria</description>
+   <name>TCMSTAR-14136 - As a Cashier, add Posting Date more than 1 year on criteria</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>a97a9776-a460-40e2-8148-79a1a16073b5</testCaseGuid>
+</TestCaseEntity>
