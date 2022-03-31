@@ -40,7 +40,7 @@ String postingDateTo = "$npostingDateTo"
 String docDateFrom = "$ndocDateFrom"
 String docDateTo = "$ndocDateTo"
 String costCenter = "$ncostCenter"
-String profitCenter = "$ncostCenter"
+String profitCenter = "$nprofitCenter"
 
 //columns validation
 //columns validation
@@ -111,25 +111,24 @@ public static void glAccountCostAndProfitCenterValidation(String paramCOAorCost,
 		
 		case 'costCenter':
 			wording_for = 'Cost Center'
-			for_column = '10'
+			for_column = '11'
 			break
 		
 		case 'profitCenter':
 			wording_for = 'Profit Center'
-			for_column = '11'
+			for_column = '12'
 			break
 		
 	}
+	println(paramCOAorCost)
 	
 	if (paramCOAorCost == '0') {
 		//pass, no validation
 		assert true
 		
-		
 	} else {
 		String[] GLOrCoaArray = new String[50]
 		GLOrCoaArray = paramCOAorCost.split(',')
-	
 		
 		//collect GL Account from params, and convert it into Array
 		//iterating each GL Account Row, to be matched with expected result
@@ -140,7 +139,7 @@ public static void glAccountCostAndProfitCenterValidation(String paramCOAorCost,
 			TestObject dynamicObject = new TestObject('dynamicObject').addProperty('xpath', ConditionType.EQUALS, new_xpath)
 	
 			println(WebUI.getText(dynamicObject))
-	
+			println(GLOrCoaArray)
 			if (GLOrCoaArray.contains(WebUI.getText(dynamicObject))) {
 				KeywordUtil.markPassed("$wording_for Validation : Expected Result and rendered table head are equal")
 			} else {
@@ -174,7 +173,7 @@ glAccountCostAndProfitCenterValidation(profitCenter, selectorContentGLTableList,
 //Debit/Credit validation
 //Debit/Credit validation
 //Need param :
-//String debitCredit = "$ndebitCredit"
+//String debitCreditz = "$ndebitCredit"
 
 public static void debitAndCreditValidation(String paramDebitCredit, List<WebElement> selectorContentGLTableList) {
 	if (paramDebitCredit == 'DebitCredit') {
@@ -248,7 +247,7 @@ public static void debitAndCreditValidation(String paramDebitCredit, List<WebEle
 	}
 }
 
-debitAndCreditValidation(String debitCredit, List<WebElement> selectorContentGLTableList)
+debitAndCreditValidation(debitCredit, selectorContentGLTableList)
 
 
 //for counting range eg. H383-I-22000002 to H383-I-22000010

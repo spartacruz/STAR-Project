@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>(+)As a Cashier, I want to add a valid 'Profit Center' range (same range) on 'Advanced Search' criteria</description>
+   <name>TCMSTAR-14148 - As a Cashier, add valid Profit Center range (same range) on criteria</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>7e5dd819-4b05-4050-b057-a869c11feee6</testCaseGuid>
+</TestCaseEntity>
