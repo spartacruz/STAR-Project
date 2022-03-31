@@ -191,10 +191,12 @@ public static void debitAndCreditValidation(String paramDebitCredit, List<WebEle
 			case 'debitOnly':
 				postingKey = "01,40,05,09,29,50,21"
 				canMinusAmount = false
+				break
 			
 			case 'creditOnly':
 				postingKey = "11,15,19,39,50"
 				canMinusAmount = true
+				break
 		}
 		
 		debitCreditArray = postingKey.split(',')
