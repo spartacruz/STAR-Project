@@ -107,14 +107,17 @@ public static void glAccountCostAndProfitCenterValidation(String paramCOAorCost,
 		case 'GLAccount':
 			wording_for = 'GL Account'
 			for_column = '2'
+			break
 		
 		case 'costCenter':
 			wording_for = 'Cost Center'
 			for_column = '10'
+			break
 		
 		case 'profitCenter':
 			wording_for = 'Profit Center'
 			for_column = '11'
+			break
 		
 	}
 	
