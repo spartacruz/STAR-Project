@@ -29,7 +29,9 @@ import com.kms.katalon.core.testobject.ConditionType as ConditionType
 WebUI.verifyElementNotPresent(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/btn Show Result/span dot spinning_fetching data'),
 	GlobalVariable.waitPresentTimeout)
 
-String maxRowItem = "$nmaxRowItem"
+String maxRowItem = "$nmaxRowItem" ?: '5'
+println(maxRowItem)
+//KeywordUtil.markErrorAndStop(stop)
 
 //count table rows, can be reuse
 //count table rows, can be reuse
@@ -41,37 +43,6 @@ selectorContentGLTable.addProperty('xpath', ConditionType.EQUALS, '//table//tbod
 List<WebElement> selectorContentGLTableList = WebUI.findWebElements(selectorContentGLTable, 30)
 
 println(selectorContentGLTableList.size())
-
-//public static Boolean checkPreviousNext(String option) {
-//	
-//	String btnNextPageEnabled = '//li[@class=\'ant-pagination-next\']/button[@class=\'ant-pagination-item-link\']'
-//	String btnNextPageDisabled = '//li[@class=ant-pagination-next ant-pagination-disabled\']/button[@class=\'ant-pagination-item-link\' and @disabled]'
-//	String btnPreviousPageEnabled = '//li[@class=\'ant-pagination-prev\']/button[@class=\'ant-pagination-item-link\']'
-//	String btnPreviousPageDisabled = '//li[@class=\'ant-pagination-prev ant-pagination-disabled\']/button[@class=\'ant-pagination-item-link\' and @disabled]'
-//	String buttonLocatorEnabled = ''
-//	
-//	switch (option) {
-//		case 'previousPage':
-//			buttonLocator = btnPreviousPageEnabled
-//			break
-//		
-//		case 'nextPage':
-//			buttonLocator = btnNextPageEnabled
-//			break
-//	}
-//	
-//	TestObject selectorButton = new TestObject()
-//	selectorButton.addProperty('xpath', ConditionType.EQUALS, buttonLocator)
-//	List<WebElement> selectorContentList = WebUI.findWebElements(selectorButton, 30)
-//	
-//	if (selectorContentList.size().equals(0)) {
-//		return false
-//	} else {
-//		return true
-//	}
-//	
-//	
-//}
 
 public static void maxRowItemValidation(String paramMaxRowItem, List<WebElement> paramSelectorContentGLTableList) {
 	
