@@ -54,6 +54,9 @@ WebUI.click(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line 
 WebUI.verifyElementNotPresent(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/btn Show Result/div no data'), 
     5)
 
-WebUI.verifyElementPresent(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/btn Show Result/btn next page disabled'), 
+WebUI.verifyElementNotPresent(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/btn Show Result/btn next page disabled'), 
     5)
+
+WebUI.callTestCase(findTestCase('Scenario/SINC-12845 - As a Cashier, View n Maintain GL Line Account/mod/verify GL Line Data Result 2'), 
+    [('nmaxRowItem') : '10'], FailureHandling.STOP_ON_FAILURE)
 

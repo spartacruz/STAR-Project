@@ -11,7 +11,7 @@
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//li[contains(@class, 'ant-pagination-next')]/button[@class='ant-pagination-item-link' and @disabled]</value>
+         <value>//li[@class=ant-pagination-next ant-pagination-disabled']/button[@class='ant-pagination-item-link' and @disabled]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>
