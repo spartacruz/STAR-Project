@@ -36,5 +36,7 @@ WebUI.callTestCase(findTestCase('Scenario/SINC-12845 - As a Cashier, View n Main
         , ('nGLAccountNumber') : '0'], FailureHandling.STOP_ON_FAILURE)
 
 WebUI.callTestCase(findTestCase('Scenario/SINC-12845 - As a Cashier, View n Maintain GL Line Account/mod/verify GL Line Data Result'), 
-    [('nGLAccountNumber') : '0', ('ndebitCredit') : 'creditOnly'], FailureHandling.STOP_ON_FAILURE)
+    [('nGLAccountNumber') : '0', ('ndebitCredit') : 'creditOnly', ('npostingNumberFrom') : '0', ('npostingNumberTo') : '0'
+        , ('ndocReferenceFrom') : '0', ('ndocReferenceTo') : '0', ('npostingDateFrom') : '0', ('npostingDateTo') : '0', ('ndocDateFrom') : '0'
+        , ('ndocDateTo') : '0', ('ncostCenter') : '0', ('nprofitCenter') : '0'], FailureHandling.STOP_ON_FAILURE)
 

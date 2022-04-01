@@ -26,38 +26,6 @@ import org.openqa.selenium.By as By
 import org.openqa.selenium.WebElement as WebElement
 import com.kms.katalon.core.testobject.ConditionType as ConditionType
 
-//static void iterator(String selectedObjXpathSelector, String[] dataGLLineItemColumns, String iterateObjXpathSelector) {
-////	System.out.println("I just got executed!");
-//	
-//	TestObject selectorTheadGLTable = new TestObject()
-//	selectorTheadGLTable.addProperty("xpath", ConditionType.EQUALS, selectedObjXpathSelector)
-//	
-//	// find the row header of result table elements
-//	List<WebElement> selectorTheadGLTableList = WebUI.findWebElements(selectorTheadGLTable, 30)
-//	println(selectorTheadGLTableList.size())
-//	
-//	if (dataGLLineItemColumns.length == selectorTheadGLTableList.size()) {
-//		KeywordUtil.markPassed("Count Table head GL Account : Expected Result and rendered table head are equal")
-//	} else {
-//		KeywordUtil.markFailedAndStop("Count Table head GL Account : Expected Result and rendered table head are NOT equal")
-//	}
-//	
-//	iterateObjXpathSelector = iterateObjXpathSelector.replace("\\", "")
-//	
-//	//iterating each Thead GL Account List, to be matched with expected result
-//	for (int i = 1; i <= selectorTheadGLTableList.size(); i++) {
-//		String new_xpath = Eval.me(iterateObjXpathSelector)
-//		TestObject dynamicObject = new TestObject('dynamicObject').addProperty('xpath', ConditionType.EQUALS, new_xpath)
-//	
-//		println(WebUI.getText(dynamicObject))
-//		
-//		if (WebUI.getText(dynamicObject).equals(dataGLLineItemColumns[i-1])) {
-//			KeywordUtil.markPassed("Table head GL Account Name : Expected Result and rendered table head are equal")
-//		} else {
-//			KeywordUtil.markFailedAndStop("Table head GL Account Name : Expected Result and rendered table head are NOT equal")
-//		}
-//	}
-//}
 WebUI.verifyElementNotPresent(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/btn Show Result/span dot spinning_fetching data'), 
     GlobalVariable.waitPresentTimeout)
 
@@ -67,6 +35,12 @@ String postingNumberFrom = "$npostingNumberFrom"
 String postingNumberTo = "$npostingNumberTo"
 String docReferenceFrom = "$ndocReferenceFrom"
 String docReferenceTo = "$ndocReferenceTo"
+String postingDateFrom = "$npostingDateFrom"
+String postingDateTo = "$npostingDateTo"
+String docDateFrom = "$ndocDateFrom"
+String docDateTo = "$ndocDateTo"
+String costCenter = "$ncostCenter"
+String profitCenter = "$nprofitCenter"
 
 //columns validation
 //columns validation
@@ -124,113 +98,158 @@ List<WebElement> selectorContentGLTableList = WebUI.findWebElements(selectorCont
 println(selectorContentGLTableList.size())
 
 
+public static void glAccountCostAndProfitCenterValidation(String paramCOAorCost, List<WebElement> selectorContentGLTableList, String option) {
+	
+	String wording_for = ''
+	String for_column = ''
+	
+	switch (option) {
+		case 'GLAccount':
+			wording_for = 'GL Account'
+			for_column = '2'
+			break
+		
+		case 'costCenter':
+			wording_for = 'Cost Center'
+			for_column = '11'
+			break
+		
+		case 'profitCenter':
+			wording_for = 'Profit Center'
+			for_column = '12'
+			break
+		
+	}
+	println(paramCOAorCost)
+	
+	if (paramCOAorCost == '0') {
+		//pass, no validation
+		assert true
+		
+	} else {
+		String[] GLOrCoaArray = new String[50]
+		GLOrCoaArray = paramCOAorCost.split(',')
+		
+		//collect GL Account from params, and convert it into Array
+		//iterating each GL Account Row, to be matched with expected result
+		//i start from 2, because the first tr is nbsp
+		for (int i = 2; i <= (selectorContentGLTableList.size()); i++) {
+			String new_xpath = "//table//tbody/tr[$i]/td[$for_column]"
+	
+			TestObject dynamicObject = new TestObject('dynamicObject').addProperty('xpath', ConditionType.EQUALS, new_xpath)
+	
+			println(WebUI.getText(dynamicObject))
+			println(GLOrCoaArray)
+			if (GLOrCoaArray.contains(WebUI.getText(dynamicObject))) {
+				KeywordUtil.markPassed("$wording_for Validation : Expected Result and rendered table head are equal")
+			} else {
+				KeywordUtil.markFailedAndStop("$wording_for Validation : Expected Result and rendered table head are NOT equal")
+			}
+		}
+	}
+}
+
 //GL Account validation
 //GL Account validation
 //GL Account validation
 //Need param :
 //String GLAccountNumber = "$nGLAccountNumber"
-if (GLAccountNumber == '0') {
-    //pass, no validation
-    assert true 
-	
-	
-} else {
-    String[] GLAccountNumberArray = new String[50]
-    GLAccountNumberArray = GLAccountNumber.split(',')
+glAccountCostAndProfitCenterValidation(GLAccountNumber, selectorContentGLTableList, 'GLAccount')
 
-	
-	//collect GL Account from params, and convert it into Array
-	//iterating each GL Account Row, to be matched with expected result
-	//i start from 2, because the first tr is nbsp
-    for (int i = 2; i <= (selectorContentGLTableList.size()); i++) {
-        String new_xpath = "//table//tbody/tr[$i]/td[2]"
+//Cost Center (Advanced Search) validation
+//Cost Center (Advanced Search) validation
+//Cost Center (Advanced Search) validation
+glAccountCostAndProfitCenterValidation(costCenter, selectorContentGLTableList, 'costCenter')
 
-        TestObject dynamicObject = new TestObject('dynamicObject').addProperty('xpath', ConditionType.EQUALS, new_xpath)
+//Cost Center (Advanced Search) validation
+//Cost Center (Advanced Search) validation
+//Cost Center (Advanced Search) validation
+glAccountCostAndProfitCenterValidation(profitCenter, selectorContentGLTableList, 'profitCenter')
 
-        println(WebUI.getText(dynamicObject))
 
-        if (GLAccountNumberArray.contains(WebUI.getText(dynamicObject))) {
-            KeywordUtil.markPassed('GL Account Validation : Expected Result and rendered table head are equal')
-        } else {
-            KeywordUtil.markFailedAndStop('GL Account Validation : Expected Result and rendered table head are NOT equal')
-        }
-    }
-}
 
 
 //Debit/Credit validation
 //Debit/Credit validation
 //Debit/Credit validation
 //Need param :
-//String debitCredit = "$ndebitCredit"
-if (debitCredit == 'DebitCredit') {
-	//pass, no validation
-	assert true 
-	
-} else {
-	
-	String[] debitCreditArray = new String[2]
-	String postingKey = ''
-	String minusAmount = '-'
-	Boolean canMinusAmount = true
-	
-	if (debitCredit == 'debitOnly') {
-		postingKey = "01,40,05,09,29,50,21"
-		canMinusAmount = false
+//String debitCreditz = "$ndebitCredit"
+
+public static void debitAndCreditValidation(String paramDebitCredit, List<WebElement> selectorContentGLTableList) {
+	if (paramDebitCredit == 'DebitCredit') {
+		//pass, no validation
+		assert true
 		
-	} else if (debitCredit == 'creditOnly') {
-		postingKey = "11,15,19,39,50"
-		canMinusAmount = true
-	}
-	
-	debitCreditArray = postingKey.split(',')
-	
-	//collect GL Account from params, and convert it into Array
-	//iterating each GL Account Row, to be matched with expected result
-	//i start from 2, because the first tr is nbsp
-	
-	//Compare Posting key
-	for (int i = 2; i <= (selectorContentGLTableList.size()); i++) {
-		String new_xpath = "//table//tbody/tr[$i]/td[4]"
-		TestObject dynamicObject = new TestObject('dynamicObject').addProperty('xpath', ConditionType.EQUALS, new_xpath)
-
-		println(WebUI.getText(dynamicObject))
-
-		if (debitCreditArray.contains(WebUI.getText(dynamicObject))) {
-			KeywordUtil.markPassed('Debit Credit Validation (Posting Key): Expected Result and rendered result are equal')
-		} else {
-			KeywordUtil.markFailedAndStop('Debit Credit Validation (Posting Key): Expected Result and rendered result are NOT equal')
+	} else {
+		
+		String[] debitCreditArray = new String[2]
+		String postingKey = ''
+		String minusAmount = '-'
+		Boolean canMinusAmount = true
+		
+		switch (paramDebitCredit) {
+			case 'debitOnly':
+				postingKey = "01,40,05,09,29,50,21"
+				canMinusAmount = false
+				break
+			
+			case 'creditOnly':
+				postingKey = "11,15,19,39,50"
+				canMinusAmount = true
+				break
 		}
-	}
+		
+		debitCreditArray = postingKey.split(',')
+		
+		//collect GL Account from params, and convert it into Array
+		//iterating each GL Account Row, to be matched with expected result
+		//i start from 2, because the first tr is nbsp
+		
+		//Compare Posting key
+		for (int i = 2; i <= (selectorContentGLTableList.size()); i++) {
+			String new_xpath = "//table//tbody/tr[$i]/td[4]"
+			TestObject dynamicObject = new TestObject('dynamicObject').addProperty('xpath', ConditionType.EQUALS, new_xpath)
 	
-	//Compare Amount (plus or minus depends on D/C)
-	for (int i = 2; i <= (selectorContentGLTableList.size()); i++) {
-		String new_xpath = "//table//tbody/tr[$i]/td[9]"
+			println(WebUI.getText(dynamicObject))
+	
+			if (debitCreditArray.contains(WebUI.getText(dynamicObject))) {
+				KeywordUtil.markPassed('Debit Credit Validation (Posting Key): Expected Result and rendered result are equal')
+			} else {
+				KeywordUtil.markFailedAndStop('Debit Credit Validation (Posting Key): Expected Result and rendered result are NOT equal')
+			}
+		}
+		
+		//Compare Amount (plus or minus depends on D/C)
+		for (int i = 2; i <= (selectorContentGLTableList.size()); i++) {
+			String new_xpath = "//table//tbody/tr[$i]/td[9]"
+			TestObject dynamicObject = new TestObject('dynamicObject').addProperty('xpath', ConditionType.EQUALS, new_xpath)
+	
+			println(WebUI.getText(dynamicObject))
+	
+			
+			if (WebUI.getText(dynamicObject).contains(minusAmount) == canMinusAmount) {
+				KeywordUtil.markPassed('Debit Credit Validation (Amount): Expected Result and rendered result are equal')
+			} else {
+				KeywordUtil.markFailedAndStop('Debit Credit Validation (Amount): Expected Result and rendered result are NOT equal')
+			}
+		}
+		
+		//Check amount summary value (plus or minus depends on D/C)
+		String new_xpath = "//table//tfoot[contains(@class, 'summary')]//td[2]"
 		TestObject dynamicObject = new TestObject('dynamicObject').addProperty('xpath', ConditionType.EQUALS, new_xpath)
-
+	
 		println(WebUI.getText(dynamicObject))
-
 		
 		if (WebUI.getText(dynamicObject).contains(minusAmount) == canMinusAmount) {
-			KeywordUtil.markPassed('Debit Credit Validation (Amount): Expected Result and rendered result are equal')
+			KeywordUtil.markPassed('Debit Credit Validation (Amount Summary): Expected Result and rendered result are equal')
 		} else {
-			KeywordUtil.markFailedAndStop('Debit Credit Validation (Amount): Expected Result and rendered result are NOT equal')
+			KeywordUtil.markFailedAndStop('Debit Credit Validation (Amount Summary): Expected Result and rendered result are NOT equal')
 		}
+		
 	}
-	
-	//Check amount summary value (plus or minus depends on D/C)
-	String new_xpath = "//table//tfoot[contains(@class, 'summary')]//td[2]"
-	TestObject dynamicObject = new TestObject('dynamicObject').addProperty('xpath', ConditionType.EQUALS, new_xpath)
-
-	println(WebUI.getText(dynamicObject))
-	
-	if (WebUI.getText(dynamicObject).contains(minusAmount) == canMinusAmount) {
-		KeywordUtil.markPassed('Debit Credit Validation (Amount Summary): Expected Result and rendered result are equal')
-	} else {
-		KeywordUtil.markFailedAndStop('Debit Credit Validation (Amount Summary): Expected Result and rendered result are NOT equal')
-	}
-	
 }
+
+debitAndCreditValidation(debitCredit, selectorContentGLTableList)
 
 
 //for counting range eg. H383-I-22000002 to H383-I-22000010
@@ -276,15 +295,15 @@ public static void postingAndDocRefValidation(String postingNumberFrom, String p
 		case 'postingNumber':
 			scan_column = 5
 			wording_invalid_range = 'Posting Number (Advanced Search) validation : Invalid range posting number from params'
-			wording_valid_render = 'Posting Number (Advanced Search) validation : Expected Result and rendered table head are equal'
-			wording_invalid_render = 'Posting Number (Advanced Search) validation : Expected Result and rendered table head are NOT equal'
+			wording_valid_render = 'Posting Number (Advanced Search) validation : Expected Result and rendered result are equal'
+			wording_invalid_render = 'Posting Number (Advanced Search) validation : Expected Result and rendered result are NOT equal'
 			break
 		
 		case 'docReference':
 			scan_column = 7
 			wording_invalid_range = 'Doc. Reference (Advanced Search) validation : Invalid range posting number from params'
-			wording_valid_render = 'Doc. Reference (Advanced Search) validation : Expected Result and rendered table head are equal'
-			wording_invalid_render = 'Doc. Reference (Advanced Search) validation : Expected Result and rendered table head are NOT equal'
+			wording_valid_render = 'Doc. Reference (Advanced Search) validation : Expected Result and rendered result are equal'
+			wording_invalid_render = 'Doc. Reference (Advanced Search) validation : Expected Result and rendered result are NOT equal'
 			break
 	}
 	
@@ -331,17 +350,12 @@ public static void postingAndDocRefValidation(String postingNumberFrom, String p
 }
 
 //Posting Number (Advanced Search) validation
-//Posting Number (Advanced Search) validation
-//Posting Number (Advanced Search) validation
 //Need param :
 //String postingNumberFrom = "$npostingNumberFrom"
 //String postingNumberTo = "$npostingNumberTo"
 String[] postingNumberArray = new String[1]
 postingAndDocRefValidation(postingNumberFrom, postingNumberTo, postingNumberArray, selectorContentGLTableList, 'postingNumber')
 
-
-//Doc. Reference (Advanced Search) validation
-//Doc. Reference (Advanced Search) validation
 //Doc. Reference (Advanced Search) validation
 //Need param :
 //String docReferenceFrom = "$ndocReferenceFrom"
@@ -349,10 +363,12 @@ postingAndDocRefValidation(postingNumberFrom, postingNumberTo, postingNumberArra
 String[] DocReferenceArray = new String[1]
 postingAndDocRefValidation(docReferenceFrom, docReferenceTo, DocReferenceArray, selectorContentGLTableList, 'docReference')
 
+
+
 //for convert string_date to java format date and check whether target date is :
 //in between or equal
 //will return boolean true if (in between or equal). Otherwise, false
-public static Boolean isWithinRange(String paramRange1, String paramRange2, String paramTargetDate) {
+public static Boolean isWithinDateRange(String paramRange1, String paramRange2, String paramTargetDate) {
 	DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd MMM yyyy");
 	String targetDate = paramTargetDate;
 	LocalDate localDate_targetDate = LocalDate.parse(targetDate, formatter);
@@ -380,5 +396,76 @@ public static Boolean isWithinRange(String paramRange1, String paramRange2, Stri
 	}
 }
 
+public static void postingAndDocDateValidation(String paramFromDate, String paramEndDate, List<WebElement> selectorContentGLTableList, String option) {
+	
+	String choice = option
+	int scan_column = 0
+	String wording_invalid_range = ''
+	String wording_valid_render = ''
+	String wording_invalid_render = ''
+	Boolean withinDateRange = true
+	
+	switch (choice) {
+		case 'postingDate':
+			scan_column = 6
+			wording_invalid_range = 'Posting Date (Advanced Search) validation : Invalid range Posting Date from params'
+			wording_valid_render = 'Posting Date (Advanced Search) validation : Expected Result and rendered result are equal'
+			wording_invalid_render = 'Posting Date (Advanced Search) validation : Expected Result and rendered result are NOT equal'
+			break
+		
+		case 'docDate':
+			scan_column = 8
+			wording_invalid_range = 'Doc. Date (Advanced Search) validation : Invalid range Doc. Date from params'
+			wording_valid_render = 'Doc. Date (Advanced Search) validation : Expected Result and rendered result are equal'
+			wording_invalid_render = 'Doc. Date (Advanced Search) validation : Expected Result and rendered result are NOT equal'
+			break
+	}
+	
+	if (paramFromDate == '0' && paramEndDate != '0') {
+		KeywordUtil.markFailedAndStop(wording_invalid_range)
+	}
+	
+	if (paramFromDate != '0' && paramEndDate == '0') {
+		KeywordUtil.markFailedAndStop(wording_invalid_range)
+	}
+	
+	if (paramFromDate == '0' && paramEndDate == '0') {
+		//pass, no validation
+		assert true
+		
+	} else {
+	
+		//iterating each Posting Number Row, to be matched with expected result
+		//i start from 2, because the first tr is nbsp
+		for (int i = 2; i <= (selectorContentGLTableList.size()); i++) {
+			String new_xpath = "//table//tbody/tr[$i]/td[$scan_column]"
+			TestObject dynamicObject = new TestObject('dynamicObject').addProperty('xpath', ConditionType.EQUALS, new_xpath)
+			println(WebUI.getText(dynamicObject))
+			
+			withinDateRange = isWithinDateRange(paramFromDate, paramEndDate, WebUI.getText(dynamicObject))
+	
+			if (withinDateRange) {
+				KeywordUtil.markPassed(wording_valid_render)
+			} else {
+				KeywordUtil.markFailedAndStop(wording_invalid_render)
+			}
+		}
+	}
+}
 
+//Posting Date (Advanced Search) validation
+//Posting Date (Advanced Search) validation
+//Posting Date (Advanced Search) validation
+//Need param :
+//String postingDateFrom = "$npostingDateFrom"
+//String postingDateTo = "$npostingDateTo"
+postingAndDocDateValidation(postingDateFrom, postingDateTo, selectorContentGLTableList, 'postingDate')
+
+//Doc. Date (Advanced Search) validation
+//Doc. Date (Advanced Search) validation
+//Doc. Date (Advanced Search) validation
+//Need param :
+//String docDateFrom = "$ndocDateFrom"
+//String docDateTo = "$ndocDateTo"
+postingAndDocDateValidation(docDateFrom, docDateTo, selectorContentGLTableList, 'docDate')
 

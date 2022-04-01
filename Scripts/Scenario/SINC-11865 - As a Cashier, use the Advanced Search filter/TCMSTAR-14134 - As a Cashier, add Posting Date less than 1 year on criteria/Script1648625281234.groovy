@@ -23,14 +23,17 @@ WebUI.callTestCase(findTestCase('Scenario/SINC-11865 - As a Cashier, use the Adv
 WebUI.click(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/btn Advanced Search modal/input postingDateStartDate'))
 
 WebUI.setText(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/btn Advanced Search modal/input postingDateStartDate'), 
-    '20-03-2022')
+    '01-02-2022')
 
 WebUI.delay(GlobalVariable.delayStep)
 
 WebUI.click(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/btn Advanced Search modal/input postingDateEndDate'))
 
 WebUI.setText(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/btn Advanced Search modal/input postingDateEndDate'), 
-    '24-03-2022')
+    '28-02-2022')
+
+WebUI.sendKeys(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/btn Advanced Search modal/input postingDateEndDate'), 
+    Keys.chord(Keys.ENTER))
 
 WebUI.callTestCase(findTestCase('Scenario/SINC-11865 - As a Cashier, use the Advanced Search filter/mod/tickDebitCredit'), 
     [('nKeyword') : 'DebitCredit'], FailureHandling.STOP_ON_FAILURE)
@@ -50,6 +53,7 @@ WebUI.callTestCase(findTestCase('Scenario/SINC-12845 - As a Cashier, View n Main
         , ('nGLAccountNumber') : '0'], FailureHandling.STOP_ON_FAILURE)
 
 WebUI.callTestCase(findTestCase('Scenario/SINC-12845 - As a Cashier, View n Maintain GL Line Account/mod/verify GL Line Data Result'), 
-    [('nGLAccountNumber') : '0', ('ndebitCredit') : 'DebitCredit', ('npostingNumberFrom') : 'H383-I-22000002', ('npostingNumberTo') : 'H383-I-22000004'
-        , ('ndocReferenceFrom') : '0', ('ndocReferenceTo') : '0'], FailureHandling.STOP_ON_FAILURE)
+    [('nGLAccountNumber') : '0', ('ndebitCredit') : 'DebitCredit', ('npostingNumberFrom') : '0', ('npostingNumberTo') : '0'
+        , ('ndocReferenceFrom') : '0', ('ndocReferenceTo') : '0', ('npostingDateFrom') : '01-02-2022', ('npostingDateTo') : '28-02-2022'
+        , ('ndocDateFrom') : '0', ('ndocDateTo') : '0', ('ncostCenter') : '0', ('ncostCenter') : '0'], FailureHandling.STOP_ON_FAILURE)
 

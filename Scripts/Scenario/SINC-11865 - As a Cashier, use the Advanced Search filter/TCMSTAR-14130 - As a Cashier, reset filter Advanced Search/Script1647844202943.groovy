@@ -25,12 +25,19 @@ WebUI.setText(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Lin
 
 WebUI.delay(3)
 
+WebUI.click(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/btn Advanced Search modal/input postingNumberTo enabled'))
+
+WebUI.sendKeys(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/btn Advanced Search modal/input postingNumberTo enabled'), 
+    Keys.chord(Keys.CONTROL, 'a'))
+
+WebUI.sendKeys(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/btn Advanced Search modal/input postingNumberTo enabled'), 
+    'H')
+
 WebUI.setText(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/btn Advanced Search modal/input postingNumberTo enabled'), 
-    'H376-I-20210512')
+    '376-I-20210512')
 
-WebUI.click(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/btn Advanced Search modal/div Debit unticked'))
-
-WebUI.click(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/btn Advanced Search modal/div Credit unticked'))
+WebUI.callTestCase(findTestCase('Scenario/SINC-11865 - As a Cashier, use the Advanced Search filter/mod/tickDebitCredit'), 
+    [('nKeyword') : 'DebitCredit'], FailureHandling.STOP_ON_FAILURE)
 
 WebUI.delay(3)
 

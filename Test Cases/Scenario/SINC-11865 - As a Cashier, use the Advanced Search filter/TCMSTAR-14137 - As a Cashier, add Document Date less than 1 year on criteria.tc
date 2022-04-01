@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>(+)As a Cashier, I want to add 'Document Date' (range less than 1 year and 'start date' smaller than 'end date' on 'Advanced Search' criteria</description>
+   <name>TCMSTAR-14137 - As a Cashier, add Document Date less than 1 year on criteria</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>e94a587b-2718-4bf4-baf6-21b852bff85c</testCaseGuid>
+</TestCaseEntity>
