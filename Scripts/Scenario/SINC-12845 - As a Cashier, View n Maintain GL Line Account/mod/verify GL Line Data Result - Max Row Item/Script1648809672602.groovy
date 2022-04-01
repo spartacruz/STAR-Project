@@ -30,8 +30,6 @@ WebUI.verifyElementNotPresent(findTestObject('Sider/Sider Inc Payment Menu/Inc -
 	GlobalVariable.waitPresentTimeout)
 
 String maxRowItem = "$nmaxRowItem" ?: '5'
-println(maxRowItem)
-//KeywordUtil.markErrorAndStop(stop)
 
 //count table rows, can be reuse
 //count table rows, can be reuse
