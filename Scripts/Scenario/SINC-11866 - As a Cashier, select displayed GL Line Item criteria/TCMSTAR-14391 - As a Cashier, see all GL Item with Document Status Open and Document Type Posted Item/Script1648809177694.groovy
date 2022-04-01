@@ -27,7 +27,7 @@ WebUI.verifyElementClickable(findTestObject('Sider/Sider Inc Payment Menu/Inc - 
 
 WebUI.click(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/btn Advanced Search modal/button Terapkan Filter enabled'))
 
-WebUI.verifyElementVisible(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/radioButton Open Item Un-ticked'))
+WebUI.delay(GlobalVariable.delayStep)
 
 WebUI.click(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/radioButton Open Item Un-ticked'))
 
@@ -36,11 +36,14 @@ WebUI.verifyElementClickable(findTestObject('Sider/Sider Inc Payment Menu/Inc - 
 WebUI.click(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/button Show Result Enable'))
 
 WebUI.callTestCase(findTestCase('Scenario/SINC-12845 - As a Cashier, View n Maintain GL Line Account/mod/verify GL Line Page'), 
-    [('ndocStatus') : 'all', ('ndocType') : 'postedItem', ('nmaxRowItem') : '1000', ('nselectDateRangeStartDate') : '0', ('nselectDateRangeEndDate') : '0'
-        , ('nGLAccountNumber') : '0'], FailureHandling.STOP_ON_FAILURE)
+    [('ndocStatus') : 'openItem', ('ndocType') : 'postedItem', ('nmaxRowItem') : '1000', ('nselectDateRangeStartDate') : '0'
+        , ('nselectDateRangeEndDate') : '0', ('nGLAccountNumber') : '0'], FailureHandling.STOP_ON_FAILURE)
 
 WebUI.callTestCase(findTestCase('Scenario/SINC-12845 - As a Cashier, View n Maintain GL Line Account/mod/verify GL Line Data Result'), 
     [('nGLAccountNumber') : '0', ('ndebitCredit') : 'DebitCredit', ('npostingNumberFrom') : '0', ('npostingNumberTo') : '0'
         , ('ndocReferenceFrom') : '0', ('ndocReferenceTo') : '0', ('npostingDateFrom') : '0', ('npostingDateTo') : '0', ('ndocDateFrom') : '0'
         , ('ndocDateTo') : '0', ('ncostCenter') : '0', ('nprofitCenter') : '0'], FailureHandling.STOP_ON_FAILURE)
+
+WebUI.callTestCase(findTestCase('Scenario/SINC-12845 - As a Cashier, View n Maintain GL Line Account/mod/verify GL Line Data Result - Document Status'), 
+    [('ndocumentStatus') : 'openItem'], FailureHandling.STOP_ON_FAILURE)
 

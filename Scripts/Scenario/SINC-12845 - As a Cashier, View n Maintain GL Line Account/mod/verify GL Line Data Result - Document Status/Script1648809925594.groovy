@@ -43,6 +43,41 @@ List<WebElement> selectorContentGLTableList = WebUI.findWebElements(selectorCont
 
 println(selectorContentGLTableList.size())
 
-public static void documentStatus(String paramDocumentStatus, List<WebElement> paramSelectorContentGLTableList) {
+public static void documentStatusValidation(String paramDocumentStatus, List<WebElement> paramSelectorContentGLTableList) {
 	
+	String wording_for = 'Document Status'
+	String for_column = '15'
+	String compareStatus = ''
+	
+	switch (paramDocumentStatus) {
+		case 'openItem':
+			compareStatus = 'Open'
+			break
+			
+		case 'clearItem':
+			compareStatus = 'Clear'
+			break
+	}
+	
+	//i start from 2, because the first tr is nbsp
+	for (int i = 2; i <= (paramSelectorContentGLTableList.size()); i++) {
+		String new_xpath = "//table//tbody/tr[$i]/td[$for_column]"
+		TestObject dynamicObject = new TestObject('dynamicObject').addProperty('xpath', ConditionType.EQUALS, new_xpath)
+
+		println(WebUI.getText(dynamicObject))
+
+		if (compareStatus.equals(WebUI.getText(dynamicObject))) {
+			KeywordUtil.markPassed("$wording_for Validation : Expected Result and rendered table result are equal")
+		} else {
+			KeywordUtil.markFailedAndStop("$wording_for Validation : Expected Result and rendered table result are NOT equal")
+		}
+	}
 }
+
+if (documentStatus.equals('all')) {
+	//no validation on document status
+	assert true
+} else {
+	documentStatusValidation(documentStatus, selectorContentGLTableList)
+}
+
