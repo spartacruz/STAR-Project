@@ -31,6 +31,12 @@ WebUI.verifyElementNotPresent(findTestObject('Sider/Sider Inc Payment Menu/Inc -
 
 String maxRowItem = "$nmaxRowItem" ?: '5'
 
+/*
+println(binding.nmaxRowItem) //printed 10 on console
+//def binding2 = binding
+maxRowItem = binding.get(nmaxRowItem, '10')
+*/
+
 //count table rows, can be reuse
 //count table rows, can be reuse
 //count table rows, can be reuse
