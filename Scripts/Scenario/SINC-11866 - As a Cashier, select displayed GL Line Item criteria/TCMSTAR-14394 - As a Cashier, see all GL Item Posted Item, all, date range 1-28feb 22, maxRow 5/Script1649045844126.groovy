@@ -59,3 +59,9 @@ WebUI.callTestCase(findTestCase('Scenario/SINC-12845 - As a Cashier, View n Main
         , ('ndocReferenceFrom') : '0', ('ndocReferenceTo') : '0', ('npostingDateFrom') : '0', ('npostingDateTo') : '0', ('ndocDateFrom') : '01-02-2022'
         , ('ndocDateTo') : '28-02-2022', ('ncostCenter') : '0', ('nprofitCenter') : '0'], FailureHandling.STOP_ON_FAILURE)
 
+WebUI.callTestCase(findTestCase('Scenario/SINC-12845 - As a Cashier, View n Maintain GL Line Account/mod/verify GL Line Data Result - Document Status'), 
+    [('ndocumentStatus') : 'all'], FailureHandling.STOP_ON_FAILURE)
+
+WebUI.callTestCase(findTestCase('Scenario/SINC-12845 - As a Cashier, View n Maintain GL Line Account/mod/verify GL Line Data Result - Max Row Item'), 
+    [('nmaxRowItem') : '5'], FailureHandling.STOP_ON_FAILURE)
+
