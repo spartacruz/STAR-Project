@@ -20,9 +20,6 @@ import org.openqa.selenium.Keys as Keys
 WebUI.callTestCase(findTestCase('Scenario/SINC-11862 - As a Cashier Input n Search GL Account/TCMSTAR-14816 - As a Cashier I Want to See GL Line Item Page'), 
     [:], FailureHandling.STOP_ON_FAILURE)
 
-WebUI.callTestCase(findTestCase('Scenario/SINC-12845 - As a Cashier, View n Maintain GL Line Account/mod/verify GL Line Data Result - Document Status'), 
-    [('ndocumentStatus') : 'clearItem'], FailureHandling.STOP_ON_FAILURE)
-
 WebUI.click(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/input GL Account'))
 
 WebUI.setText(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/input GL Account'), '8991600000')
@@ -34,6 +31,8 @@ WebUI.waitForElementPresent(findTestObject('Sider/Sider Inc Payment Menu/Inc - M
     GlobalVariable.waitPresentTimeout)
 
 WebUI.click(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/option select Account 8991600000 - Other IncomeCharges Payment Difference'))
+
+WebUI.click(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/radioButton Open Item Un-ticked'))
 
 WebUI.click(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/input Start Date'))
 
@@ -50,11 +49,14 @@ WebUI.verifyElementVisible(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR
 WebUI.click(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/button Show Result Enable'))
 
 WebUI.callTestCase(findTestCase('Scenario/SINC-12845 - As a Cashier, View n Maintain GL Line Account/mod/verify GL Line Page'), 
-    [('ndocStatus') : 'all', ('ndocType') : 'postedItem', ('nmaxRowItem') : '1000', ('nselectDateRangeStartDate') : '0', ('nselectDateRangeEndDate') : '0'
-        , ('nGLAccountNumber') : '8991600000'], FailureHandling.STOP_ON_FAILURE)
+    [('ndocStatus') : 'openItem', ('ndocType') : 'postedItem', ('nmaxRowItem') : '1000', ('nselectDateRangeStartDate') : '0'
+        , ('nselectDateRangeEndDate') : '0', ('nGLAccountNumber') : '8991600000'], FailureHandling.STOP_ON_FAILURE)
 
 WebUI.callTestCase(findTestCase('Scenario/SINC-12845 - As a Cashier, View n Maintain GL Line Account/mod/verify GL Line Data Result'), 
     [('nGLAccountNumber') : '8991600000', ('ndebitCredit') : 'DebitCredit', ('npostingNumberFrom') : '0', ('npostingNumberTo') : '0'
         , ('ndocReferenceFrom') : '0', ('ndocReferenceTo') : '0', ('npostingDateFrom') : '0', ('npostingDateTo') : '0', ('ndocDateFrom') : '01-02-2022'
         , ('ndocDateTo') : '28-02-2022', ('ncostCenter') : '0', ('nprofitCenter') : '0'], FailureHandling.STOP_ON_FAILURE)
+
+WebUI.callTestCase(findTestCase('Scenario/SINC-12845 - As a Cashier, View n Maintain GL Line Account/mod/verify GL Line Data Result - Document Status'), 
+    [('ndocumentStatus') : 'openItem'], FailureHandling.STOP_ON_FAILURE)
 
