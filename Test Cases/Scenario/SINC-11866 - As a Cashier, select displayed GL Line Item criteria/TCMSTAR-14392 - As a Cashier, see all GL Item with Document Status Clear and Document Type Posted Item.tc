@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>(+)As a Cashier, I want to see all GL Item with 'Document Status' = 'Clear' and 'Document Type' = 'Posted Item'</description>
+   <name>TCMSTAR-14392 - As a Cashier, see all GL Item with Document Status Clear and Document Type Posted Item</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>772affae-01e8-45a6-a5ee-86ef6ecc7551</testCaseGuid>
+</TestCaseEntity>
