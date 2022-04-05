@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>(+)As a Cashier, I want to view 'Data Document Details' and back again to 'Display GL Line Item' page</description>
+   <name>TCMSTAR-14428 - Cashier, view Data Document Details and back again to GL Line Page</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>262b5fb2-d971-4e9f-940b-647f5503e5dc</testCaseGuid>
+</TestCaseEntity>
