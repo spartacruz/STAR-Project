@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>(-)As a Cashier, I want to see List of GL Line Item based on defined filter and use search text box to find un exist data</description>
+   <name>TCMSTAR-14422 - Cashier, Use search text box find unexist data</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>aec7beda-a46a-421b-b18a-eda353dc65c4</testCaseGuid>
+</TestCaseEntity>

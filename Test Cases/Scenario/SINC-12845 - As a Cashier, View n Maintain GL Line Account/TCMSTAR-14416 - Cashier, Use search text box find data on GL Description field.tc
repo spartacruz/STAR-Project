@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TestCaseEntity>
-   <description>(+)As a Cashier, I want to see List of GL Line Item based on defined filter and use search text box to find data on 'GL Account' field with input the whole digit of 'GL Account'</description>
+   <description>(+)As a Cashier, I want to see List of GL Line Item based on defined filter and use search text box to find data on 'GL Description' field with input the whole digit of 'GL Description'</description>
    <name>TCMSTAR-14416 - Cashier, Use search text box find data on GL Description field</name>
    <tag></tag>
    <comment></comment>

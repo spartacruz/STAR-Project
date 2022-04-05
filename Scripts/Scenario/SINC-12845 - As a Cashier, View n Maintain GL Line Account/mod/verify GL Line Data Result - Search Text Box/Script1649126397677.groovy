@@ -17,7 +17,8 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
-import org.openqa.selenium.Keys as Keys
+import org.openqa.selenium.Keys
+import org.codehaus.groovy.tools.shell.completion.KeywordSyntaxCompletor
 import org.openqa.selenium.By as By
 import org.openqa.selenium.WebElement as WebElement
 import com.kms.katalon.core.testobject.ConditionType as ConditionType
@@ -65,10 +66,13 @@ public static boolean searchQueryValidation(String paramSearchQuery, String para
 			break
 		
 		case 'expectedNoData':
-			if (paramSelectorContentGLTableList.size().equals(0)) {
+			//2 means row table head + blank row on FE aka no row data result
+			if (paramSelectorContentGLTableList.size().equals(2)) {
 				KeywordUtil.markPassed("Search Box Validation (unexist data): Expected Result and rendered table result are equal")
+				return true
 			} else {
 				KeywordUtil.markFailedAndStop("Search Box Validation (unexist data): Expected Result and rendered table result NOT equal")
+				return false
 			}
 	}
 	
@@ -84,6 +88,8 @@ public static boolean searchQueryValidation(String paramSearchQuery, String para
 			KeywordUtil.markFailedAndStop("$wording_for Search Box Validation: Expected Result and rendered table result are NOT equal")
 		}
 	}
+	
+	return true
 }
 
 if (!searchQuery.equals('')) {
