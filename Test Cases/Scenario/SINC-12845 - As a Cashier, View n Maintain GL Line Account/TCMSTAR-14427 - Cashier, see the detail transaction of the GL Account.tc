@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>(+)As a Cashier, I want to see List of GL Line Item based on defined filter and see the detail transaction of the GL Account</description>
+   <name>TCMSTAR-14427 - Cashier, see the detail transaction of the GL Account</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>648e16c8-f42e-4d0c-b3d9-cd67a1207446</testCaseGuid>
+</TestCaseEntity>
