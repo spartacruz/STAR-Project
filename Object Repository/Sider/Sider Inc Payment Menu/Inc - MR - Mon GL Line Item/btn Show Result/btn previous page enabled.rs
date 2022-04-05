@@ -11,7 +11,7 @@
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//li[contains(@class, 'ant-pagination-prev')]/button[@class='ant-pagination-item-link']</value>
+         <value>//li[@class='ant-pagination-prev']/button[@class='ant-pagination-item-link']</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

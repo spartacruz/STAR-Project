@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>(+)As a Cashier, I want to see all GL Item with 'Document Type' = 'Posted Item' dan 'Document Status' = 'Open Item' dan 'Select Date Range' = &quot;1 February 2022 - 28 February 2022&quot;</description>
+   <name>TCMSTAR-14395 - Cashier, see GL Item Posted Item, DS Open, date range 1-28feb 22</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>8893f9be-14c7-4ac0-af7e-a3f6cf851d12</testCaseGuid>
+</TestCaseEntity>
