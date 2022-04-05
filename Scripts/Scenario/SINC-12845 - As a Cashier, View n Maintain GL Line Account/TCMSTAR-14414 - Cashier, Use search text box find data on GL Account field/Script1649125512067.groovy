@@ -27,6 +27,8 @@ WebUI.setText(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Lin
 
 WebUI.delay(GlobalVariable.delayStep)
 
+String searchBoxInput = WebUI.getText(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/btn Show Result/input search box'))
+
 WebUI.callTestCase(findTestCase('Scenario/SINC-12845 - As a Cashier, View n Maintain GL Line Account/mod/verify GL Line Data Result - Search Text Box'), 
-    [:], FailureHandling.STOP_ON_FAILURE)
+    [('nsearchQuery') : searchBoxInput, ('nsearchFor') : 'GLAccount'], FailureHandling.STOP_ON_FAILURE)
 
