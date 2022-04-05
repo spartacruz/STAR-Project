@@ -17,3 +17,9 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
+WebUI.callTestCase(findTestCase('Scenario/SINC-12845 - As a Cashier, View n Maintain GL Line Account/TCMSTAR-14409 - As a Cashier, see List of GL Line Item based on defined filter'), 
+    [:], FailureHandling.STOP_ON_FAILURE)
+
+WebUI.callTestCase(findTestCase('Scenario/SINC-12845 - As a Cashier, View n Maintain GL Line Account/mod/click Document Details'), 
+    [('nrowNo') : '1'], FailureHandling.STOP_ON_FAILURE)
+
