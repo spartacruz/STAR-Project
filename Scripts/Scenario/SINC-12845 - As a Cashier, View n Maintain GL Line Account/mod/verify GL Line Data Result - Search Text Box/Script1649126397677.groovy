@@ -26,6 +26,7 @@ WebUI.verifyElementNotPresent(findTestObject('Sider/Sider Inc Payment Menu/Inc -
 	GlobalVariable.waitPresentTimeout)
 
 String searchQuery = "$nsearchQuery" ?: ''
+String searchFor = "$nsearchFor" ?: ''
 
 //count table rows, can be reuse
 //count table rows, can be reuse
@@ -62,6 +63,13 @@ public static boolean searchQueryValidation(String paramSearchQuery, String para
 			wording_for = 'Doc Reference'
 			for_column = '7'
 			break
+		
+		case 'expectedNoData':
+			if (paramSelectorContentGLTableList.size().equals(0)) {
+				KeywordUtil.markPassed("Search Box Validation (unexist data): Expected Result and rendered table result are equal")
+			} else {
+				KeywordUtil.markFailedAndStop("Search Box Validation (unexist data): Expected Result and rendered table result NOT equal")
+			}
 	}
 	
 	for (int i = 2; i <= (paramSelectorContentGLTableList.size()); i++) {
@@ -76,64 +84,8 @@ public static boolean searchQueryValidation(String paramSearchQuery, String para
 			KeywordUtil.markFailedAndStop("$wording_for Search Box Validation: Expected Result and rendered table result are NOT equal")
 		}
 	}
-	
-	return true
-/*
-	Integer row_counter = 0
-	Boolean checkPreviousPage = false
-	Boolean checkNextPage = false
-	
-	try {
-		checkPreviousPage = WebUI.verifyElementVisible(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/btn Show Result/btn previous page enabled'))
-	} catch (Exception e) {
-		checkPreviousPage = false
-	}
-	
-	//if not the first page, system will click previous until the first one
-	while (checkPreviousPage.equals(true)) {
-
-//		String el = 'return document.querySelector("//li[contains(@class, \'ant-pagination-next\')]/button[@class=\'ant-pagination-item-link\']")[0].click();'
-//		WebUI.executeJavaScript(el, null, FailureHandling.OPTIONAL)
-		WebUI.click(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/btn Show Result/btn previous page enabled'))
-		
-		try {
-			checkPreviousPage = WebUI.verifyElementVisible(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/btn Show Result/btn previous page enabled'))
-		} catch (Exception e) {
-			checkPreviousPage = false
-		}
-	}
-	
-	row_counter = row_counter + paramSelectorContentGLTableList.size()
-	
-	
-	try {
-		checkNextPage = WebUI.verifyElementVisible(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/btn Show Result/btn next page enabled'))
-	} catch (Exception e) {
-		checkNextPage = false
-	}
-	
-	//if button next enable
-	while (checkNextPage.equals(true)) {		
-		WebUI.click(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/btn Show Result/btn next page enabled'))
-		
-		try {
-			checkNextPage = WebUI.verifyElementVisible(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/btn Show Result/btn next page enabled'))
-		} catch (Exception e) {
-			checkNextPage = false
-		}
-		row_counter = row_counter + paramSelectorContentGLTableList.size()
-		
-		println(row_counter)
-	}
-	
-	if (row_counter - 1 > Integer.parseInt(paramMaxRowItem)) {
-		KeywordUtil.markFailedAndStop('Max Row Item Count Validation : Expected Result and rendered table head are NOT equal')
-	} else {
-		KeywordUtil.markPassed('Max Row Item Validation : Expected Result and rendered table head are equal')
-	}
-	*/
 }
 
 if (!searchQuery.equals('')) {
-	searchQueryValidation(searchQuery, ,selectorContentGLTableList)
+	searchQueryValidation(searchQuery, searchFor, selectorContentGLTableList)
 }
