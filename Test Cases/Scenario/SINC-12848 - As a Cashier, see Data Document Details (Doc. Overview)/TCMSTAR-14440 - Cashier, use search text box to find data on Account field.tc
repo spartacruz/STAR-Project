@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>(+)As a Cashier, I want to see List of 'Data Document Details' and use search text box to find data on 'Account' field</description>
+   <name>TCMSTAR-14440 - Cashier, use search text box to find data on Account field</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>ff321e63-2f03-4371-9273-a03aa4a76676</testCaseGuid>
+</TestCaseEntity>
