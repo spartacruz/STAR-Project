@@ -22,61 +22,50 @@ WebUI.callTestCase(findTestCase('Scenario/SINC-11862 - As a Cashier Input n Sear
 
 WebUI.click(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/input GL Account'))
 
-WebUI.setText(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/input GL Account'), '1002100100')
+WebUI.setText(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/input GL Account'), '1240100995')
 
 WebUI.callTestCase(findTestCase('Scenario/SINC-11862 - As a Cashier Input n Search GL Account/mod/verifyGLSugesstion'), 
     [('nKeyword') : GlobalVariable.InputFourDigit], FailureHandling.STOP_ON_FAILURE)
 
-WebUI.waitForElementPresent(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/option select Account 1002100100'), 
+WebUI.waitForElementPresent(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/option select Account 1240100995'), 
     GlobalVariable.waitPresentTimeout)
 
-WebUI.click(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/option select Account 1002100100'))
+WebUI.click(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/option select Account 1240100995'))
 
 WebUI.verifyElementVisible(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/button Show Result Enable'))
 
 WebUI.click(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/button Show Result Enable'))
-/*
+
 WebUI.callTestCase(findTestCase('Scenario/SINC-12845 - As a Cashier, View n Maintain GL Line Account/mod/verify GL Line Page'), 
     [('ndocStatus') : 'all', ('ndocType') : 'postedItem', ('nmaxRowItem') : '1000', ('nselectDateRangeStartDate') : '0', ('nselectDateRangeEndDate') : '0'
-        , ('nGLAccountNumber') : '1002100100'], FailureHandling.STOP_ON_FAILURE)
+        , ('nGLAccountNumber') : '1240100995'], FailureHandling.STOP_ON_FAILURE)
 
 WebUI.callTestCase(findTestCase('Scenario/SINC-12845 - As a Cashier, View n Maintain GL Line Account/mod/verify GL Line Data Result'), 
-    [('nGLAccountNumber') : '1002100100', ('ndebitCredit') : 'DebitCredit', ('npostingNumberFrom') : '0', ('npostingNumberTo') : '0'
+    [('nGLAccountNumber') : '1240100995', ('ndebitCredit') : 'DebitCredit', ('npostingNumberFrom') : '0', ('npostingNumberTo') : '0'
         , ('ndocReferenceFrom') : '0', ('ndocReferenceTo') : '0', ('npostingDateFrom') : '0', ('npostingDateTo') : '0', ('ndocDateFrom') : '0'
         , ('ndocDateTo') : '0', ('ncostCenter') : '0', ('nprofitCenter') : '0'], FailureHandling.STOP_ON_FAILURE)
-*/
 
-WebUI.delay(3)
 String docNumber = WebUI.callTestCase(findTestCase('Scenario/SINC-12848 - As a Cashier, see Data Document Details (Doc. Overview)/mod/get Attrib Row from GL Item Show Result'), 
-    [('nrow'): 1, ('nwhichColumn'):'docNumber'], FailureHandling.STOP_ON_FAILURE)
+    [('nrow') : 1, ('nwhichColumn') : 'docNumber'], FailureHandling.STOP_ON_FAILURE)
 
 String docDate = WebUI.callTestCase(findTestCase('Scenario/SINC-12848 - As a Cashier, see Data Document Details (Doc. Overview)/mod/get Attrib Row from GL Item Show Result'), 
-    [('nrow'): 1, ('nwhichColumn'):'docDate'], FailureHandling.STOP_ON_FAILURE)
+    [('nrow') : 1, ('nwhichColumn') : 'docDate'], FailureHandling.STOP_ON_FAILURE)
 
 String postingNumber = WebUI.callTestCase(findTestCase('Scenario/SINC-12848 - As a Cashier, see Data Document Details (Doc. Overview)/mod/get Attrib Row from GL Item Show Result'), 
-    [('nrow'): 1, ('nwhichColumn'):'postingNumber'], FailureHandling.STOP_ON_FAILURE)
+    [('nrow') : 1, ('nwhichColumn') : 'postingNumber'], FailureHandling.STOP_ON_FAILURE)
 
 String postingDate = WebUI.callTestCase(findTestCase('Scenario/SINC-12848 - As a Cashier, see Data Document Details (Doc. Overview)/mod/get Attrib Row from GL Item Show Result'), 
-    [('nrow'): 1, ('nwhichColumn'):'postingDate'], FailureHandling.STOP_ON_FAILURE)
+    [('nrow') : 1, ('nwhichColumn') : 'postingDate'], FailureHandling.STOP_ON_FAILURE)
 
-String SAPDocNumber = "-"
-
+String SAPDocNumber = '-'
 
 WebUI.callTestCase(findTestCase('Scenario/SINC-12845 - As a Cashier, View n Maintain GL Line Account/mod/click Document Details'), 
     [('nrowNo') : '1'], FailureHandling.STOP_ON_FAILURE)
 
 WebUI.callTestCase(findTestCase('Scenario/SINC-12848 - As a Cashier, see Data Document Details (Doc. Overview)/mod/verify Document Details (head)'), 
-    [('ndocNumber') : docNumber, ('ndocDate') : docDate, ('npostingNumber') : postingNumber, ('npostingDate') : postingDate, ('nSAPDocNumber') : SAPDocNumber], FailureHandling.STOP_ON_FAILURE)
+    [('ndocNumber') : docNumber, ('ndocDate') : docDate, ('npostingNumber') : postingNumber, ('npostingDate') : postingDate
+        , ('nSAPDocNumber') : SAPDocNumber], FailureHandling.STOP_ON_FAILURE)
 
-String TO_back = 'Object Repository/Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/document overview details/btn BackButton'
-
-WebUI.callTestCase(findTestCase('Scenario/SINC-12848 - As a Cashier, see Data Document Details (Doc. Overview)/mod/click with javascript'), 
-    [('ntestObject') : TO_back], 
-    FailureHandling.STOP_ON_FAILURE)
-
-WebUI.callTestCase(findTestCase('Scenario/SINC-12845 - As a Cashier, View n Maintain GL Line Account/mod/verify GL Line Page'), 
-    [('ndocStatus') : 'all', ('ndocType') : 'postedItem', ('nmaxRowItem') : '1000', ('nselectDateRangeStartDate') : '0', ('nselectDateRangeEndDate') : '0'
-        , ('nGLAccountNumber') : '1002100100'], FailureHandling.STOP_ON_FAILURE)
-
-
+WebUI.callTestCase(findTestCase('Scenario/SINC-12848 - As a Cashier, see Data Document Details (Doc. Overview)/mod/verify Table Head Data Document'), 
+    [:], FailureHandling.STOP_ON_FAILURE)
 

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>(+)As a Cashier, I want to check table column field on 'Data Document Details'</description>
+   <name>TCMSTAR-14430 - Cashier, check table column field Data Document Details</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>fdc6839e-93e4-4a91-a478-0cdf4df5adcc</testCaseGuid>
+</TestCaseEntity>
