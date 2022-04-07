@@ -26,8 +26,13 @@ import org.openqa.selenium.By as By
 import org.openqa.selenium.WebElement as WebElement
 import com.kms.katalon.core.testobject.ConditionType as ConditionType
 
+WebUI.waitForElementNotPresent(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/btn Show Result/span dot spinning_fetching data'), GlobalVariable.waitPresentTimeout, FailureHandling.STOP_ON_FAILURE)
 WebUI.verifyElementNotPresent(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/btn Show Result/span dot spinning_fetching data'), 
     GlobalVariable.waitPresentTimeout)
+
+WebUI.waitForElementNotPresent(findTestObject('Object Repository/Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/btn Show Result/div no data'), GlobalVariable.waitPresentTimeout, FailureHandling.STOP_ON_FAILURE)
+WebUI.verifyElementNotPresent(findTestObject('Object Repository/Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/btn Show Result/div no data'),
+	GlobalVariable.waitPresentTimeout)
 
 String GLAccountNumber = "$nGLAccountNumber"
 String debitCredit = "$ndebitCredit"
@@ -43,60 +48,109 @@ String costCenter = "$ncostCenter"
 String profitCenter = "$nprofitCenter"
 
 //columns validation
-//columns validation
-//columns validation
 //total 26 columns + 1 blank column on Frontend
 //expected result on Thead GL Line Data
-String[] dataGLLineItemColumns = ['No', 'GL Account', 'GL Description', 'PK', 'Posting Number', 'Posting Date', 'Doc. Reference'
-    , 'Doc. Date', 'Amount', 'BA Code', 'Cost Center', 'Profit Center', 'Clearing No.', 'Clearing Date', 'Status', 'Baseline Date'
-    , 'Assignment', 'Text', 'Tax Code', 'Division', 'Notice/Unotice', 'Header Text', 'Fiscal Year', 'Period', 'Doc. Currency'
-    , 'Doc. Type', '']
+GLLineTableHeadValidation()
 
-//String selectedObjXpathSelector = "//table//thead/tr/th"
-//String iterateObjXpathSelector = "//table//thead/tr/th[\${i}]"
-////String iterateObjXpathSelector = "//table//thead/tr/th[${i}]"
-//iterator(selectedObjXpathSelector, dataGLLineItemColumns, iterateObjXpathSelector)
-TestObject selectorTheadGLTable = new TestObject()
+//row result counter
+List<WebElement> selectorContentGLTableList = tableListGenerator()
 
-selectorTheadGLTable.addProperty('xpath', ConditionType.EQUALS, '//table//thead/tr/th')
+//GL Account validation
+//Need param :
+//String GLAccountNumber = "$nGLAccountNumber"
+glAccountCostAndProfitCenterValidation(GLAccountNumber, selectorContentGLTableList, 'GLAccount')
 
-// find the row header of result table elements
-List<WebElement> selectorTheadGLTableList = WebUI.findWebElements(selectorTheadGLTable, 30)
+//Cost Center (Advanced Search) validation
+glAccountCostAndProfitCenterValidation(costCenter, selectorContentGLTableList, 'costCenter')
 
-println(selectorTheadGLTableList.size())
+//Cost Center (Advanced Search) validation
+glAccountCostAndProfitCenterValidation(profitCenter, selectorContentGLTableList, 'profitCenter')
 
-if (dataGLLineItemColumns.length == selectorTheadGLTableList.size()) {
-    KeywordUtil.markPassed('Count Table head GL Account : Expected Result and rendered table head are equal')
-} else {
-    KeywordUtil.markFailedAndStop('Count Table head GL Account : Expected Result and rendered table head are NOT equal')
+//Debit/Credit validation
+//Need param :
+//String debitCreditz = "$ndebitCredit"
+debitAndCreditValidation(debitCredit, selectorContentGLTableList)
+
+//Posting Number (Advanced Search) validation
+//Need param :
+//String postingNumberFrom = "$npostingNumberFrom"
+//String postingNumberTo = "$npostingNumberTo"
+String[] postingNumberArray = new String[1]
+postingAndDocRefValidation(postingNumberFrom, postingNumberTo, postingNumberArray, selectorContentGLTableList, 'postingNumber')
+
+//Doc. Reference (Advanced Search) validation
+//Need param :
+//String docReferenceFrom = "$ndocReferenceFrom"
+//String docReferenceTo = "$ndocReferenceTo"
+String[] DocReferenceArray = new String[1]
+postingAndDocRefValidation(docReferenceFrom, docReferenceTo, DocReferenceArray, selectorContentGLTableList, 'docReference')
+
+//Posting Date (Advanced Search) validation
+//Need param :
+//String postingDateFrom = "$npostingDateFrom"
+//String postingDateTo = "$npostingDateTo"
+postingAndDocDateValidation(postingDateFrom, postingDateTo, selectorContentGLTableList, 'postingDate')
+
+//Doc. Date (Advanced Search) validation
+//Need param :
+//String docDateFrom = "$ndocDateFrom"
+//String docDateTo = "$ndocDateTo"
+postingAndDocDateValidation(docDateFrom, docDateTo, selectorContentGLTableList, 'docDate')
+
+/*
+ * 
+ whole function start from here
+ * 
+ * */
+
+def void GLLineTableHeadValidation() {
+	String[] dataGLLineItemColumns = ['No', 'GL Account', 'GL Description', 'PK', 'Posting Number', 'Posting Date', 'Doc. Reference'
+		, 'Doc. Date', 'Amount', 'BA Code', 'Cost Center', 'Profit Center', 'Clearing No.', 'Clearing Date', 'Status', 'Baseline Date'
+		, 'Assignment', 'Text', 'Tax Code', 'Division', 'Notice/Unotice', 'Header Text', 'Fiscal Year', 'Period', 'Doc. Currency'
+		, 'Doc. Type', '']
+	
+	TestObject selectorTheadGLTable = new TestObject()
+	
+	selectorTheadGLTable.addProperty('xpath', ConditionType.EQUALS, '//table//thead/tr/th')
+	
+	// find the row header of result table elements
+	List<WebElement> selectorTheadGLTableList = WebUI.findWebElements(selectorTheadGLTable, 30)
+	
+	println(selectorTheadGLTableList.size())
+	
+	if (dataGLLineItemColumns.length == selectorTheadGLTableList.size()) {
+		KeywordUtil.markPassed('Count Table head GL Account : Expected Result and rendered table head are equal')
+	} else {
+		KeywordUtil.markFailedAndStop('Count Table head GL Account : Expected Result and rendered table head are NOT equal')
+	}
+	
+	//iterating each Thead GL Account List, to be matched with expected result
+	for (int i = 1; i <= selectorTheadGLTableList.size(); i++) {
+		String new_xpath = "//table//thead/tr/th[$i]"
+	
+		TestObject dynamicObject = new TestObject('dynamicObject').addProperty('xpath', ConditionType.EQUALS, new_xpath)
+	
+		println(WebUI.getText(dynamicObject))
+	
+		if (WebUI.getText(dynamicObject).equals(dataGLLineItemColumns[(i - 1)])) {
+			KeywordUtil.markPassed('Table head GL Account Name : Expected Result and rendered table head are equal')
+		} else {
+			KeywordUtil.markFailedAndStop('Table head GL Account Name : Expected Result and rendered table head are NOT equal')
+		}
+	}
 }
 
-//iterating each Thead GL Account List, to be matched with expected result
-for (int i = 1; i <= selectorTheadGLTableList.size(); i++) {
-    String new_xpath = "//table//thead/tr/th[$i]"
-
-    TestObject dynamicObject = new TestObject('dynamicObject').addProperty('xpath', ConditionType.EQUALS, new_xpath)
-
-    println(WebUI.getText(dynamicObject))
-
-    if (WebUI.getText(dynamicObject).equals(dataGLLineItemColumns[(i - 1)])) {
-        KeywordUtil.markPassed('Table head GL Account Name : Expected Result and rendered table head are equal')
-    } else {
-        KeywordUtil.markFailedAndStop('Table head GL Account Name : Expected Result and rendered table head are NOT equal')
-    }
+def tableListGenerator() {
+	//count table rows, can be reuse
+	TestObject selectorContentGLTable = new TestObject()
+	selectorContentGLTable.addProperty('xpath', ConditionType.EQUALS, '//table//tbody/tr')
+	
+	// find the row header of result table elements
+	List<WebElement> selectorContentGLTableList = WebUI.findWebElements(selectorContentGLTable, 30)
+	
+	println(selectorContentGLTableList.size())
+	return selectorContentGLTableList
 }
-
-//count table rows, can be reuse
-//count table rows, can be reuse
-//count table rows, can be reuse
-TestObject selectorContentGLTable = new TestObject()
-selectorContentGLTable.addProperty('xpath', ConditionType.EQUALS, '//table//tbody/tr')
-
-// find the row header of result table elements
-List<WebElement> selectorContentGLTableList = WebUI.findWebElements(selectorContentGLTable, 30)
-
-println(selectorContentGLTableList.size())
-
 
 public static void glAccountCostAndProfitCenterValidation(String paramCOAorCost, List<WebElement> selectorContentGLTableList, String option) {
 	
@@ -148,32 +202,6 @@ public static void glAccountCostAndProfitCenterValidation(String paramCOAorCost,
 		}
 	}
 }
-
-//GL Account validation
-//GL Account validation
-//GL Account validation
-//Need param :
-//String GLAccountNumber = "$nGLAccountNumber"
-glAccountCostAndProfitCenterValidation(GLAccountNumber, selectorContentGLTableList, 'GLAccount')
-
-//Cost Center (Advanced Search) validation
-//Cost Center (Advanced Search) validation
-//Cost Center (Advanced Search) validation
-glAccountCostAndProfitCenterValidation(costCenter, selectorContentGLTableList, 'costCenter')
-
-//Cost Center (Advanced Search) validation
-//Cost Center (Advanced Search) validation
-//Cost Center (Advanced Search) validation
-glAccountCostAndProfitCenterValidation(profitCenter, selectorContentGLTableList, 'profitCenter')
-
-
-
-
-//Debit/Credit validation
-//Debit/Credit validation
-//Debit/Credit validation
-//Need param :
-//String debitCreditz = "$ndebitCredit"
 
 public static void debitAndCreditValidation(String paramDebitCredit, List<WebElement> selectorContentGLTableList) {
 	if (paramDebitCredit == 'DebitCredit') {
@@ -248,9 +276,6 @@ public static void debitAndCreditValidation(String paramDebitCredit, List<WebEle
 		
 	}
 }
-
-debitAndCreditValidation(debitCredit, selectorContentGLTableList)
-
 
 //for counting range eg. H383-I-22000002 to H383-I-22000010
 //will return string with comma : H383-I-22000002,H383-I-22000003,H383-I-22000004,H383-I-22000005,H383-I-22000006,H383-I-22000007,H383-I-22000008,H383-I-22000009,H383-I-22000010
@@ -349,22 +374,6 @@ public static void postingAndDocRefValidation(String postingNumberFrom, String p
 	}
 }
 
-//Posting Number (Advanced Search) validation
-//Need param :
-//String postingNumberFrom = "$npostingNumberFrom"
-//String postingNumberTo = "$npostingNumberTo"
-String[] postingNumberArray = new String[1]
-postingAndDocRefValidation(postingNumberFrom, postingNumberTo, postingNumberArray, selectorContentGLTableList, 'postingNumber')
-
-//Doc. Reference (Advanced Search) validation
-//Need param :
-//String docReferenceFrom = "$ndocReferenceFrom"
-//String docReferenceTo = "$ndocReferenceTo"
-String[] DocReferenceArray = new String[1]
-postingAndDocRefValidation(docReferenceFrom, docReferenceTo, DocReferenceArray, selectorContentGLTableList, 'docReference')
-
-
-
 //for convert string_date to java format date and check whether target date is :
 //in between or equal
 //will return boolean true if (in between or equal). Otherwise, false
@@ -452,20 +461,3 @@ public static void postingAndDocDateValidation(String paramFromDate, String para
 		}
 	}
 }
-
-//Posting Date (Advanced Search) validation
-//Posting Date (Advanced Search) validation
-//Posting Date (Advanced Search) validation
-//Need param :
-//String postingDateFrom = "$npostingDateFrom"
-//String postingDateTo = "$npostingDateTo"
-postingAndDocDateValidation(postingDateFrom, postingDateTo, selectorContentGLTableList, 'postingDate')
-
-//Doc. Date (Advanced Search) validation
-//Doc. Date (Advanced Search) validation
-//Doc. Date (Advanced Search) validation
-//Need param :
-//String docDateFrom = "$ndocDateFrom"
-//String docDateTo = "$ndocDateTo"
-postingAndDocDateValidation(docDateFrom, docDateTo, selectorContentGLTableList, 'docDate')
-
