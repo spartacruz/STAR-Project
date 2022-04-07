@@ -33,15 +33,68 @@ String documentStatus = "$ndocumentStatus" ?: 'all'
 
 
 //count table rows, can be reuse
-//count table rows, can be reuse
-//count table rows, can be reuse
-TestObject selectorContentGLTable = new TestObject()
-selectorContentGLTable.addProperty('xpath', ConditionType.EQUALS, '//table//tbody/tr')
 
-// find the row header of result table elements
-List<WebElement> selectorContentGLTableList = WebUI.findWebElements(selectorContentGLTable, 30)
+Integer countPage = 1
+//row result counter
+List<WebElement> selectorContentGLTableList = tableListGenerator('//table//tbody/tr')
 
-println(selectorContentGLTableList.size())
+String xpath_nextPage = '//li[@class=\'ant-pagination-next\']/button[@class=\'ant-pagination-item-link\']'
+String xpath_previousPage ='//li[@class=\'ant-pagination-prev\']/button[@class=\'ant-pagination-item-link\']'
+
+List<WebElement> buttonNextPageEnabled = tableListGenerator(xpath_nextPage)
+List<WebElement> buttonPreviousPageEnabled = tableListGenerator(xpath_previousPage)
+
+if (buttonPreviousPageEnabled.size() > 0) {
+	
+	//while previous page can be clicked
+	while (buttonPreviousPageEnabled.size() > 0) {
+		WebUI.callTestCase(findTestCase('Scenario/SINC-12848 - As a Cashier, see Data Document Details (Doc. Overview)/mod/click with javascript'),
+			[('ntestObject') : 'Object Repository/Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/btn Show Result/btn previous page enabled'], FailureHandling.STOP_ON_FAILURE)
+		
+		buttonPreviousPageEnabled = tableListGenerator(xpath_previousPage)
+	}
+}
+
+//if there is a data
+if (selectorContentGLTableList.size() > 2) {
+	if (documentStatus.equals('all')) {
+		//no validation on document status
+		assert true
+	} else {
+		//only checking until page 10 for now
+		while (buttonNextPageEnabled.size() > 0 && countPage < 10) {	
+			WebUI.callTestCase(findTestCase('Scenario/SINC-12848 - As a Cashier, see Data Document Details (Doc. Overview)/mod/click with javascript'),
+				[('ntestObject') : 'Object Repository/Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/btn Show Result/btn next page enabled'], FailureHandling.STOP_ON_FAILURE)
+			
+			documentStatusValidation(documentStatus, selectorContentGLTableList)
+			
+			countPage = countPage + 1
+			KeywordUtil.logInfo("Iterating page: $countPage")
+			
+			buttonNextPageEnabled = tableListGenerator('//li[@class=\'ant-pagination-next\']/button[@class=\'ant-pagination-item-link\']')
+		}
+	}	
+}
+
+
+
+/*
+ *
+ whole function start from here
+ *
+ * */
+
+def tableListGenerator(String xpathLocation) {
+	//count table rows, can be reuse
+	TestObject selectorContentGLTable = new TestObject()
+	selectorContentGLTable.addProperty('xpath', ConditionType.EQUALS, xpathLocation)
+	
+	// find the row header of result table elements
+	List<WebElement> selectorContentGLTableList = WebUI.findWebElements(selectorContentGLTable, 10)
+	
+	println(selectorContentGLTableList.size())
+	return selectorContentGLTableList
+}
 
 public static void documentStatusValidation(String paramDocumentStatus, List<WebElement> paramSelectorContentGLTableList) {
 	
@@ -74,10 +127,5 @@ public static void documentStatusValidation(String paramDocumentStatus, List<Web
 	}
 }
 
-if (documentStatus.equals('all')) {
-	//no validation on document status
-	assert true
-} else {
-	documentStatusValidation(documentStatus, selectorContentGLTableList)
-}
+
 
