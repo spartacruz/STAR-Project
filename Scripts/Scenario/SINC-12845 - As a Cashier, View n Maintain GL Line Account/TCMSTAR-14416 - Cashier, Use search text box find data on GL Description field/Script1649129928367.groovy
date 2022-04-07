@@ -23,16 +23,15 @@ WebUI.callTestCase(findTestCase('Scenario/SINC-11865 - As a Cashier, use the Adv
 WebUI.click(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/btn Show Result/input search box'))
 
 WebUI.setText(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/btn Show Result/input search box'), 
-    '8991600000')
+    'Other Income')
 
 WebUI.delay(GlobalVariable.delayStep)
 
 String searchBoxInput = WebUI.getAttribute(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/btn Show Result/input search box'), 
     'value')
+
 println(searchBoxInput)
 
 WebUI.callTestCase(findTestCase('Scenario/SINC-12845 - As a Cashier, View n Maintain GL Line Account/mod/verify GL Line Data Result - Search Text Box'), 
-    [('nsearchQuery') : searchBoxInput, ('nsearchFor') : 'GLAccount'], FailureHandling.STOP_ON_FAILURE)
-
-
+    [('nsearchQuery') : searchBoxInput, ('nsearchFor') : 'GLDescription'], FailureHandling.STOP_ON_FAILURE)
 

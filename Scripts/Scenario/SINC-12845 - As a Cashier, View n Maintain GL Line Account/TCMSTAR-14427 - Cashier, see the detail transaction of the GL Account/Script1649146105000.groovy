@@ -17,22 +17,9 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
-WebUI.callTestCase(findTestCase('Scenario/SINC-11865 - As a Cashier, use the Advanced Search filter/mod/_As a Cashier, add debit credit transaction'), 
+WebUI.callTestCase(findTestCase('Scenario/SINC-12845 - As a Cashier, View n Maintain GL Line Account/TCMSTAR-14409 - As a Cashier, see List of GL Line Item based on defined filter'), 
     [:], FailureHandling.STOP_ON_FAILURE)
 
-WebUI.click(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/btn Show Result/input search box'))
-
-WebUI.setText(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/btn Show Result/input search box'), 
-    '8991600000')
-
-WebUI.delay(GlobalVariable.delayStep)
-
-String searchBoxInput = WebUI.getAttribute(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/btn Show Result/input search box'), 
-    'value')
-println(searchBoxInput)
-
-WebUI.callTestCase(findTestCase('Scenario/SINC-12845 - As a Cashier, View n Maintain GL Line Account/mod/verify GL Line Data Result - Search Text Box'), 
-    [('nsearchQuery') : searchBoxInput, ('nsearchFor') : 'GLAccount'], FailureHandling.STOP_ON_FAILURE)
-
-
+WebUI.callTestCase(findTestCase('Scenario/SINC-12845 - As a Cashier, View n Maintain GL Line Account/mod/click Document Details'), 
+    [('nrowNo') : '1'], FailureHandling.STOP_ON_FAILURE)
 

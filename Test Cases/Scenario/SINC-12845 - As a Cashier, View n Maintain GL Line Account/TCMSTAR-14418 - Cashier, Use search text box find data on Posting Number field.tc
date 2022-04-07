@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>(+)As a Cashier, I want to see List of GL Line Item based on defined filter and use search text box to find data on 'Posting Number' field with input the whole digit of 'Posting Number'</description>
+   <name>TCMSTAR-14418 - Cashier, Use search text box find data on Posting Number field</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>c683c480-2856-4de8-8632-bc34d4c742dd</testCaseGuid>
+</TestCaseEntity>
