@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TestCaseEntity>
    <description></description>
-   <name>currency converter and sum amount</name>
+   <name>verify Data Document Result - Sum Amount</name>
    <tag></tag>
    <comment></comment>
    <testCaseGuid>b24491ef-4951-4ba6-acd3-45569278ef08</testCaseGuid>

@@ -77,10 +77,17 @@ String SAPDocNumber = '-'
 WebUI.callTestCase(findTestCase('Scenario/SINC-12845 - As a Cashier, View n Maintain GL Line Account/mod/click Document Details'), 
     [('nrowNo') : '1'], FailureHandling.STOP_ON_FAILURE)
 
+
 WebUI.callTestCase(findTestCase('Scenario/SINC-12848 - As a Cashier, see Data Document Details (Doc. Overview)/mod/verify Detail Document'), 
     [('ndocNumber') : docNumber, ('ndocDate') : docDate, ('npostingNumber') : postingNumber, ('npostingDate') : postingDate
         , ('nSAPDocNumber') : SAPDocNumber], FailureHandling.STOP_ON_FAILURE)
 
 WebUI.callTestCase(findTestCase('Scenario/SINC-12848 - As a Cashier, see Data Document Details (Doc. Overview)/mod/verify Table Head Data Document Result'), 
     [:], FailureHandling.STOP_ON_FAILURE)
+
+WebUI.callTestCase(findTestCase('Scenario/SINC-12848 - As a Cashier, see Data Document Details (Doc. Overview)/mod/verify Data Document Result - Sum Amount'), 
+    [('ncheckFor'):('Amount'), ('nhaveToBeZero'): true], FailureHandling.STOP_ON_FAILURE)
+
+WebUI.callTestCase(findTestCase('Scenario/SINC-12848 - As a Cashier, see Data Document Details (Doc. Overview)/mod/verify Data Document Result - Sum Amount'),
+	[('ncheckFor'):('AmountInLC'), ('nhaveToBeZero'): true], FailureHandling.STOP_ON_FAILURE)
 
