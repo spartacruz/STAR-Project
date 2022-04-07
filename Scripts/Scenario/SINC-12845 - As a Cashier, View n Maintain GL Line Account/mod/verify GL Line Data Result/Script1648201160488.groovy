@@ -6,6 +6,7 @@ import static com.kms.katalon.core.testobject.ObjectRepository.findWindowsObject
 
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter
+import java.lang.Object as Object
 
 import com.github.kklisura.cdt.protocol.types.runtime.Evaluate as Evaluate
 import com.kms.katalon.core.checkpoint.Checkpoint as Checkpoint
@@ -34,74 +35,144 @@ WebUI.waitForElementNotPresent(findTestObject('Object Repository/Sider/Sider Inc
 WebUI.verifyElementNotPresent(findTestObject('Object Repository/Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/btn Show Result/div no data'),
 	GlobalVariable.waitPresentTimeout)
 
-String GLAccountNumber = "$nGLAccountNumber"
-String debitCredit = "$ndebitCredit"
-String postingNumberFrom = "$npostingNumberFrom"
-String postingNumberTo = "$npostingNumberTo"
-String docReferenceFrom = "$ndocReferenceFrom"
-String docReferenceTo = "$ndocReferenceTo"
-String postingDateFrom = "$npostingDateFrom"
-String postingDateTo = "$npostingDateTo"
-String docDateFrom = "$ndocDateFrom"
-String docDateTo = "$ndocDateTo"
-String costCenter = "$ncostCenter"
-String profitCenter = "$nprofitCenter"
 
-//columns validation
-//total 26 columns + 1 blank column on Frontend
-//expected result on Thead GL Line Data
-GLLineTableHeadValidation()
+def mapVariables = [:]
+mapVariables['GLAccountNumber'] = "$nGLAccountNumber"
+mapVariables['debitCredit'] = "$ndebitCredit"
+mapVariables['postingNumberFrom'] = "$npostingNumberFrom"
+mapVariables['postingNumberTo'] = "$npostingNumberTo"
+mapVariables['docReferenceFrom'] = "$ndocReferenceFrom"
+mapVariables['docReferenceTo'] = "$ndocReferenceTo"
+mapVariables['postingDateFrom'] = "$npostingDateFrom"
+mapVariables['postingDateTo'] = "$npostingDateTo"
+mapVariables['docDateFrom'] = "$ndocDateFrom"
+mapVariables['docDateTo'] = "$ndocDateTo"
+mapVariables['costCenter'] = "$ncostCenter"
+mapVariables['profitCenter'] = "$nprofitCenter"
 
+
+Integer countPage = 1
 //row result counter
-List<WebElement> selectorContentGLTableList = tableListGenerator()
+List<WebElement> selectorContentGLTableList = tableListGenerator('//table//tbody/tr')
 
-//GL Account validation
-//Need param :
-//String GLAccountNumber = "$nGLAccountNumber"
-glAccountCostAndProfitCenterValidation(GLAccountNumber, selectorContentGLTableList, 'GLAccount')
+String xpath_nextPage = '//li[@class=\'ant-pagination-next\']/button[@class=\'ant-pagination-item-link\']'
+List<WebElement> buttonNextPageEnabled = tableListGenerator(xpath_nextPage)
+List<WebElement> buttonPreviousPageEnabled = tableListGenerator('//li[@class=\'ant-pagination-prev\']/button[@class=\'ant-pagination-item-link\']')
 
-//Cost Center (Advanced Search) validation
-glAccountCostAndProfitCenterValidation(costCenter, selectorContentGLTableList, 'costCenter')
-
-//Cost Center (Advanced Search) validation
-glAccountCostAndProfitCenterValidation(profitCenter, selectorContentGLTableList, 'profitCenter')
-
-//Debit/Credit validation
-//Need param :
-//String debitCreditz = "$ndebitCredit"
-debitAndCreditValidation(debitCredit, selectorContentGLTableList)
-
-//Posting Number (Advanced Search) validation
-//Need param :
-//String postingNumberFrom = "$npostingNumberFrom"
-//String postingNumberTo = "$npostingNumberTo"
-String[] postingNumberArray = new String[1]
-postingAndDocRefValidation(postingNumberFrom, postingNumberTo, postingNumberArray, selectorContentGLTableList, 'postingNumber')
-
-//Doc. Reference (Advanced Search) validation
-//Need param :
-//String docReferenceFrom = "$ndocReferenceFrom"
-//String docReferenceTo = "$ndocReferenceTo"
-String[] DocReferenceArray = new String[1]
-postingAndDocRefValidation(docReferenceFrom, docReferenceTo, DocReferenceArray, selectorContentGLTableList, 'docReference')
-
-//Posting Date (Advanced Search) validation
-//Need param :
-//String postingDateFrom = "$npostingDateFrom"
-//String postingDateTo = "$npostingDateTo"
-postingAndDocDateValidation(postingDateFrom, postingDateTo, selectorContentGLTableList, 'postingDate')
-
-//Doc. Date (Advanced Search) validation
-//Need param :
-//String docDateFrom = "$ndocDateFrom"
-//String docDateTo = "$ndocDateTo"
-postingAndDocDateValidation(docDateFrom, docDateTo, selectorContentGLTableList, 'docDate')
+//if there is a data
+if (selectorContentGLTableList.size() > 2) {
+	
+	//columns validation
+	//total 26 columns + 1 blank column on Frontend
+	//expected result on Thead GL Line Data
+	GLLineTableHeadValidation()
+	
+	//starting several validation
+	startValidation(mapVariables, selectorContentGLTableList)
+	buttonNextPageEnabled = tableListGenerator('//li[@class=\'ant-pagination-next\']/button[@class=\'ant-pagination-item-link\']')
+	
+	//only checking until page 10 for now
+	while (buttonNextPageEnabled.size() > 0 && countPage < 10) {
+		WebUI.callTestCase(findTestCase('Scenario/SINC-12848 - As a Cashier, see Data Document Details (Doc. Overview)/mod/click with javascript'),
+			[('ntestObject') : 'Object Repository/Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/btn Show Result/btn next page enabled'], FailureHandling.STOP_ON_FAILURE)
+		
+		//starting several validation
+		startValidation(mapVariables, selectorContentGLTableList)
+		countPage = countPage + 1
+		KeywordUtil.logInfo("Iterating page: $countPage")
+		
+		buttonNextPageEnabled = tableListGenerator('//li[@class=\'ant-pagination-next\']/button[@class=\'ant-pagination-item-link\']')
+	}
+}
 
 /*
  * 
  whole function start from here
  * 
  * */
+
+def startValidation(paramMapVariables, List<WebElement> paramselectorContentGLTableList) {
+	//GL Account validation
+	//Need param :
+	//String GLAccountNumber = "$nGLAccountNumber"
+	
+	String GLAccountNumber = paramMapVariables['GLAccountNumber'].toString()
+	String debitCredit = paramMapVariables['debitCredit'].toString()
+	String postingNumberFrom = paramMapVariables['postingNumberFrom'].toString()
+	String postingNumberTo = paramMapVariables['postingNumberTo'].toString()
+	String docReferenceFrom = paramMapVariables['docReferenceFrom'].toString()
+	String docReferenceTo = paramMapVariables['docReferenceTo'].toString()
+	String postingDateFrom = paramMapVariables['postingDateFrom'].toString()
+	String postingDateTo = paramMapVariables['postingDateTo'].toString()
+	String docDateFrom = paramMapVariables['docDateFrom'].toString()
+	String docDateTo = paramMapVariables['docDateTo'].toString()
+	String costCenter = paramMapVariables['costCenter'].toString()
+	String profitCenter = paramMapVariables['profitCenter'].toString()
+	
+//	println(costCenter) //0
+//	if (!costCenter.equals('0')) {
+//		KeywordUtil.markPassed('berhasil')
+//	} else {
+//		KeywordUtil.markFailedAndStop('gagal')
+//	}
+	
+	if (!GLAccountNumber.equals('0')) {
+		glAccountCostAndProfitCenterValidation(GLAccountNumber, paramselectorContentGLTableList, 'GLAccount')
+	}
+	
+	if (!costCenter.equals('0')) {
+		println("testing")
+		//Cost Center (Advanced Search) validation
+		glAccountCostAndProfitCenterValidation(costCenter, paramselectorContentGLTableList, 'costCenter')
+	}
+	
+	if (!profitCenter.equals('0')) {
+		//Cost Center (Advanced Search) validation
+		glAccountCostAndProfitCenterValidation(profitCenter, paramselectorContentGLTableList, 'profitCenter')
+	}
+	
+	if (!debitCredit.equals('DebitCredit')) {
+		//Debit/Credit validation
+		//Need param :
+		//String debitCreditz = "$ndebitCredit"
+		debitAndCreditValidation(debitCredit, paramselectorContentGLTableList)
+	}
+	
+	if (!postingNumberFrom.equals('0') || !postingNumberTo.equals('0')) {
+		//Posting Number (Advanced Search) validation
+		//Need param :
+		//String postingNumberFrom = "$npostingNumberFrom"
+		//String postingNumberTo = "$npostingNumberTo"
+		String[] postingNumberArray = new String[1]
+		postingAndDocRefValidation(postingNumberFrom, postingNumberTo, postingNumberArray, paramselectorContentGLTableList, 'postingNumber')
+	}
+	
+	if (!docReferenceFrom.equals('0') || !docReferenceTo.equals('0')) {
+		//Doc. Reference (Advanced Search) validation
+		//Need param :
+		//String docReferenceFrom = "$ndocReferenceFrom"
+		//String docReferenceTo = "$ndocReferenceTo"
+		String[] DocReferenceArray = new String[1]
+		postingAndDocRefValidation(docReferenceFrom, docReferenceTo, DocReferenceArray, paramselectorContentGLTableList, 'docReference')
+	}
+	
+	if (!postingDateFrom.equals('0') || !postingDateTo.equals('0')) {
+		//Posting Date (Advanced Search) validation
+		//Need param :
+		//String postingDateFrom = "$npostingDateFrom"
+		//String postingDateTo = "$npostingDateTo"
+		postingAndDocDateValidation(postingDateFrom, postingDateTo, paramselectorContentGLTableList, 'postingDate')
+	}
+	
+	if (!docDateFrom.equals('0') || !docDateTo.equals('0')) {
+		//Doc. Date (Advanced Search) validation
+		//Need param :
+		//String docDateFrom = "$ndocDateFrom"
+		//String docDateTo = "$ndocDateTo"
+		postingAndDocDateValidation(docDateFrom, docDateTo, paramselectorContentGLTableList, 'docDate')
+	}
+	
+}
 
 def void GLLineTableHeadValidation() {
 	String[] dataGLLineItemColumns = ['No', 'GL Account', 'GL Description', 'PK', 'Posting Number', 'Posting Date', 'Doc. Reference'
@@ -140,13 +211,13 @@ def void GLLineTableHeadValidation() {
 	}
 }
 
-def tableListGenerator() {
+def tableListGenerator(String xpathLocation) {
 	//count table rows, can be reuse
 	TestObject selectorContentGLTable = new TestObject()
-	selectorContentGLTable.addProperty('xpath', ConditionType.EQUALS, '//table//tbody/tr')
+	selectorContentGLTable.addProperty('xpath', ConditionType.EQUALS, xpathLocation)
 	
 	// find the row header of result table elements
-	List<WebElement> selectorContentGLTableList = WebUI.findWebElements(selectorContentGLTable, 30)
+	List<WebElement> selectorContentGLTableList = WebUI.findWebElements(selectorContentGLTable, 10)
 	
 	println(selectorContentGLTableList.size())
 	return selectorContentGLTableList
