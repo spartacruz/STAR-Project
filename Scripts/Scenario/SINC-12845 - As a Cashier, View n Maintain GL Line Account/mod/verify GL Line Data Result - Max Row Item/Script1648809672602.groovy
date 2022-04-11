@@ -26,27 +26,77 @@ import org.openqa.selenium.By as By
 import org.openqa.selenium.WebElement as WebElement
 import com.kms.katalon.core.testobject.ConditionType as ConditionType
 
-WebUI.verifyElementNotPresent(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/btn Show Result/span dot spinning_fetching data'),
+WebUI.waitForElementNotPresent(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/btn Show Result/span dot spinning_fetching data'), GlobalVariable.waitPresentTimeout, FailureHandling.STOP_ON_FAILURE)
+WebUI.verifyElementNotPresent(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/btn Show Result/span dot spinning_fetching data'), 
+    GlobalVariable.waitPresentTimeout)
+
+WebUI.waitForElementNotPresent(findTestObject('Object Repository/Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/btn Show Result/div no data'), GlobalVariable.waitPresentTimeout, FailureHandling.STOP_ON_FAILURE)
+WebUI.verifyElementNotPresent(findTestObject('Object Repository/Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/btn Show Result/div no data'),
 	GlobalVariable.waitPresentTimeout)
 
 String maxRowItem = "$nmaxRowItem" ?: '5'
 
-/*
-println(binding.nmaxRowItem) //printed 10 on console
-//def binding2 = binding
-maxRowItem = binding.get(nmaxRowItem, '10')
-*/
+Integer countPage = 1
+//row result counter
+List<WebElement> selectorContentGLTableList = tableListGenerator('//table//tbody/tr')
 
-//count table rows, can be reuse
-//count table rows, can be reuse
-//count table rows, can be reuse
-TestObject selectorContentGLTable = new TestObject()
-selectorContentGLTable.addProperty('xpath', ConditionType.EQUALS, '//table//tbody/tr')
+String xpath_nextPage = '//li[@class=\'ant-pagination-next\']/button[@class=\'ant-pagination-item-link\']'
+String xpath_previousPage ='//li[@class=\'ant-pagination-prev\']/button[@class=\'ant-pagination-item-link\']'
 
-// find the row header of result table elements
-List<WebElement> selectorContentGLTableList = WebUI.findWebElements(selectorContentGLTable, 30)
+List<WebElement> buttonNextPageEnabled = tableListGenerator(xpath_nextPage)
+List<WebElement> buttonPreviousPageEnabled = tableListGenerator(xpath_previousPage)
 
-println(selectorContentGLTableList.size())
+if (buttonPreviousPageEnabled.size() > 0) {
+	
+	//while previous page can be clicked
+	while (buttonPreviousPageEnabled.size() > 0) {
+		WebUI.callTestCase(findTestCase('Scenario/SINC-12848 - As a Cashier, see Data Document Details (Doc. Overview)/mod/click with javascript'),
+			[('ntestObject') : 'Object Repository/Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/btn Show Result/btn previous page enabled'], FailureHandling.STOP_ON_FAILURE)
+		
+		buttonPreviousPageEnabled = tableListGenerator(xpath_previousPage)
+	}
+}
+
+//if there is a data
+if (selectorContentGLTableList.size() > 2) {
+	if (maxRowItem.equals('1000')) {
+		//no validation
+		assert true
+	} else {
+		
+		maxRowItemValidation(maxRowItem, selectorContentGLTableList)
+		
+		//only check next page if maxrowitem more than 10
+		if (maxRowItem > 10) {
+			
+			//only checking until page 10 for now
+			while (buttonNextPageEnabled.size() > 0 && countPage < 10) {
+				WebUI.callTestCase(findTestCase('Scenario/SINC-12848 - As a Cashier, see Data Document Details (Doc. Overview)/mod/click with javascript'),
+					[('ntestObject') : 'Object Repository/Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/btn Show Result/btn next page enabled'], FailureHandling.STOP_ON_FAILURE)
+				
+				maxRowItemValidation(maxRowItem, selectorContentGLTableList)
+				
+				countPage = countPage + 1
+				KeywordUtil.logInfo("Iterating page: $countPage")
+				
+				buttonNextPageEnabled = tableListGenerator('//li[@class=\'ant-pagination-next\']/button[@class=\'ant-pagination-item-link\']')
+			}
+		
+		}
+	}
+}
+
+def tableListGenerator(String xpathLocation) {
+	//count table rows, can be reuse
+	TestObject selectorContentGLTable = new TestObject()
+	selectorContentGLTable.addProperty('xpath', ConditionType.EQUALS, xpathLocation)
+	
+	// find the row header of result table elements
+	List<WebElement> selectorContentGLTableList = WebUI.findWebElements(selectorContentGLTable, 10)
+	
+	println(selectorContentGLTableList.size())
+	return selectorContentGLTableList
+}
 
 public static void maxRowItemValidation(String paramMaxRowItem, List<WebElement> paramSelectorContentGLTableList) {
 	
@@ -102,8 +152,4 @@ public static void maxRowItemValidation(String paramMaxRowItem, List<WebElement>
 	} else {
 		KeywordUtil.markPassed('Max Row Item Validation : Expected Result and rendered table head are equal')
 	}
-}
-
-if (!maxRowItem.equals('0')) {
-	maxRowItemValidation(maxRowItem, selectorContentGLTableList)
 }
