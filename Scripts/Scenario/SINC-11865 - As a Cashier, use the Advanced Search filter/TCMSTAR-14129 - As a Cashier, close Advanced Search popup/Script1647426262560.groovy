@@ -20,17 +20,17 @@ import org.openqa.selenium.Keys as Keys
 WebUI.callTestCase(findTestCase('Scenario/SINC-11865 - As a Cashier, use the Advanced Search filter/TCMSTAR-14128 - As a Cashier, click Advanced Search button'), 
     [:], FailureHandling.STOP_ON_FAILURE)
 
-WebUI.click(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/btn Advanced Search modal/button close Advanced Search'))
+WebUI.click(findTestObject('Sider/Sider Inc Payment Menu/Fin - MR - Mon GL Line Item/btn Advanced Search modal/button close Advanced Search'))
 
-WebUI.verifyElementNotVisible(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/btn Advanced Search modal/title Advanced Search'), 
+WebUI.verifyElementNotVisible(findTestObject('Sider/Sider Inc Payment Menu/Fin - MR - Mon GL Line Item/btn Advanced Search modal/title Advanced Search'), 
     FailureHandling.STOP_ON_FAILURE)
 
-WebUI.verifyElementNotVisible(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/btn Advanced Search modal/button close Advanced Search'), 
+WebUI.verifyElementNotVisible(findTestObject('Sider/Sider Inc Payment Menu/Fin - MR - Mon GL Line Item/btn Advanced Search modal/button close Advanced Search'), 
     FailureHandling.STOP_ON_FAILURE)
 
-WebUI.verifyElementNotVisible(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/btn Advanced Search modal/button Reset Filter'), 
+WebUI.verifyElementNotVisible(findTestObject('Sider/Sider Inc Payment Menu/Fin - MR - Mon GL Line Item/btn Advanced Search modal/button Reset Filter'), 
     FailureHandling.STOP_ON_FAILURE)
 
-WebUI.verifyElementNotVisible(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/btn Advanced Search modal/button Terapkan Filter disabled'), 
+WebUI.verifyElementNotVisible(findTestObject('Sider/Sider Inc Payment Menu/Fin - MR - Mon GL Line Item/btn Advanced Search modal/button Terapkan Filter disabled'), 
     FailureHandling.STOP_ON_FAILURE)
 

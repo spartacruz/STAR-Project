@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>Incoming - Pengeluaran Pembayaran</name>
+   <name>Finance - Pengeluaran (Outgoing Payment) menu</name>
    <tag></tag>
    <elementGuidId>6201e8bd-9475-4761-87bb-46823dad3488</elementGuidId>
    <selectorCollection>

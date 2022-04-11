@@ -20,14 +20,14 @@ import org.openqa.selenium.Keys as Keys
 WebUI.callTestCase(findTestCase('Scenario/SINC-11865 - As a Cashier, use the Advanced Search filter/mod/_As a Cashier, add debit credit transaction'), 
     [:], FailureHandling.STOP_ON_FAILURE)
 
-WebUI.click(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/btn Show Result/input search box'))
+WebUI.click(findTestObject('Sider/Sider Inc Payment Menu/Fin - MR - Mon GL Line Item/btn Show Result/input search box'))
 
-WebUI.setText(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/btn Show Result/input search box'), 
+WebUI.setText(findTestObject('Sider/Sider Inc Payment Menu/Fin - MR - Mon GL Line Item/btn Show Result/input search box'), 
     'Other Income')
 
 WebUI.delay(GlobalVariable.delayStep)
 
-String searchBoxInput = WebUI.getAttribute(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/btn Show Result/input search box'), 
+String searchBoxInput = WebUI.getAttribute(findTestObject('Sider/Sider Inc Payment Menu/Fin - MR - Mon GL Line Item/btn Show Result/input search box'), 
     'value')
 
 println(searchBoxInput)

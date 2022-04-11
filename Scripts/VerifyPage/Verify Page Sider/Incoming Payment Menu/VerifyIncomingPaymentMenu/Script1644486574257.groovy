@@ -17,27 +17,27 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
-WebUI.waitForElementPresent(findTestObject('Sider/Sider Inc Payment Menu/Incoming - Penerimaan Pembayaran'), GlobalVariable.waitPresentTimeout, 
+WebUI.waitForElementPresent(findTestObject('Sider/Sider Inc Payment Menu/Finance - Penerimaan (Incoming Payment) menu'), GlobalVariable.waitPresentTimeout, 
     FailureHandling.CONTINUE_ON_FAILURE)
 
-WebUI.verifyElementPresent(findTestObject('Sider/Sider Inc Payment Menu/Incoming - Penerimaan Pembayaran'), GlobalVariable.waitPresentTimeout, 
+WebUI.verifyElementPresent(findTestObject('Sider/Sider Inc Payment Menu/Finance - Penerimaan (Incoming Payment) menu'), GlobalVariable.waitPresentTimeout, 
     FailureHandling.STOP_ON_FAILURE)
 
-WebUI.waitForElementClickable(findTestObject('Sider/Sider Inc Payment Menu/Incoming - Penerimaan Pembayaran'), GlobalVariable.waitPresentTimeout, 
+WebUI.waitForElementClickable(findTestObject('Sider/Sider Inc Payment Menu/Finance - Penerimaan (Incoming Payment) menu'), GlobalVariable.waitPresentTimeout, 
     FailureHandling.STOP_ON_FAILURE)
 
-WebUI.waitForElementPresent(findTestObject('Sider/Sider Inc Payment Menu/Incoming - Pengeluaran Pembayaran'), GlobalVariable.waitPresentTimeout, 
+WebUI.waitForElementPresent(findTestObject('Sider/Sider Inc Payment Menu/Finance - Pengeluaran (Outgoing Payment) menu'), GlobalVariable.waitPresentTimeout, 
     FailureHandling.CONTINUE_ON_FAILURE)
 
-WebUI.waitForElementPresent(findTestObject('Sider/Sider Inc Payment Menu/Incoming - Pembebanan'), GlobalVariable.waitPresentTimeout, 
+WebUI.waitForElementPresent(findTestObject('Sider/Sider Inc Payment Menu/Finance - Pembebanan'), GlobalVariable.waitPresentTimeout, 
     FailureHandling.CONTINUE_ON_FAILURE)
 
-WebUI.waitForElementPresent(findTestObject('Sider/Sider Inc Payment Menu/Incoming - Penagihan'), GlobalVariable.waitPresentTimeout, 
+WebUI.waitForElementPresent(findTestObject('Sider/Sider Inc Payment Menu/Finance - Penagihan'), GlobalVariable.waitPresentTimeout, 
     FailureHandling.CONTINUE_ON_FAILURE)
 
-WebUI.waitForElementPresent(findTestObject('Sider/Sider Inc Payment Menu/Incoming - Cash Opname'), GlobalVariable.waitPresentTimeout, 
+WebUI.waitForElementPresent(findTestObject('Sider/Sider Inc Payment Menu/Finance - Cash Opname'), GlobalVariable.waitPresentTimeout, 
     FailureHandling.CONTINUE_ON_FAILURE)
 
-WebUI.waitForElementPresent(findTestObject('Sider/Sider Inc Payment Menu/Inc - Mon Report (MR)'), GlobalVariable.waitPresentTimeout, 
+WebUI.waitForElementPresent(findTestObject('Sider/Sider Inc Payment Menu/Fin - Mon Report (MR)'), GlobalVariable.waitPresentTimeout, 
     FailureHandling.CONTINUE_ON_FAILURE)
 

@@ -20,13 +20,13 @@ import org.openqa.selenium.Keys as Keys
 WebUI.callTestCase(findTestCase('Scenario/SINC-11862 - As a Cashier Input n Search GL Account/TCMSTAR-14121 - Input 4 Digit (exist) and Select The Sugesstion'), 
     [:], FailureHandling.STOP_ON_FAILURE)
 
-WebUI.click(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/input GL Account'))
+WebUI.click(findTestObject('Sider/Sider Inc Payment Menu/Fin - MR - Mon GL Line Item/input GL Account'))
 
-WebUI.setText(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/input GL Account'), GlobalVariable.InputFourDigit)
+WebUI.setText(findTestObject('Sider/Sider Inc Payment Menu/Fin - MR - Mon GL Line Item/input GL Account'), GlobalVariable.InputFourDigit)
 
 WebUI.callTestCase(findTestCase('Scenario/SINC-11862 - As a Cashier Input n Search GL Account/mod/verifyGLSugesstion'), 
     [('nKeyword') : GlobalVariable.InputFourDigit], FailureHandling.STOP_ON_FAILURE)
 
-WebUI.verifyElementNotPresent(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/option select Account 1080101000 - AR Trade NewUnit-AffCo'), 
+WebUI.verifyElementNotPresent(findTestObject('Sider/Sider Inc Payment Menu/Fin - MR - Mon GL Line Item/option select Account 1080101000 - AR Trade NewUnit-AffCo'), 
     GlobalVariable.waitPresentTimeout)
 

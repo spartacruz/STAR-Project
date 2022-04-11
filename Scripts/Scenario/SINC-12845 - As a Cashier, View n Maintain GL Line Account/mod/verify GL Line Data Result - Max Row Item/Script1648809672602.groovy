@@ -26,12 +26,12 @@ import org.openqa.selenium.By as By
 import org.openqa.selenium.WebElement as WebElement
 import com.kms.katalon.core.testobject.ConditionType as ConditionType
 
-WebUI.waitForElementNotPresent(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/btn Show Result/span dot spinning_fetching data'), GlobalVariable.waitPresentTimeout, FailureHandling.STOP_ON_FAILURE)
-WebUI.verifyElementNotPresent(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/btn Show Result/span dot spinning_fetching data'), 
+WebUI.waitForElementNotPresent(findTestObject('Sider/Sider Inc Payment Menu/Fin - MR - Mon GL Line Item/btn Show Result/span dot spinning_fetching data'), GlobalVariable.waitPresentTimeout, FailureHandling.STOP_ON_FAILURE)
+WebUI.verifyElementNotPresent(findTestObject('Sider/Sider Inc Payment Menu/Fin - MR - Mon GL Line Item/btn Show Result/span dot spinning_fetching data'), 
     GlobalVariable.waitPresentTimeout)
 
-WebUI.waitForElementNotPresent(findTestObject('Object Repository/Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/btn Show Result/div no data'), GlobalVariable.waitPresentTimeout, FailureHandling.STOP_ON_FAILURE)
-WebUI.verifyElementNotPresent(findTestObject('Object Repository/Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/btn Show Result/div no data'),
+WebUI.waitForElementNotPresent(findTestObject('Sider/Sider Inc Payment Menu/Fin - MR - Mon GL Line Item/btn Show Result/div no data'), GlobalVariable.waitPresentTimeout, FailureHandling.STOP_ON_FAILURE)
+WebUI.verifyElementNotPresent(findTestObject('Sider/Sider Inc Payment Menu/Fin - MR - Mon GL Line Item/btn Show Result/div no data'),
 	GlobalVariable.waitPresentTimeout)
 
 String maxRowItem = "$nmaxRowItem" ?: '5'
@@ -105,7 +105,7 @@ public static void maxRowItemValidation(String paramMaxRowItem, List<WebElement>
 	Boolean checkNextPage = false
 	
 	try {
-		checkPreviousPage = WebUI.verifyElementVisible(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/btn Show Result/btn previous page enabled'))
+		checkPreviousPage = WebUI.verifyElementVisible(findTestObject('Sider/Sider Inc Payment Menu/Fin - MR - Mon GL Line Item/btn Show Result/btn previous page enabled'))
 	} catch (Exception e) {
 		checkPreviousPage = false
 	}
@@ -115,10 +115,10 @@ public static void maxRowItemValidation(String paramMaxRowItem, List<WebElement>
 
 //		String el = 'return document.querySelector("//li[contains(@class, \'ant-pagination-next\')]/button[@class=\'ant-pagination-item-link\']")[0].click();'
 //		WebUI.executeJavaScript(el, null, FailureHandling.OPTIONAL)
-		WebUI.click(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/btn Show Result/btn previous page enabled'))
+		WebUI.click(findTestObject('Sider/Sider Inc Payment Menu/Fin - MR - Mon GL Line Item/btn Show Result/btn previous page enabled'))
 		
 		try {
-			checkPreviousPage = WebUI.verifyElementVisible(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/btn Show Result/btn previous page enabled'))
+			checkPreviousPage = WebUI.verifyElementVisible(findTestObject('Sider/Sider Inc Payment Menu/Fin - MR - Mon GL Line Item/btn Show Result/btn previous page enabled'))
 		} catch (Exception e) {
 			checkPreviousPage = false
 		}
@@ -128,17 +128,17 @@ public static void maxRowItemValidation(String paramMaxRowItem, List<WebElement>
 	
 	
 	try {
-		checkNextPage = WebUI.verifyElementVisible(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/btn Show Result/btn next page enabled'))
+		checkNextPage = WebUI.verifyElementVisible(findTestObject('Sider/Sider Inc Payment Menu/Fin - MR - Mon GL Line Item/btn Show Result/btn next page enabled'))
 	} catch (Exception e) {
 		checkNextPage = false
 	}
 	
 	//if button next enable
 	while (checkNextPage.equals(true)) {		
-		WebUI.click(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/btn Show Result/btn next page enabled'))
+		WebUI.click(findTestObject('Sider/Sider Inc Payment Menu/Fin - MR - Mon GL Line Item/btn Show Result/btn next page enabled'))
 		
 		try {
-			checkNextPage = WebUI.verifyElementVisible(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/btn Show Result/btn next page enabled'))
+			checkNextPage = WebUI.verifyElementVisible(findTestObject('Sider/Sider Inc Payment Menu/Fin - MR - Mon GL Line Item/btn Show Result/btn next page enabled'))
 		} catch (Exception e) {
 			checkNextPage = false
 		}

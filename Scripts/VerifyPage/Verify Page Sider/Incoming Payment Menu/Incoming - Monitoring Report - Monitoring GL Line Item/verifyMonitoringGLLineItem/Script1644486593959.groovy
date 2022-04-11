@@ -17,102 +17,102 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
-WebUI.waitForElementPresent(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/text Header Monitoring GL Line Item'), 
+WebUI.waitForElementPresent(findTestObject('Sider/Sider Inc Payment Menu/Fin - MR - Mon GL Line Item/text Header Monitoring GL Line Item'), 
     GlobalVariable.waitPresentTimeout, FailureHandling.STOP_ON_FAILURE)
 
-WebUI.verifyElementPresent(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/text Header Monitoring GL Line Item'), 
+WebUI.verifyElementPresent(findTestObject('Sider/Sider Inc Payment Menu/Fin - MR - Mon GL Line Item/text Header Monitoring GL Line Item'), 
     GlobalVariable.waitPresentTimeout, FailureHandling.STOP_ON_FAILURE)
 
-WebUI.waitForElementPresent(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/text GL Account Selection Section'), 
+WebUI.waitForElementPresent(findTestObject('Sider/Sider Inc Payment Menu/Fin - MR - Mon GL Line Item/text GL Account Selection Section'), 
     GlobalVariable.waitPresentTimeout, FailureHandling.STOP_ON_FAILURE)
 
-WebUI.verifyElementPresent(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/text GL Account Selection Section'), 
+WebUI.verifyElementPresent(findTestObject('Sider/Sider Inc Payment Menu/Fin - MR - Mon GL Line Item/text GL Account Selection Section'), 
     GlobalVariable.waitPresentTimeout, FailureHandling.STOP_ON_FAILURE)
 
-WebUI.waitForElementPresent(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/text GL Account'), 
+WebUI.waitForElementPresent(findTestObject('Sider/Sider Inc Payment Menu/Fin - MR - Mon GL Line Item/text GL Account'), 
     GlobalVariable.waitPresentTimeout, FailureHandling.STOP_ON_FAILURE)
 
-WebUI.verifyElementPresent(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/text GL Account'), GlobalVariable.waitPresentTimeout, 
+WebUI.verifyElementPresent(findTestObject('Sider/Sider Inc Payment Menu/Fin - MR - Mon GL Line Item/text GL Account'), GlobalVariable.waitPresentTimeout, 
     FailureHandling.STOP_ON_FAILURE)
 
-WebUI.waitForElementPresent(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/input GL Account'), 
+WebUI.waitForElementPresent(findTestObject('Sider/Sider Inc Payment Menu/Fin - MR - Mon GL Line Item/input GL Account'), 
     GlobalVariable.waitPresentTimeout, FailureHandling.STOP_ON_FAILURE)
 
-WebUI.verifyElementPresent(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/input GL Account'), 
+WebUI.verifyElementPresent(findTestObject('Sider/Sider Inc Payment Menu/Fin - MR - Mon GL Line Item/input GL Account'), 
     GlobalVariable.waitPresentTimeout, FailureHandling.STOP_ON_FAILURE)
 
-WebUI.waitForElementPresent(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/text cari n pilih lebih dari satu GL Account'), 
+WebUI.waitForElementPresent(findTestObject('Sider/Sider Inc Payment Menu/Fin - MR - Mon GL Line Item/text cari n pilih lebih dari satu GL Account'), 
     GlobalVariable.waitPresentTimeout, FailureHandling.STOP_ON_FAILURE)
 
-WebUI.verifyElementPresent(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/text cari n pilih lebih dari satu GL Account'), 
+WebUI.verifyElementPresent(findTestObject('Sider/Sider Inc Payment Menu/Fin - MR - Mon GL Line Item/text cari n pilih lebih dari satu GL Account'), 
     GlobalVariable.waitPresentTimeout, FailureHandling.STOP_ON_FAILURE)
 
-WebUI.waitForElementPresent(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/button Advanced Search'), 
+WebUI.waitForElementPresent(findTestObject('Sider/Sider Inc Payment Menu/Fin - MR - Mon GL Line Item/button Advanced Search'), 
     GlobalVariable.waitPresentTimeout, FailureHandling.STOP_ON_FAILURE)
 
-WebUI.verifyElementPresent(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/button Advanced Search'), 
+WebUI.verifyElementPresent(findTestObject('Sider/Sider Inc Payment Menu/Fin - MR - Mon GL Line Item/button Advanced Search'), 
     GlobalVariable.waitPresentTimeout, FailureHandling.STOP_ON_FAILURE)
 
-WebUI.waitForElementPresent(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/text LA Selection - Document Status'), 
+WebUI.waitForElementPresent(findTestObject('Sider/Sider Inc Payment Menu/Fin - MR - Mon GL Line Item/text LA Selection - Document Status'), 
     GlobalVariable.waitPresentTimeout, FailureHandling.STOP_ON_FAILURE)
 
-WebUI.verifyElementPresent(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/text LA Selection - Document Status'), 
-    GlobalVariable.waitPresentTimeout, FailureHandling.STOP_ON_FAILURE)
-
-'Validasi awal - By default hanya Radio Button \'All\' yang tertick'
-WebUI.waitForElementPresent(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/radioButton Open Item Un-ticked'), 
+WebUI.verifyElementPresent(findTestObject('Sider/Sider Inc Payment Menu/Fin - MR - Mon GL Line Item/text LA Selection - Document Status'), 
     GlobalVariable.waitPresentTimeout, FailureHandling.STOP_ON_FAILURE)
 
 'Validasi awal - By default hanya Radio Button \'All\' yang tertick'
-WebUI.verifyElementPresent(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/radioButton Open Item Un-ticked'), 
+WebUI.waitForElementPresent(findTestObject('Sider/Sider Inc Payment Menu/Fin - MR - Mon GL Line Item/radioButton Open Item Un-ticked'), 
     GlobalVariable.waitPresentTimeout, FailureHandling.STOP_ON_FAILURE)
 
 'Validasi awal - By default hanya Radio Button \'All\' yang tertick'
-WebUI.waitForElementPresent(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/radioButton Clear Item Un-ticked'), 
+WebUI.verifyElementPresent(findTestObject('Sider/Sider Inc Payment Menu/Fin - MR - Mon GL Line Item/radioButton Open Item Un-ticked'), 
     GlobalVariable.waitPresentTimeout, FailureHandling.STOP_ON_FAILURE)
 
 'Validasi awal - By default hanya Radio Button \'All\' yang tertick'
-WebUI.verifyElementPresent(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/radioButton Clear Item Un-ticked'), 
+WebUI.waitForElementPresent(findTestObject('Sider/Sider Inc Payment Menu/Fin - MR - Mon GL Line Item/radioButton Clear Item Un-ticked'), 
     GlobalVariable.waitPresentTimeout, FailureHandling.STOP_ON_FAILURE)
 
 'Validasi awal - By default hanya Radio Button \'All\' yang tertick'
-WebUI.waitForElementPresent(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/radioButton All item ticked'), 
+WebUI.verifyElementPresent(findTestObject('Sider/Sider Inc Payment Menu/Fin - MR - Mon GL Line Item/radioButton Clear Item Un-ticked'), 
     GlobalVariable.waitPresentTimeout, FailureHandling.STOP_ON_FAILURE)
 
 'Validasi awal - By default hanya Radio Button \'All\' yang tertick'
-WebUI.verifyElementPresent(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/radioButton All item ticked'), 
+WebUI.waitForElementPresent(findTestObject('Sider/Sider Inc Payment Menu/Fin - MR - Mon GL Line Item/radioButton All item ticked'), 
     GlobalVariable.waitPresentTimeout, FailureHandling.STOP_ON_FAILURE)
 
-WebUI.waitForElementPresent(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/text LA Selection - Select Date Range'), 
+'Validasi awal - By default hanya Radio Button \'All\' yang tertick'
+WebUI.verifyElementPresent(findTestObject('Sider/Sider Inc Payment Menu/Fin - MR - Mon GL Line Item/radioButton All item ticked'), 
     GlobalVariable.waitPresentTimeout, FailureHandling.STOP_ON_FAILURE)
 
-WebUI.verifyElementPresent(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/text LA Selection - Select Date Range'), 
+WebUI.waitForElementPresent(findTestObject('Sider/Sider Inc Payment Menu/Fin - MR - Mon GL Line Item/text LA Selection - Select Date Range'), 
     GlobalVariable.waitPresentTimeout, FailureHandling.STOP_ON_FAILURE)
 
-WebUI.waitForElementPresent(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/text LA Selection - Document Type'), 
+WebUI.verifyElementPresent(findTestObject('Sider/Sider Inc Payment Menu/Fin - MR - Mon GL Line Item/text LA Selection - Select Date Range'), 
     GlobalVariable.waitPresentTimeout, FailureHandling.STOP_ON_FAILURE)
 
-WebUI.verifyElementPresent(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/text LA Selection - Document Type'), 
+WebUI.waitForElementPresent(findTestObject('Sider/Sider Inc Payment Menu/Fin - MR - Mon GL Line Item/text LA Selection - Document Type'), 
     GlobalVariable.waitPresentTimeout, FailureHandling.STOP_ON_FAILURE)
 
-WebUI.waitForElementPresent(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/text LA Selection - Max Row Item'), 
+WebUI.verifyElementPresent(findTestObject('Sider/Sider Inc Payment Menu/Fin - MR - Mon GL Line Item/text LA Selection - Document Type'), 
     GlobalVariable.waitPresentTimeout, FailureHandling.STOP_ON_FAILURE)
 
-WebUI.verifyElementPresent(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/text LA Selection - Max Row Item'), 
+WebUI.waitForElementPresent(findTestObject('Sider/Sider Inc Payment Menu/Fin - MR - Mon GL Line Item/text LA Selection - Max Row Item'), 
     GlobalVariable.waitPresentTimeout, FailureHandling.STOP_ON_FAILURE)
 
-WebUI.waitForElementPresent(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/input Max Row Item'), 
+WebUI.verifyElementPresent(findTestObject('Sider/Sider Inc Payment Menu/Fin - MR - Mon GL Line Item/text LA Selection - Max Row Item'), 
     GlobalVariable.waitPresentTimeout, FailureHandling.STOP_ON_FAILURE)
 
-WebUI.verifyElementPresent(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/input Max Row Item'), 
+WebUI.waitForElementPresent(findTestObject('Sider/Sider Inc Payment Menu/Fin - MR - Mon GL Line Item/input Max Row Item'), 
     GlobalVariable.waitPresentTimeout, FailureHandling.STOP_ON_FAILURE)
 
-WebUI.waitForElementPresent(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/button Show Result Disable'), 
+WebUI.verifyElementPresent(findTestObject('Sider/Sider Inc Payment Menu/Fin - MR - Mon GL Line Item/input Max Row Item'), 
     GlobalVariable.waitPresentTimeout, FailureHandling.STOP_ON_FAILURE)
 
-WebUI.verifyElementPresent(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/button Show Result Disable'), 
+WebUI.waitForElementPresent(findTestObject('Sider/Sider Inc Payment Menu/Fin - MR - Mon GL Line Item/button Show Result Disable'), 
     GlobalVariable.waitPresentTimeout, FailureHandling.STOP_ON_FAILURE)
 
-WebUI.waitForElementClickable(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/button Advanced Search'), 
+WebUI.verifyElementPresent(findTestObject('Sider/Sider Inc Payment Menu/Fin - MR - Mon GL Line Item/button Show Result Disable'), 
+    GlobalVariable.waitPresentTimeout, FailureHandling.STOP_ON_FAILURE)
+
+WebUI.waitForElementClickable(findTestObject('Sider/Sider Inc Payment Menu/Fin - MR - Mon GL Line Item/button Advanced Search'), 
     GlobalVariable.waitPresentTimeout, FailureHandling.STOP_ON_FAILURE)
 

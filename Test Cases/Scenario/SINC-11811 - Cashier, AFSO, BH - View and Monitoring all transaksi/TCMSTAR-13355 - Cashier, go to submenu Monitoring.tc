@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>(+)As a Cashier, I want to go to submenu Monitoring</description>
+   <name>TCMSTAR-13355 - Cashier, go to submenu Monitoring</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>be3b4b06-69a5-4127-a423-472f2316cde9</testCaseGuid>
+</TestCaseEntity>

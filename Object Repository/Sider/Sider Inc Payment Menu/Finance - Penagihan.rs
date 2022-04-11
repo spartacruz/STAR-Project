@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>Incoming - Pembebanan</name>
+   <name>Finance - Penagihan</name>
    <tag></tag>
-   <elementGuidId>cf44bc95-5e07-4c93-9067-5585804cdd70</elementGuidId>
+   <elementGuidId>a2e0cd01-76d6-442f-b819-deb68f8bcd06</elementGuidId>
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//div[@href = '/incomingpayment/pembebanan' and (text() = 'Pembebanan' or . = 'Pembebanan')]</value>
+         <value>//div[@href = '/incomingpayment#' and (text() = 'Penagihan' or . = 'Penagihan')]</value>
       </entry>
       <entry>
          <key>CSS</key>
@@ -41,7 +41,7 @@
       <matchCondition>equals</matchCondition>
       <name>text</name>
       <type>Main</type>
-      <value>Pembebanan</value>
+      <value>Penagihan</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
@@ -55,41 +55,41 @@
       <matchCondition>equals</matchCondition>
       <name>xpath:idRelative</name>
       <type>Main</type>
-      <value>//div[@id='root']/section/section/div/section/section/main/div/div/div/div/div[3]/div</value>
+      <value>//div[@id='root']/section/section/div/section/section/main/div/div/div/div/div[4]/div</value>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:neighbor</name>
       <type>Main</type>
-      <value>(.//*[normalize-space(text()) and normalize-space(.)='Pengeluaran Pembayaran'])[1]/following::div[2]</value>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Pembebanan'])[1]/following::div[2]</value>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:neighbor</name>
       <type>Main</type>
-      <value>(.//*[normalize-space(text()) and normalize-space(.)='Penerimaan Pembayaran'])[1]/following::div[5]</value>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Pengeluaran Pembayaran'])[1]/following::div[5]</value>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:neighbor</name>
       <type>Main</type>
-      <value>(.//*[normalize-space(text()) and normalize-space(.)='Penagihan'])[1]/preceding::div[3]</value>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Cash Opname'])[1]/preceding::div[3]</value>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:position</name>
       <type>Main</type>
-      <value>//div/div[3]/div</value>
+      <value>//div/div[4]/div</value>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:customAttributes</name>
       <type>Main</type>
-      <value>//div[@href = '/incomingpayment#' and (text() = 'Pembebanan' or . = 'Pembebanan')]</value>
+      <value>//div[@href = '/incomingpayment#' and (text() = 'Penagihan' or . = 'Penagihan')]</value>
    </webElementXpaths>
 </WebElementEntity>

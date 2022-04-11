@@ -19,7 +19,7 @@ import org.openqa.selenium.Keys as Keys
 
 WebUI.callTestCase(findTestCase('Open Sider Incoming Payment'), [:], FailureHandling.STOP_ON_FAILURE)
 
-WebUI.click(findTestObject('Sider/Sider Inc Payment Menu/Inc - Mon Report (MR)'))
+WebUI.click(findTestObject('Sider/Sider Inc Payment Menu/Fin - Mon Report (MR)'))
 
 WebUI.callTestCase(findTestCase('VerifyPage/Verify Page Sider/Incoming Payment Menu/Incoming - Monitoring Report - Monitoring GL Line Item/verifyMonitoringGLLineItem'), 
     [:], FailureHandling.STOP_ON_FAILURE)

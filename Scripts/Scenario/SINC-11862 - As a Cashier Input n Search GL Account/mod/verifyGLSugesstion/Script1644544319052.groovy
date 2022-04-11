@@ -28,7 +28,7 @@ if (keywordCount < 3) {
 	//Jika input kurang dari tiga, maka sistem tidak menampilkan sugestion
 	
 	try {
-		WebUI.verifyElementNotPresent(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/option GL Account List'),
+		WebUI.verifyElementNotPresent(findTestObject('Sider/Sider Inc Payment Menu/Fin - MR - Mon GL Line Item/option GL Account List'),
 			GlobalVariable.waitPresentTimeout, FailureHandling.STOP_ON_FAILURE)
 	} catch (Exception e) {
 		KeywordUtil.logInfo("element GL Account dropdown tampil - seharusnya tidak tampil")
@@ -38,7 +38,7 @@ if (keywordCount < 3) {
 } else {
 	//Jika input lebih atas sama dengan tiga, maka sistem menampilkan sugestion
 	try {
-		WebUI.verifyElementPresent(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/option GL Account List'),
+		WebUI.verifyElementPresent(findTestObject('Sider/Sider Inc Payment Menu/Fin - MR - Mon GL Line Item/option GL Account List'),
 			GlobalVariable.waitPresentTimeout, FailureHandling.STOP_ON_FAILURE)
 	} catch (Exception e) {
 		KeywordUtil.logInfo("element GL Account dropdown tidak tampil/kosong - seharusnya tampil")
