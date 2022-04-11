@@ -23,22 +23,72 @@ import org.openqa.selenium.By as By
 import org.openqa.selenium.WebElement as WebElement
 import com.kms.katalon.core.testobject.ConditionType as ConditionType
 
-WebUI.verifyElementNotPresent(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/btn Show Result/span dot spinning_fetching data'),
+WebUI.waitForElementNotPresent(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/btn Show Result/span dot spinning_fetching data'), GlobalVariable.waitPresentTimeout, FailureHandling.STOP_ON_FAILURE)
+WebUI.verifyElementNotPresent(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/btn Show Result/span dot spinning_fetching data'), 
+    GlobalVariable.waitPresentTimeout)
+
+WebUI.waitForElementNotPresent(findTestObject('Object Repository/Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/btn Show Result/div no data'), GlobalVariable.waitPresentTimeout, FailureHandling.STOP_ON_FAILURE)
+WebUI.verifyElementNotPresent(findTestObject('Object Repository/Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/btn Show Result/div no data'),
 	GlobalVariable.waitPresentTimeout)
 
 String searchQuery = "$nsearchQuery" ?: ''
 String searchFor = "$nsearchFor" ?: ''
 
-//count table rows, can be reuse
-//count table rows, can be reuse
-//count table rows, can be reuse
-TestObject selectorContentGLTable = new TestObject()
-selectorContentGLTable.addProperty('xpath', ConditionType.EQUALS, '//table//tbody/tr')
+Integer countPage = 1
+//row result counter
+List<WebElement> selectorContentGLTableList = tableListGenerator('//table//tbody/tr')
 
-// find the row header of result table elements
-List<WebElement> selectorContentGLTableList = WebUI.findWebElements(selectorContentGLTable, 30)
+String xpath_nextPage = '//li[@class=\'ant-pagination-next\']/button[@class=\'ant-pagination-item-link\']'
+String xpath_previousPage ='//li[@class=\'ant-pagination-prev\']/button[@class=\'ant-pagination-item-link\']'
 
-println(selectorContentGLTableList.size())
+List<WebElement> buttonNextPageEnabled = tableListGenerator(xpath_nextPage)
+List<WebElement> buttonPreviousPageEnabled = tableListGenerator(xpath_previousPage)
+
+if (buttonPreviousPageEnabled.size() > 0) {
+	
+	//while previous page can be clicked
+	while (buttonPreviousPageEnabled.size() > 0) {
+		WebUI.callTestCase(findTestCase('Scenario/SINC-12848 - As a Cashier, see Data Document Details (Doc. Overview)/mod/click with javascript'),
+			[('ntestObject') : 'Object Repository/Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/btn Show Result/btn previous page enabled'], FailureHandling.STOP_ON_FAILURE)
+		
+		buttonPreviousPageEnabled = tableListGenerator(xpath_previousPage)
+	}
+}
+
+if (selectorContentGLTableList.size() > 2) {
+	if (searchQuery.equals('')) {
+		//no validation
+		assert true
+	} else {
+		
+		searchQueryValidation(searchQuery, searchFor, selectorContentGLTableList)
+		
+		//only checking until page 10 for now
+		while (buttonNextPageEnabled.size() > 0 && countPage < 10) {
+			WebUI.callTestCase(findTestCase('Scenario/SINC-12848 - As a Cashier, see Data Document Details (Doc. Overview)/mod/click with javascript'),
+				[('ntestObject') : 'Object Repository/Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/btn Show Result/btn next page enabled'], FailureHandling.STOP_ON_FAILURE)
+			
+			searchQueryValidation(searchQuery, searchFor, selectorContentGLTableList)
+			
+			countPage = countPage + 1
+			KeywordUtil.logInfo("Iterating page: $countPage")
+			
+			buttonNextPageEnabled = tableListGenerator('//li[@class=\'ant-pagination-next\']/button[@class=\'ant-pagination-item-link\']')
+		}
+	}
+}
+
+def tableListGenerator(String xpathLocation) {
+	//count table rows, can be reuse
+	TestObject selectorContentGLTable = new TestObject()
+	selectorContentGLTable.addProperty('xpath', ConditionType.EQUALS, xpathLocation)
+	
+	// find the row header of result table elements
+	List<WebElement> selectorContentGLTableList = WebUI.findWebElements(selectorContentGLTable, 10)
+	
+	println(selectorContentGLTableList.size())
+	return selectorContentGLTableList
+}
 
 public static boolean searchQueryValidation(String paramSearchQuery, String paramSearchFor, List<WebElement> paramSelectorContentGLTableList) {
 
@@ -92,6 +142,3 @@ public static boolean searchQueryValidation(String paramSearchQuery, String para
 	return true
 }
 
-if (!searchQuery.equals('')) {
-	searchQueryValidation(searchQuery, searchFor, selectorContentGLTableList)
-}
