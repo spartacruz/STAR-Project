@@ -27,5 +27,5 @@ WebUI.scrollToPosition(0, 9999)
 
 WebUI.click(findTestObject('Home - Dashboard/Sider/Sider Incoming Payment'))
 
-WebUI.callTestCase(findTestCase('VerifyPage/Verify Page Sider/Incoming Payment Menu/VerifyIncomingPaymentMenu'), [:], FailureHandling.STOP_ON_FAILURE)
+WebUI.callTestCase(findTestCase('VerifyPage/Verify Page Sider/Finance Payment Menu/VerifyIncomingPaymentMenu'), [:], FailureHandling.STOP_ON_FAILURE)
 
