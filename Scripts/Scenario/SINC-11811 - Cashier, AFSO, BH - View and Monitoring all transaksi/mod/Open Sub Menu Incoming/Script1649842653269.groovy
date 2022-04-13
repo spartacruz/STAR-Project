@@ -19,3 +19,8 @@ import org.openqa.selenium.Keys as Keys
 
 WebUI.callTestCase(findTestCase('Open Sider Finance Menu'), [:], FailureHandling.STOP_ON_FAILURE)
 
+WebUI.click(findTestObject('Sider/Sider Inc Payment Menu/Finance - Penerimaan (Incoming Payment) menu'))
+
+WebUI.callTestCase(findTestCase('VerifyPage/Verify Page Sider/Finance Payment Menu/Finance - Incoming Menu/verify Incoming Section'), 
+    [:], FailureHandling.STOP_ON_FAILURE)
+

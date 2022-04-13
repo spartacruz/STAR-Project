@@ -18,7 +18,7 @@ import com.sun.java.util.jar.pack.Instruction.Switch as Switch
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
-WebUI.callTestCase(findTestCase('Open Sider Incoming Payment'), [:], FailureHandling.STOP_ON_FAILURE)
+WebUI.callTestCase(findTestCase('Open Sider Finance Menu'), [:], FailureHandling.STOP_ON_FAILURE)
 
 WebUI.click(findTestObject('Sider/Sider Inc Payment Menu/Fin - Mon Report (MR)'))
 

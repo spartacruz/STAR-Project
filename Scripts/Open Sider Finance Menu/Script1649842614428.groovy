@@ -17,5 +17,15 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
-WebUI.callTestCase(findTestCase('Open Sider Finance Menu'), [:], FailureHandling.STOP_ON_FAILURE)
+WebUI.callTestCase(findTestCase('Login as/Login As'), [:], FailureHandling.STOP_ON_FAILURE)
+
+WebUI.mouseOver(findTestObject('Home - Dashboard/Sider/Sider home icon'))
+
+WebUI.delay(3)
+
+WebUI.scrollToPosition(0, 9999)
+
+WebUI.click(findTestObject('Home - Dashboard/Sider/Sider Incoming Payment'))
+
+WebUI.callTestCase(findTestCase('VerifyPage/Verify Page Sider/Finance Payment Menu/VerifyFinancePaymentMenu'), [:], FailureHandling.STOP_ON_FAILURE)
 
