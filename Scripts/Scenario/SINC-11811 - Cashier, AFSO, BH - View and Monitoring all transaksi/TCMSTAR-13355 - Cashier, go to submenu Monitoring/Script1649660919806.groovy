@@ -22,6 +22,9 @@ WebUI.callTestCase(findTestCase('Scenario/SINC-11811 - Cashier, AFSO, BH - View 
 
 WebUI.click(findTestObject('Sider/Sider Inc Payment Menu/Finance - Penerimaan (Incoming Payment)/Monitoring Incoming'))
 
-WebUI.callTestCase(findTestCase('VerifyPage/Verify Page Sider/Finance Payment Menu/Finance - Incoming Menu/Fin - Incoming - Monitoring Incoming/verify Monitoring Incoming'), 
+WebUI.callTestCase(findTestCase('VerifyPage/Verify Page Sider/Finance Payment Menu/Finance - Incoming Menu/Fin - Incoming - Monitoring Incoming/verify Monitoring Incoming Page'), 
+    [:], FailureHandling.STOP_ON_FAILURE)
+
+WebUI.callTestCase(findTestCase('Scenario/SINC-11811 - Cashier, AFSO, BH - View and Monitoring all transaksi/mod/Verify Table Head Monitoring Incoming Table'), 
     [:], FailureHandling.STOP_ON_FAILURE)
 
