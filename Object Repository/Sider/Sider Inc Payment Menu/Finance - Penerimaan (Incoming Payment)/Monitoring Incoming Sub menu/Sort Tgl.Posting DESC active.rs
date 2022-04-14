@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>Sort Tgl.Posting DESC active</name>
+   <tag></tag>
+   <elementGuidId>c3a30130-cbff-4bbf-8cb9-1fc9ca5fc2f0</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>XPATH</key>
+         <value>//table//span[text()='Tgl.Posting']/following-sibling::span//span[@aria-label='caret-down' and contains(@class, 'active')]</value>
+      </entry>
+      <entry>
+         <key>CSS</key>
+         <value>div.ant-table-column-sorters.ant-tooltip-open</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>XPATH</selectorMethod>
+   <useRalativeImagePath>true</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>tag</name>
+      <type>Main</type>
+      <value>div</value>
+      <webElementGuid>da3a9f8e-14a3-4492-ba34-b9bb7816c147</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>class</name>
+      <type>Main</type>
+      <value>ant-table-column-sorters ant-tooltip-open</value>
+      <webElementGuid>a15d53a2-4b75-4142-ace8-90be5c927dab</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>text</name>
+      <type>Main</type>
+      <value>Tgl.Posting</value>
+      <webElementGuid>6f41d191-3677-40f0-9066-53c60ce32229</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath</name>
+      <type>Main</type>
+      <value>id(&quot;root&quot;)/section[@class=&quot;ant-layout&quot;]/div[@class=&quot;Layout_layout-content__UoFx4&quot;]/section[@class=&quot;ant-layout Layout_layout-transition__tp-4e Layout_collapsed__Z9C94&quot;]/section[@class=&quot;ant-layout Layout_content__95Ydx&quot;]/main[@class=&quot;ant-layout-content&quot;]/div[@class=&quot;layout-wrapper&quot;]/div[@class=&quot;layout-content-wrapper&quot;]/div[@class=&quot;blueTitle round documentStatus table-style-wrapper mt10 ml20&quot;]/div[1]/div[@class=&quot;ant-table-wrapper ResultMonitoringIncoming_wrapper-table-display-incoming__mxtAG&quot;]/div[@class=&quot;ant-spin-nested-loading&quot;]/div[@class=&quot;ant-spin-container&quot;]/div[@class=&quot;ant-table ant-table-middle&quot;]/div[@class=&quot;ant-table-container&quot;]/div[@class=&quot;ant-table-content&quot;]/table[1]/thead[@class=&quot;ant-table-thead&quot;]/tr[1]/th[@class=&quot;ant-table-cell ant-table-column-has-sorters&quot;]/div[@class=&quot;ant-table-column-sorters ant-tooltip-open&quot;]</value>
+      <webElementGuid>97922f08-9f50-421a-b9fa-160f9010337f</webElementGuid>
+   </webElementProperties>
+   <webElementXpaths>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:idRelative</name>
+      <type>Main</type>
+      <value>//div[@id='root']/section/div/section/section/main/div/div/div[3]/div/div/div/div/div/div/div/table/thead/tr/th[7]/div</value>
+      <webElementGuid>4404cd63-52da-49d3-9e6a-7daa0d15ca45</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='No.Posting'])[1]/following::div[1]</value>
+      <webElementGuid>c538dc24-0422-4abd-8e36-fe4f3a0fda38</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Tgl.Kuitansi'])[1]/following::div[2]</value>
+      <webElementGuid>b4e3b6e1-017c-4e0f-9a6d-3e30b508c007</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Status'])[1]/preceding::div[1]</value>
+      <webElementGuid>b19fb481-ff06-4265-9cf5-ff0ab289da6f</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:position</name>
+      <type>Main</type>
+      <value>//th[7]/div</value>
+      <webElementGuid>755c17cc-ec51-4935-92b8-9f7fc9f828fc</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:customAttributes</name>
+      <type>Main</type>
+      <value>//div[(text() = 'Tgl.Posting' or . = 'Tgl.Posting')]</value>
+      <webElementGuid>58d32f14-d41d-4cde-9d15-38cfa7794ae1</webElementGuid>
+   </webElementXpaths>
+</WebElementEntity>

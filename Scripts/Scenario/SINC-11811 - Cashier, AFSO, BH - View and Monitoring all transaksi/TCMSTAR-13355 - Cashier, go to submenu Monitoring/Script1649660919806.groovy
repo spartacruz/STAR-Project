@@ -22,3 +22,6 @@ WebUI.callTestCase(findTestCase('Scenario/SINC-11811 - Cashier, AFSO, BH - View 
 
 WebUI.click(findTestObject('Sider/Sider Inc Payment Menu/Finance - Penerimaan (Incoming Payment)/Monitoring Incoming'))
 
+WebUI.callTestCase(findTestCase('VerifyPage/Verify Page Sider/Finance Payment Menu/Finance - Incoming Menu/Fin - Incoming - Monitoring Incoming/verify Monitoring Incoming'), 
+    [:], FailureHandling.STOP_ON_FAILURE)
+

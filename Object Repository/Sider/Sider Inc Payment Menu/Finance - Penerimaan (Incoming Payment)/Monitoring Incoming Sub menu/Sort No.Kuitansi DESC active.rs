@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>Sort No.Kuitansi DESC active</name>
+   <tag></tag>
+   <elementGuidId>8a77c7dd-e117-44b3-b381-180444c03508</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>XPATH</key>
+         <value>//table//span[text()='No.Kuitansi']/following-sibling::span//span[@aria-label='caret-down' and contains(@class, 'active')]</value>
+      </entry>
+      <entry>
+         <key>CSS</key>
+         <value>div.ant-table-column-sorters.ant-tooltip-open</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>XPATH</selectorMethod>
+   <useRalativeImagePath>true</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>tag</name>
+      <type>Main</type>
+      <value>div</value>
+      <webElementGuid>858fd988-8e92-4371-803a-4c669b45b67d</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>class</name>
+      <type>Main</type>
+      <value>ant-table-column-sorters ant-tooltip-open</value>
+      <webElementGuid>18c4f198-7922-4d72-b3f8-0be84e42b4ed</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>text</name>
+      <type>Main</type>
+      <value>No.Kuitansi</value>
+      <webElementGuid>debf9f7e-0810-4a40-8956-b6b5fada8347</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath</name>
+      <type>Main</type>
+      <value>id(&quot;root&quot;)/section[@class=&quot;ant-layout&quot;]/div[@class=&quot;Layout_layout-content__UoFx4&quot;]/section[@class=&quot;ant-layout Layout_layout-transition__tp-4e Layout_collapsed__Z9C94&quot;]/section[@class=&quot;ant-layout Layout_content__95Ydx&quot;]/main[@class=&quot;ant-layout-content&quot;]/div[@class=&quot;layout-wrapper&quot;]/div[@class=&quot;layout-content-wrapper&quot;]/div[@class=&quot;blueTitle round documentStatus table-style-wrapper mt10 ml20&quot;]/div[1]/div[@class=&quot;ant-table-wrapper ResultMonitoringIncoming_wrapper-table-display-incoming__mxtAG&quot;]/div[@class=&quot;ant-spin-nested-loading&quot;]/div[@class=&quot;ant-spin-container&quot;]/div[@class=&quot;ant-table ant-table-middle&quot;]/div[@class=&quot;ant-table-container&quot;]/div[@class=&quot;ant-table-content&quot;]/table[1]/thead[@class=&quot;ant-table-thead&quot;]/tr[1]/th[@class=&quot;ant-table-cell ant-table-column-has-sorters&quot;]/div[@class=&quot;ant-table-column-sorters ant-tooltip-open&quot;]</value>
+      <webElementGuid>c64b77b4-8dcc-4259-8a46-9bf7f3fe619e</webElementGuid>
+   </webElementProperties>
+   <webElementXpaths>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:idRelative</name>
+      <type>Main</type>
+      <value>//div[@id='root']/section/div/section/section/main/div/div/div[3]/div/div/div/div/div/div/div/table/thead/tr/th[4]/div</value>
+      <webElementGuid>e40de17b-6f55-493a-8e7e-b00b8cfde566</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Nama Pelanggan'])[1]/following::div[1]</value>
+      <webElementGuid>c6a0dbc6-e352-45d4-902e-7d075339d073</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='No. Pelanggan'])[1]/following::div[2]</value>
+      <webElementGuid>919a2dd8-60ff-4ef3-81be-a1e1ea8f8b5b</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Tgl.Kuitansi'])[1]/preceding::div[1]</value>
+      <webElementGuid>726334b6-eb04-4626-8f61-8b4c7403f359</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:position</name>
+      <type>Main</type>
+      <value>//th[4]/div</value>
+      <webElementGuid>9376f041-3756-4fc3-b076-b522d0470822</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:customAttributes</name>
+      <type>Main</type>
+      <value>//div[(text() = 'No.Kuitansi' or . = 'No.Kuitansi')]</value>
+      <webElementGuid>ed91753e-b53e-44b3-9655-6aab49fa1f71</webElementGuid>
+   </webElementXpaths>
+</WebElementEntity>
