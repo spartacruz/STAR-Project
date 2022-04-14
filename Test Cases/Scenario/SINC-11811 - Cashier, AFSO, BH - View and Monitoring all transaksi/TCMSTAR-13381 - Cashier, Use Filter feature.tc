@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>(+)As a Cashier I want to use Filter feature</description>
+   <name>TCMSTAR-13381 - Cashier, Use Filter feature</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>baec397b-c68a-4c55-882b-5a24de1ee0d5</testCaseGuid>
+</TestCaseEntity>

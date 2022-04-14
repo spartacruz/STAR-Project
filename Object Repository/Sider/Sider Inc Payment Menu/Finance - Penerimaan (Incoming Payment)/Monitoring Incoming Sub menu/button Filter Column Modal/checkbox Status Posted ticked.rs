@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>checkbox Status Posted ticked</name>
+   <tag></tag>
+   <elementGuidId>5d2ea7d5-51aa-4ea6-9ebc-4d6ff67f8c20</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>XPATH</key>
+         <value>//span[contains(@class, 'ant-checkbox-checked')]/input[@type='checkbox' and @value='POSTED']</value>
+      </entry>
+      <entry>
+         <key>CSS</key>
+         <value></value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>XPATH</selectorMethod>
+   <useRalativeImagePath>true</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>tag</name>
+      <type>Main</type>
+      <value>span</value>
+      <webElementGuid>7cebd6ae-a305-433e-bed0-c1baab663a04</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>text</name>
+      <type>Main</type>
+      <value>Posted</value>
+      <webElementGuid>82f07658-a893-4f08-9085-2f84d22c95fd</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath</name>
+      <type>Main</type>
+      <value>id(&quot;root&quot;)/div[1]/div[@class=&quot;ant-modal-root&quot;]/div[@class=&quot;ant-modal-wrap wrapper&quot;]/div[@class=&quot;ant-modal ModalWhite_modal-white__D-a+a BaseModal_base-modal__LLvzx&quot;]/div[@class=&quot;ant-modal-content&quot;]/div[@class=&quot;ant-modal-body&quot;]/div[1]/div[@class=&quot;BaseModal_container__UzhOW&quot;]/div[@class=&quot;AdvancedFilter_content__7Ej67&quot;]/form[@class=&quot;ant-form ant-form-vertical AdvancedFilter_modal-input__a6M2b&quot;]/div[@class=&quot;ant-row ant-form-item&quot;]/div[@class=&quot;ant-col ant-form-item-control&quot;]/div[@class=&quot;ant-form-item-control-input&quot;]/div[@class=&quot;ant-form-item-control-input-content&quot;]/div[@class=&quot;ant-checkbox-group&quot;]/div[@class=&quot;ant-row&quot;]/div[@class=&quot;ant-col ant-col-3&quot;]/label[@class=&quot;ant-checkbox-wrapper&quot;]/span[2]</value>
+      <webElementGuid>7a437700-f043-40cc-a45a-8107e64c24f3</webElementGuid>
+   </webElementProperties>
+   <webElementXpaths>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:idRelative</name>
+      <type>Main</type>
+      <value>//div[@id='root']/div/div/div[2]/div/div[2]/div/div/div[2]/div/form/div[5]/div[2]/div/div/div/div/div[5]/label/span[2]</value>
+      <webElementGuid>ff9f78dc-11b2-41b8-97bd-bab10759ed63</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Open'])[1]/following::span[3]</value>
+      <webElementGuid>c50443d4-5c56-42df-97b3-4f84a396b11b</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Empty'])[1]/following::span[6]</value>
+      <webElementGuid>909ab16e-1d82-44ff-895a-215a310300bc</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Cancelled'])[1]/preceding::span[3]</value>
+      <webElementGuid>4903b674-ec54-407e-b888-4c48178c37d8</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Deleted'])[1]/preceding::span[6]</value>
+      <webElementGuid>bd433031-1d06-43c5-ad8b-606c9781f299</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>//*/text()[normalize-space(.)='Posted']/parent::*</value>
+      <webElementGuid>73f63790-d615-4fa3-a09c-8fcf0cf813a6</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:position</name>
+      <type>Main</type>
+      <value>//div[5]/label/span[2]</value>
+      <webElementGuid>6db05e13-d6fe-4496-8240-5e6a18b903a7</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:customAttributes</name>
+      <type>Main</type>
+      <value>//span[(text() = 'Posted' or . = 'Posted')]</value>
+      <webElementGuid>a3d80da5-240c-4fb2-8074-b4437c0a1646</webElementGuid>
+   </webElementXpaths>
+</WebElementEntity>
