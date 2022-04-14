@@ -23,8 +23,8 @@ WebUI.callTestCase(findTestCase('Scenario/SINC-11862 - As a Cashier Input n Sear
 
 WebUI.delay(5)
 
-WebUI.sendKeys(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/input GL Account'), Keys.chord(Keys.BACK_SPACE))
+WebUI.sendKeys(findTestObject('Sider/Sider Inc Payment Menu/Fin - MR - Mon GL Line Item/input GL Account'), Keys.chord(Keys.BACK_SPACE))
 
-WebUI.verifyElementNotPresent(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/span selected 1080101000 - AR Trade-NewUnit-AffCo'), 
+WebUI.verifyElementNotPresent(findTestObject('Sider/Sider Inc Payment Menu/Fin - MR - Mon GL Line Item/span selected 1080101000 - AR Trade-NewUnit-AffCo'), 
     GlobalVariable.waitPresentTimeout)
 

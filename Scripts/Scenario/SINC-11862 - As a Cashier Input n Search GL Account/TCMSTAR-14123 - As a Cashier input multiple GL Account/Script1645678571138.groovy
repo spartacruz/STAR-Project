@@ -20,23 +20,23 @@ import org.openqa.selenium.Keys as Keys
 WebUI.callTestCase(findTestCase('Scenario/SINC-11862 - As a Cashier Input n Search GL Account/TCMSTAR-14121 - Input 4 Digit (exist) and Select The Sugesstion'), 
     [:], FailureHandling.STOP_ON_FAILURE)
 
-WebUI.click(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/input GL Account'))
+WebUI.click(findTestObject('Sider/Sider Inc Payment Menu/Fin - MR - Mon GL Line Item/input GL Account'))
 
-WebUI.setText(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/input GL Account'), '2120')
+WebUI.setText(findTestObject('Sider/Sider Inc Payment Menu/Fin - MR - Mon GL Line Item/input GL Account'), '2120')
 
-WebUI.waitForElementPresent(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/option select Account 2120101000 - Customer GuaranteeNewUnit-AffCo'), 
+WebUI.waitForElementPresent(findTestObject('Sider/Sider Inc Payment Menu/Fin - MR - Mon GL Line Item/option select Account 2120101000 - Customer GuaranteeNewUnit-AffCo'), 
     GlobalVariable.waitPresentTimeout)
 
-WebUI.verifyElementPresent(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/option select Account 2120101000 - Customer GuaranteeNewUnit-AffCo'), 
+WebUI.verifyElementPresent(findTestObject('Sider/Sider Inc Payment Menu/Fin - MR - Mon GL Line Item/option select Account 2120101000 - Customer GuaranteeNewUnit-AffCo'), 
     0)
 
-WebUI.click(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/option select Account 2120101000 - Customer GuaranteeNewUnit-AffCo'))
+WebUI.click(findTestObject('Sider/Sider Inc Payment Menu/Fin - MR - Mon GL Line Item/option select Account 2120101000 - Customer GuaranteeNewUnit-AffCo'))
 
 WebUI.delay(5)
 
-WebUI.verifyElementPresent(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/span selected 1080101000 - AR Trade-NewUnit-AffCo'), 
+WebUI.verifyElementPresent(findTestObject('Sider/Sider Inc Payment Menu/Fin - MR - Mon GL Line Item/span selected 1080101000 - AR Trade-NewUnit-AffCo'), 
     GlobalVariable.waitPresentTimeout)
 
-WebUI.verifyElementPresent(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/span selected 2120101000 - Customer GuaranteeNewUnit-AffCo'), 
+WebUI.verifyElementPresent(findTestObject('Sider/Sider Inc Payment Menu/Fin - MR - Mon GL Line Item/span selected 2120101000 - Customer GuaranteeNewUnit-AffCo'), 
     GlobalVariable.waitPresentTimeout)
 

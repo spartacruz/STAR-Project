@@ -20,9 +20,9 @@ import org.openqa.selenium.Keys as Keys
 WebUI.callTestCase(findTestCase('Scenario/SINC-11862 - As a Cashier Input n Search GL Account/TCMSTAR-14115 - Input 4 Upper Case n System Give Recomendation'), 
     [:], FailureHandling.STOP_ON_FAILURE)
 
-WebUI.waitForElementPresent(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/option select Account 2120101000 - Customer GuaranteeNewUnit-AffCo'), 
+WebUI.waitForElementPresent(findTestObject('Sider/Sider Inc Payment Menu/Fin - MR - Mon GL Line Item/option select Account 2120101000 - Customer GuaranteeNewUnit-AffCo'), 
     GlobalVariable.waitPresentTimeout, FailureHandling.STOP_ON_FAILURE)
 
-WebUI.click(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/option select Account 2120101000 - Customer GuaranteeNewUnit-AffCo'), 
+WebUI.click(findTestObject('Sider/Sider Inc Payment Menu/Fin - MR - Mon GL Line Item/option select Account 2120101000 - Customer GuaranteeNewUnit-AffCo'), 
     FailureHandling.STOP_ON_FAILURE)
 

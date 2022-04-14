@@ -56,53 +56,53 @@ String selectDateRangeStartDate = "$nselectDateRangeStartDate"
 String selectDateRangeEndDate = "$nselectDateRangeEndDate"
 String GLAccountNumber = "$nGLAccountNumber"
 
-WebUI.verifyElementPresent(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/btn Show Result/btn BackButton'), 
+WebUI.verifyElementPresent(findTestObject('Sider/Sider Inc Payment Menu/Fin - MR - Mon GL Line Item/btn Show Result/btn BackButton'), 
     GlobalVariable.waitPresentTimeout)
 
-WebUI.verifyElementPresent(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/btn Show Result/strong Data GL Line Item title'), 
+WebUI.verifyElementPresent(findTestObject('Sider/Sider Inc Payment Menu/Fin - MR - Mon GL Line Item/btn Show Result/strong Data GL Line Item title'), 
     GlobalVariable.waitPresentTimeout)
 
-WebUI.verifyElementPresent(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/btn Show Result/strong GL Account Selection sub title'), 
+WebUI.verifyElementPresent(findTestObject('Sider/Sider Inc Payment Menu/Fin - MR - Mon GL Line Item/btn Show Result/strong GL Account Selection sub title'), 
     GlobalVariable.waitPresentTimeout)
 
-WebUI.verifyElementPresent(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/btn Show Result/strong GL Account text'), 
+WebUI.verifyElementPresent(findTestObject('Sider/Sider Inc Payment Menu/Fin - MR - Mon GL Line Item/btn Show Result/strong GL Account text'), 
     GlobalVariable.waitPresentTimeout)
 
-WebUI.verifyElementPresent(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/btn Show Result/strong Line Account Selection Title'), 
+WebUI.verifyElementPresent(findTestObject('Sider/Sider Inc Payment Menu/Fin - MR - Mon GL Line Item/btn Show Result/strong Line Account Selection Title'), 
     GlobalVariable.waitPresentTimeout)
 
-WebUI.verifyElementPresent(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/btn Show Result/strong Document Status text'), 
+WebUI.verifyElementPresent(findTestObject('Sider/Sider Inc Payment Menu/Fin - MR - Mon GL Line Item/btn Show Result/strong Document Status text'), 
     GlobalVariable.waitPresentTimeout)
 
-WebUI.verifyElementPresent(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/btn Show Result/strong Select Date Range text'), 
+WebUI.verifyElementPresent(findTestObject('Sider/Sider Inc Payment Menu/Fin - MR - Mon GL Line Item/btn Show Result/strong Select Date Range text'), 
     GlobalVariable.waitPresentTimeout)
 
-WebUI.verifyElementPresent(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/btn Show Result/strong Document Type text'), 
+WebUI.verifyElementPresent(findTestObject('Sider/Sider Inc Payment Menu/Fin - MR - Mon GL Line Item/btn Show Result/strong Document Type text'), 
     GlobalVariable.waitPresentTimeout)
 
-WebUI.verifyElementPresent(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/btn Show Result/strong Max Row Item text'), 
+WebUI.verifyElementPresent(findTestObject('Sider/Sider Inc Payment Menu/Fin - MR - Mon GL Line Item/btn Show Result/strong Max Row Item text'), 
     GlobalVariable.waitPresentTimeout)
 
-WebUI.verifyElementPresent(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/btn Show Result/input search box'), 
+WebUI.verifyElementPresent(findTestObject('Sider/Sider Inc Payment Menu/Fin - MR - Mon GL Line Item/btn Show Result/input search box'), 
     GlobalVariable.waitPresentTimeout)
 
-WebUI.verifyElementPresent(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/btn Show Result/div table content'), 
+WebUI.verifyElementPresent(findTestObject('Sider/Sider Inc Payment Menu/Fin - MR - Mon GL Line Item/btn Show Result/div table content'), 
     GlobalVariable.waitPresentTimeout)
 
 //Document Status Validation
 switch (docStatus) {
     case 'all':
-        WebUI.verifyElementPresent(findTestObject('Object Repository/Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/radioButton All item ticked'), 
+        WebUI.verifyElementPresent(findTestObject('Sider/Sider Inc Payment Menu/Fin - MR - Mon GL Line Item/radioButton All item ticked'), 
             GlobalVariable.waitPresentTimeout)
         break
 		
     case 'openItem':
-        WebUI.verifyElementPresent(findTestObject('Object Repository/Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/radioButton Open Item ticked'), 
+        WebUI.verifyElementPresent(findTestObject('Sider/Sider Inc Payment Menu/Fin - MR - Mon GL Line Item/radioButton Open Item ticked'), 
             GlobalVariable.waitPresentTimeout)
         break
 		
     case 'clearItem':
-        WebUI.verifyElementPresent(findTestObject('Object Repository/Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/radioButton Clear Item ticked'), 
+        WebUI.verifyElementPresent(findTestObject('Sider/Sider Inc Payment Menu/Fin - MR - Mon GL Line Item/radioButton Clear Item ticked'), 
             GlobalVariable.waitPresentTimeout)
         break
 }
@@ -110,13 +110,13 @@ switch (docStatus) {
 //Document Type Validation
 switch (docType) {
     case 'postedItem':
-        WebUI.verifyElementPresent(findTestObject('Object Repository/Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/radioButton Posted item ticked'), 
+        WebUI.verifyElementPresent(findTestObject('Sider/Sider Inc Payment Menu/Fin - MR - Mon GL Line Item/radioButton Posted item ticked'), 
             GlobalVariable.waitPresentTimeout)
         break
 }
 
 //Max Row Item Validation
-String maxRowItemValue = WebUI.getAttribute(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/btn Show Result/input Max Row Item Disabled'), 'value')
+String maxRowItemValue = WebUI.getAttribute(findTestObject('Sider/Sider Inc Payment Menu/Fin - MR - Mon GL Line Item/btn Show Result/input Max Row Item Disabled'), 'value')
 println(maxRowItemValue)
 
 if (maxRowItemValue == maxRowItem) {
@@ -126,10 +126,10 @@ if (maxRowItemValue == maxRowItem) {
 }
 
 //Select Date Range Validation
-String selectDateRangeStartDateValue = WebUI.getAttribute(findTestObject('Object Repository/Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/btn Show Result/input Select Date Range Start Date disabled'), 'value')
+String selectDateRangeStartDateValue = WebUI.getAttribute(findTestObject('Sider/Sider Inc Payment Menu/Fin - MR - Mon GL Line Item/btn Show Result/input Select Date Range Start Date disabled'), 'value')
 println(selectDateRangeStartDateValue)
 
-String selectDateRangeEndDateValue = WebUI.getAttribute(findTestObject('Object Repository/Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/btn Show Result/input Select Date Range End Date disabled'), 'value')
+String selectDateRangeEndDateValue = WebUI.getAttribute(findTestObject('Sider/Sider Inc Payment Menu/Fin - MR - Mon GL Line Item/btn Show Result/input Select Date Range End Date disabled'), 'value')
 println(selectDateRangeEndDateValue)
 
 if (selectDateRangeStartDate == "0") {

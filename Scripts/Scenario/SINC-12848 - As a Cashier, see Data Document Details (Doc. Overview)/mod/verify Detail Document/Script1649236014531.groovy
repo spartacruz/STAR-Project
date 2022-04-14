@@ -7,49 +7,49 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 
 import internal.GlobalVariable as GlobalVariable
 
-WebUI.verifyElementPresent(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/document overview details/btn BackButton'), 
+WebUI.verifyElementPresent(findTestObject('Sider/Sider Inc Payment Menu/Fin - MR - Mon GL Line Item/document overview details/btn BackButton'), 
     GlobalVariable.waitPresentTimeout)
 
-WebUI.verifyElementPresent(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/document overview details/div Document Overview heading text'), 
+WebUI.verifyElementPresent(findTestObject('Sider/Sider Inc Payment Menu/Fin - MR - Mon GL Line Item/document overview details/div Document Overview heading text'), 
     GlobalVariable.waitPresentTimeout)
 
-WebUI.verifyElementPresent(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/document overview details/h4 Detail Document text'), 
+WebUI.verifyElementPresent(findTestObject('Sider/Sider Inc Payment Menu/Fin - MR - Mon GL Line Item/document overview details/h4 Detail Document text'), 
     GlobalVariable.waitPresentTimeout)
 
-WebUI.verifyElementPresent(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/document overview details/h4 Doc Number Title'), 
+WebUI.verifyElementPresent(findTestObject('Sider/Sider Inc Payment Menu/Fin - MR - Mon GL Line Item/document overview details/h4 Doc Number Title'), 
     GlobalVariable.waitPresentTimeout)
 
-WebUI.verifyElementPresent(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/document overview details/p Doc Number Value'), 
+WebUI.verifyElementPresent(findTestObject('Sider/Sider Inc Payment Menu/Fin - MR - Mon GL Line Item/document overview details/p Doc Number Value'), 
     GlobalVariable.waitPresentTimeout)
 
-WebUI.verifyElementPresent(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/document overview details/h4 Doc. Date Title'), 
+WebUI.verifyElementPresent(findTestObject('Sider/Sider Inc Payment Menu/Fin - MR - Mon GL Line Item/document overview details/h4 Doc. Date Title'), 
     GlobalVariable.waitPresentTimeout)
 
-WebUI.verifyElementPresent(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/document overview details/p Doc. Date Value'), 
+WebUI.verifyElementPresent(findTestObject('Sider/Sider Inc Payment Menu/Fin - MR - Mon GL Line Item/document overview details/p Doc. Date Value'), 
     GlobalVariable.waitPresentTimeout)
 
-WebUI.verifyElementPresent(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/document overview details/h4 Posting Number Title'), 
+WebUI.verifyElementPresent(findTestObject('Sider/Sider Inc Payment Menu/Fin - MR - Mon GL Line Item/document overview details/h4 Posting Number Title'), 
     GlobalVariable.waitPresentTimeout)
 
-WebUI.verifyElementPresent(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/document overview details/p Posting Number Value'), 
+WebUI.verifyElementPresent(findTestObject('Sider/Sider Inc Payment Menu/Fin - MR - Mon GL Line Item/document overview details/p Posting Number Value'), 
     GlobalVariable.waitPresentTimeout)
 
-WebUI.verifyElementPresent(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/document overview details/h4 Posting Date Title'), 
+WebUI.verifyElementPresent(findTestObject('Sider/Sider Inc Payment Menu/Fin - MR - Mon GL Line Item/document overview details/h4 Posting Date Title'), 
     GlobalVariable.waitPresentTimeout)
 
-WebUI.verifyElementPresent(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/document overview details/p Posting Date Value'), 
+WebUI.verifyElementPresent(findTestObject('Sider/Sider Inc Payment Menu/Fin - MR - Mon GL Line Item/document overview details/p Posting Date Value'), 
     GlobalVariable.waitPresentTimeout)
 
-WebUI.verifyElementPresent(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/document overview details/h4 SAP Doc Number Title'), 
+WebUI.verifyElementPresent(findTestObject('Sider/Sider Inc Payment Menu/Fin - MR - Mon GL Line Item/document overview details/h4 SAP Doc Number Title'), 
     GlobalVariable.waitPresentTimeout)
 
-WebUI.verifyElementPresent(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/document overview details/p SAP Doc Number Value'), 
+WebUI.verifyElementPresent(findTestObject('Sider/Sider Inc Payment Menu/Fin - MR - Mon GL Line Item/document overview details/p SAP Doc Number Value'), 
     GlobalVariable.waitPresentTimeout)
 
-WebUI.verifyElementPresent(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/document overview details/input Search Box'), 
+WebUI.verifyElementPresent(findTestObject('Sider/Sider Inc Payment Menu/Fin - MR - Mon GL Line Item/document overview details/input Search Box'), 
     GlobalVariable.waitPresentTimeout)
 
-WebUI.verifyElementPresent(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/document overview details/table content'), 
+WebUI.verifyElementPresent(findTestObject('Sider/Sider Inc Payment Menu/Fin - MR - Mon GL Line Item/document overview details/table content'), 
     GlobalVariable.waitPresentTimeout)
 
 String docNumber = "$ndocNumber"
@@ -58,11 +58,11 @@ String postingNumber = "$npostingNumber"
 String postingDate = "$npostingDate"
 String SAPDocNumber = "$nSAPDocNumber"
 
-TestObject objDocNumber = findTestObject('Object Repository/Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/document overview details/p Doc Number Value')
-TestObject objDocDate = findTestObject('Object Repository/Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/document overview details/p Doc. Date Value')
-TestObject objPostingNumber = findTestObject('Object Repository/Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/document overview details/p Posting Number Value')
-TestObject objPostingDate = findTestObject('Object Repository/Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/document overview details/p Posting Date Value')
-TestObject objSAPDocNumber = findTestObject('Object Repository/Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/document overview details/p SAP Doc Number Value')
+TestObject objDocNumber = findTestObject('Sider/Sider Inc Payment Menu/Fin - MR - Mon GL Line Item/document overview details/p Doc Number Value')
+TestObject objDocDate = findTestObject('Sider/Sider Inc Payment Menu/Fin - MR - Mon GL Line Item/document overview details/p Doc. Date Value')
+TestObject objPostingNumber = findTestObject('Sider/Sider Inc Payment Menu/Fin - MR - Mon GL Line Item/document overview details/p Posting Number Value')
+TestObject objPostingDate = findTestObject('Sider/Sider Inc Payment Menu/Fin - MR - Mon GL Line Item/document overview details/p Posting Date Value')
+TestObject objSAPDocNumber = findTestObject('Sider/Sider Inc Payment Menu/Fin - MR - Mon GL Line Item/document overview details/p SAP Doc Number Value')
 
 
 String docDetailDocNumber = WebUI.getText(objDocNumber, FailureHandling.STOP_ON_FAILURE)

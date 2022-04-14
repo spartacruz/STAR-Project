@@ -10,7 +10,7 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 //columns validation
 //total 12 columns
 //expected result on Thead Document Over view
-String[] dataDocumentDetailColumns = ['No', 'PK', 'Bus A', 'G/L', 'Account', 'Account Short Text', 'Cost Center'
+String[] dataDocumentDetailColumns = ['Itm', 'PK', 'Bus A', 'G/L', 'Account', 'Account Short Text', 'Cost Center'
 	, 'Clearing Doc.', 'Amount', 'Amount in LC', 'Assigment', 'Text']
 
 TestObject selectorTheadGLTable = new TestObject()

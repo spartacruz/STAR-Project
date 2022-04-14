@@ -20,19 +20,19 @@ import org.openqa.selenium.Keys as Keys
 WebUI.callTestCase(findTestCase('Scenario/SINC-11862 - As a Cashier Input n Search GL Account/TCMSTAR-14123 - As a Cashier input multiple GL Account'), 
     [:], FailureHandling.STOP_ON_FAILURE)
 
-WebUI.sendKeys(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/input GL Account'), Keys.chord(Keys.BACK_SPACE))
+WebUI.sendKeys(findTestObject('Sider/Sider Inc Payment Menu/Fin - MR - Mon GL Line Item/input GL Account'), Keys.chord(Keys.BACK_SPACE))
 
-WebUI.sendKeys(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/input GL Account'), Keys.chord(Keys.BACK_SPACE))
+WebUI.sendKeys(findTestObject('Sider/Sider Inc Payment Menu/Fin - MR - Mon GL Line Item/input GL Account'), Keys.chord(Keys.BACK_SPACE))
 
-WebUI.waitForElementNotPresent(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/span selected 1080101000 - AR Trade-NewUnit-AffCo'), 
+WebUI.waitForElementNotPresent(findTestObject('Sider/Sider Inc Payment Menu/Fin - MR - Mon GL Line Item/span selected 1080101000 - AR Trade-NewUnit-AffCo'), 
     GlobalVariable.waitPresentTimeout, FailureHandling.STOP_ON_FAILURE)
 
-WebUI.verifyElementNotPresent(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/span selected 1080101000 - AR Trade-NewUnit-AffCo'), 
+WebUI.verifyElementNotPresent(findTestObject('Sider/Sider Inc Payment Menu/Fin - MR - Mon GL Line Item/span selected 1080101000 - AR Trade-NewUnit-AffCo'), 
     GlobalVariable.waitPresentTimeout, FailureHandling.STOP_ON_FAILURE)
 
-WebUI.waitForElementNotPresent(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/span selected 2120101000 - Customer GuaranteeNewUnit-AffCo'), 
+WebUI.waitForElementNotPresent(findTestObject('Sider/Sider Inc Payment Menu/Fin - MR - Mon GL Line Item/span selected 2120101000 - Customer GuaranteeNewUnit-AffCo'), 
     GlobalVariable.waitPresentTimeout, FailureHandling.STOP_ON_FAILURE)
 
-WebUI.verifyElementNotPresent(findTestObject('Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/span selected 2120101000 - Customer GuaranteeNewUnit-AffCo'), 
+WebUI.verifyElementNotPresent(findTestObject('Sider/Sider Inc Payment Menu/Fin - MR - Mon GL Line Item/span selected 2120101000 - Customer GuaranteeNewUnit-AffCo'), 
     GlobalVariable.waitPresentTimeout, FailureHandling.STOP_ON_FAILURE)
 

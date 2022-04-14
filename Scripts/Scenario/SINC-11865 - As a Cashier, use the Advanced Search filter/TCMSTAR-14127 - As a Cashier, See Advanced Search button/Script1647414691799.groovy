@@ -17,10 +17,10 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
-WebUI.callTestCase(findTestCase('Open Sider Incoming Payment'), [:], FailureHandling.STOP_ON_FAILURE)
+WebUI.callTestCase(findTestCase('Open Sider Finance Menu'), [:], FailureHandling.STOP_ON_FAILURE)
 
-WebUI.click(findTestObject('Sider/Sider Inc Payment Menu/Inc - Mon Report (MR)'))
+WebUI.click(findTestObject('Sider/Sider Inc Payment Menu/Fin - Mon Report (MR)'))
 
-WebUI.callTestCase(findTestCase('VerifyPage/Verify Page Sider/Incoming Payment Menu/Incoming - Monitoring Report - Monitoring GL Line Item/verifyMonitoringGLLineItem'), 
+WebUI.callTestCase(findTestCase('VerifyPage/Verify Page Sider/Finance Payment Menu/Finance - Monitoring Report - Monitoring GL Line Item/verifyMonitoringGLLineItem'), 
     [:], FailureHandling.STOP_ON_FAILURE)
 
