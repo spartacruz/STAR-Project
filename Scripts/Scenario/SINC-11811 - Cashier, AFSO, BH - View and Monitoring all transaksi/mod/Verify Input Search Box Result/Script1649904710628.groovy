@@ -82,8 +82,12 @@ if (selectorContentGLTableList.size() > 2) {
 			
 			WebUI.waitForElementNotPresent(findTestObject('Sider/Sider Inc Payment Menu/Fin - MR - Mon GL Line Item/btn Show Result/span dot spinning_fetching data'),
 				GlobalVariable.waitPresentTimeout, FailureHandling.STOP_ON_FAILURE)
+			WebUI.verifyElementNotPresent(findTestObject('Sider/Sider Inc Payment Menu/Fin - MR - Mon GL Line Item/btn Show Result/span dot spinning_fetching data'),
+				GlobalVariable.waitPresentTimeout, FailureHandling.STOP_ON_FAILURE)
 			
 			WebUI.waitForElementNotPresent(findTestObject('Object Repository/Sider/Sider Inc Payment Menu/Finance - Penerimaan (Incoming Payment)/Monitoring Incoming Sub menu/div No Data Shown'),
+				GlobalVariable.waitPresentTimeout, FailureHandling.STOP_ON_FAILURE)
+			WebUI.verifyElementNotPresent(findTestObject('Object Repository/Sider/Sider Inc Payment Menu/Finance - Penerimaan (Incoming Payment)/Monitoring Incoming Sub menu/div No Data Shown'),
 				GlobalVariable.waitPresentTimeout, FailureHandling.STOP_ON_FAILURE)
 			
 			selectorContentGLTableList = tableListGenerator('//table//tbody/tr')
