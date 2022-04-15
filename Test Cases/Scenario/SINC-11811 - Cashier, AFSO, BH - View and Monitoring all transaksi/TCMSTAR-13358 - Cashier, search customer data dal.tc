@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>(+)As a Cashier I want search customer data by typing 'dal'</description>
+   <name>TCMSTAR-13358 - Cashier, search customer data dal</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>fc92d0c8-6ba0-4d6f-be53-2f445540f078</testCaseGuid>
+</TestCaseEntity>
