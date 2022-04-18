@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TestCaseEntity>
    <description></description>
-   <name>Get Value Row from Monitoring Incoming Table</name>
+   <name>Verify Filter Result - Status</name>
    <tag></tag>
    <comment></comment>
-   <testCaseGuid>5c5b2d59-0716-494e-aca6-5354f6ec6e5c</testCaseGuid>
+   <testCaseGuid>34ccb82e-1b12-4f3b-9911-d89c76252039</testCaseGuid>
 </TestCaseEntity>

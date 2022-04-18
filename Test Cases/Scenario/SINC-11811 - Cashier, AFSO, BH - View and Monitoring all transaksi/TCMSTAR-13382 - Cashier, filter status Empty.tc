@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>(+)As a Cashier I want search customer data has status 'Empty' using filter</description>
+   <name>TCMSTAR-13382 - Cashier, filter status Empty</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>84482b40-6461-4007-b76f-90fece36df67</testCaseGuid>
+</TestCaseEntity>

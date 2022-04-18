@@ -22,8 +22,8 @@ String whichColumn = "$nwhichColumn"
 
 getAttribRow(row, whichColumn)
 
-String getAttribRow(def defrow, def defwhichColumn) {
-    Integer x1 = Integer.parseInt(defrow) + 1
+def getAttribRow(String defrow, String defwhichColumn) {
+    Integer x1 = Integer.parseInt(defrow)
 
     Integer for_column = 0
 
@@ -79,6 +79,6 @@ String getAttribRow(def defrow, def defwhichColumn) {
 
     println(WebUI.getText(dynamicObject))
 
-    return WebUI.getText(dynamicObject)
+    return dynamicObject
 }
 

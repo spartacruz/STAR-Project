@@ -26,25 +26,24 @@ import org.codehaus.groovy.tools.shell.completion.KeywordSyntaxCompletor
 import org.openqa.selenium.By as By
 import org.openqa.selenium.WebElement as WebElement
 import com.kms.katalon.core.testobject.ConditionType as ConditionType
-
-
 import internal.GlobalVariable as GlobalVariable
 
+WebUI.waitForElementNotPresent(findTestObject('Sider/Sider Inc Payment Menu/Fin - MR - Mon GL Line Item/btn Show Result/span dot spinning_fetching data'),
+	GlobalVariable.waitPresentTimeout, FailureHandling.STOP_ON_FAILURE)
 WebUI.verifyElementNotPresent(findTestObject('Sider/Sider Inc Payment Menu/Fin - MR - Mon GL Line Item/btn Show Result/span dot spinning_fetching data'),
 	GlobalVariable.waitPresentTimeout, FailureHandling.STOP_ON_FAILURE)
 
-
+WebUI.waitForElementNotPresent(findTestObject('Object Repository/Sider/Sider Inc Payment Menu/Finance - Penerimaan (Incoming Payment)/Monitoring Incoming Sub menu/div No Data Shown'),
+	GlobalVariable.waitPresentTimeout, FailureHandling.STOP_ON_FAILURE)
 WebUI.verifyElementNotPresent(findTestObject('Object Repository/Sider/Sider Inc Payment Menu/Finance - Penerimaan (Incoming Payment)/Monitoring Incoming Sub menu/div No Data Shown'),
 	GlobalVariable.waitPresentTimeout, FailureHandling.STOP_ON_FAILURE)
 
-
-String searchQuery = "$nsearchQuery" ?: ''
-String searchFor = "$nsearchFor" ?: ''
+String filteredStatus = "$nfilteredStatus" ?: ''
+filteredStatus = filteredStatus.toUpperCase()
 Integer countPage = 1
 
 List<WebElement> selectorContentGLTableList = tableListGenerator('//table//tbody/tr')
 println(selectorContentGLTableList.size())
-
 
 TestObject temp_xpath_previousPage = findTestObject('Object Repository/Sider/Sider Inc Payment Menu/Finance - Penerimaan (Incoming Payment)/Monitoring Incoming Sub menu/button Previous Page Enabled')
 String xpath_previousPage = temp_xpath_previousPage.findPropertyValue('xpath')
@@ -56,6 +55,7 @@ println(xpath_nextPage)
 
 List<WebElement> buttonNextPageEnabled = tableListGenerator(xpath_nextPage)
 List<WebElement> buttonPreviousPageEnabled = tableListGenerator(xpath_previousPage)
+
 
 if (buttonPreviousPageEnabled.size() > 0) {
 	
@@ -69,11 +69,12 @@ if (buttonPreviousPageEnabled.size() > 0) {
 }
 
 if (selectorContentGLTableList.size() > 0) {
-	if (searchQuery.equals('')) {
-		KeywordUtil.markFailedAndStop("Search Box Validation: No string inputed on search box")
+	if (filteredStatus.equals('')) {
+		KeywordUtil.markFailedAndStop("Filter Result - Status Validation: No string inputed")
 	} else {
 		
-		searchQueryValidation(searchQuery, searchFor, selectorContentGLTableList)
+		///put the function here
+		filterResultStatusValidation(filteredStatus, selectorContentGLTableList)
 		
 		//only checking until page 10 for now
 		while (buttonNextPageEnabled.size() > 0 && countPage < 10) {
@@ -92,7 +93,8 @@ if (selectorContentGLTableList.size() > 0) {
 			
 			selectorContentGLTableList = tableListGenerator('//table//tbody/tr')
 			
-			searchQueryValidation(searchQuery, searchFor, selectorContentGLTableList)
+			///put the function here
+			filterResultStatusValidation(filteredStatus, selectorContentGLTableList)
 			
 			countPage = countPage + 1
 			KeywordUtil.logInfo("Iterating page: $countPage")
@@ -102,56 +104,31 @@ if (selectorContentGLTableList.size() > 0) {
 	}
 }
 
-public static boolean searchQueryValidation(String paramSearchQuery, String paramSearchFor, List<WebElement> paramSelectorContentGLTableList) {
-
-	String for_column = ''
-	String wording_for = ''
-	switch (paramSearchFor) {
-		case 'No.Pelanggan':
-			for_column = '2'
-			wording_for = 'No. Pelanggan'
-			break
-		
-		case 'NamaPelanggan':
-			for_column = '3'
-			wording_for = 'Nama Pelanggan'
-			break
-			
-		case 'No.Kuitansi':
-			for_column = '4'
-			wording_for = 'No. Kuitansi'
-			break
-			
-		case 'No.Posting':
-			wording_for = 'No. Posting'
-			for_column = '6'
-			break
-		
-		case 'expectedNoData':
-			//2 means row table head + blank row on FE aka no row data result
-			if (paramSelectorContentGLTableList.size().equals(1)) {
-				KeywordUtil.markPassed("Search Box Validation (unexist data): Expected Result and rendered table result are equal")
-				return true
-			} else {
-				KeywordUtil.markFailedAndStop("Search Box Validation (unexist data): Expected Result and rendered table result NOT equal")
-				return false
-			}
-	}
+public static void filterResultStatusValidation(String paramFilteredStatus, List<WebElement> paramSelectorContentGLTableList) {
+	String[] filteredStatus = new String[50]
+	filteredStatus = paramFilteredStatus.split(',')
 	
 	for (int i = 1; i <= (paramSelectorContentGLTableList.size()); i++) {
-		String new_xpath = "//table//tbody/tr[$i]/td[$for_column]"
-
-		TestObject dynamicObject = new TestObject('dynamicObject').addProperty('xpath', ConditionType.EQUALS, new_xpath)
-		println(WebUI.getText(dynamicObject))
-
-		if (WebUI.getText(dynamicObject).contains(paramSearchQuery)) {
-			KeywordUtil.markPassed("$wording_for Search Box Validation : Expected Result and rendered table result are equal")
+		
+		TestObject dynamicObject = WebUI.callTestCase(findTestCase('Scenario/SINC-11811 - Cashier, AFSO, BH - View and Monitoring all transaksi/mod/Get Object Row from Monitoring Incoming Table'),
+			[('nrow') : i.toString(), ('nwhichColumn') : 'Status'], FailureHandling.STOP_ON_FAILURE)
+		
+//		println(WebUI.getText(dynamicObject))
+//		println(WebUI.getText(dynamicObject).getClass().getName())
+		
+		String xresult = WebUI.getText(dynamicObject)
+		xresult = xresult.toString()
+		
+//		println(xresult.getClass().getName())
+//		println(filteredStatus)
+//		println(filteredStatus.getClass().getName())
+		
+		if (filteredStatus.contains(xresult)) {
+			KeywordUtil.markPassed("Filter Result - Status Validation:  Expected Result and rendered table result are equal")
 		} else {
-			KeywordUtil.markFailedAndStop("$wording_for Search Box Validation: Expected Result and rendered table result are NOT equal")
+			KeywordUtil.markFailedAndStop("Filter Result - Status Validation:  Expected Result and rendered table result are NOT equal")
 		}
 	}
-	
-	return true
 }
 
 def tableListGenerator(String xpathLocation) {
@@ -165,9 +142,3 @@ def tableListGenerator(String xpathLocation) {
 	println(selectorContentGLTableList.size())
 	return selectorContentGLTableList
 }
-
-//if (!searchQuery.equals('')) {
-//	searchQueryValidation(searchQuery, searchFor, selectorContentGLTableList)
-//} else {
-//	KeywordUtil.markFailedAndStop("Search Box Validation: No string inputed on search box")
-//}
