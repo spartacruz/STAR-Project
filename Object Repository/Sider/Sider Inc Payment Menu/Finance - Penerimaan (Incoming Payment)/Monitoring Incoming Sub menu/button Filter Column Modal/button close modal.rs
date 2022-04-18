@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>button close modal</name>
+   <tag></tag>
+   <elementGuidId>4af93cce-5984-4167-9bd9-75a896e453e2</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>XPATH</key>
+         <value>//div[contains(@class, 'AdvancedFilter_btn-cancel')]/button</value>
+      </entry>
+      <entry>
+         <key>CSS</key>
+         <value></value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>XPATH</selectorMethod>
+   <useRalativeImagePath>true</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>tag</name>
+      <type>Main</type>
+      <value>svg</value>
+      <webElementGuid>c4405de6-8f07-48af-b1d2-a35a9c4d42cb</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>width</name>
+      <type>Main</type>
+      <value>24</value>
+      <webElementGuid>6ad971ce-df4e-48c4-8732-7a8580d832d3</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>height</name>
+      <type>Main</type>
+      <value>24</value>
+      <webElementGuid>cf8cac9c-6541-44da-a646-ee8d49a74b65</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>viewBox</name>
+      <type>Main</type>
+      <value>0 0 24 24</value>
+      <webElementGuid>e3a97990-3b9e-4756-9724-e1a67cb48f92</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>fill</name>
+      <type>Main</type>
+      <value>none</value>
+      <webElementGuid>5919f2eb-e818-44dd-87b8-ed9ce1daa608</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xmlns</name>
+      <type>Main</type>
+      <value>http://www.w3.org/2000/svg</value>
+      <webElementGuid>56db0cdd-236f-4132-bdc1-24977d565306</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath</name>
+      <type>Main</type>
+      <value>id(&quot;root&quot;)/div[1]/div[@class=&quot;ant-modal-root&quot;]/div[@class=&quot;ant-modal-wrap wrapper&quot;]/div[@class=&quot;ant-modal ModalWhite_modal-white__D-a+a BaseModal_base-modal__LLvzx&quot;]/div[@class=&quot;ant-modal-content&quot;]/div[@class=&quot;ant-modal-body&quot;]/div[1]/div[@class=&quot;BaseModal_header-wrapper__vQqWB&quot;]/div[@class=&quot;AdvancedFilter_btn-cancel__sS25J&quot;]/button[@class=&quot;IconWrapper_wrapper__atQgp IconWrapper_clickable__mfi+-&quot;]/svg[1]</value>
+      <webElementGuid>666a8161-654f-4c34-8d1d-3f56643203ca</webElementGuid>
+   </webElementProperties>
+   <webElementXpaths>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Filter Search'])[1]/following::*[name()='svg'][1]</value>
+      <webElementGuid>0d7b7b77-bea7-4270-b429-347eff751e29</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Rp 22.440.000'])[2]/following::*[name()='svg'][5]</value>
+      <webElementGuid>e59f74b8-8b73-4da9-9345-7da9a1540da7</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='No.Kuitansi'])[2]/preceding::*[name()='svg'][1]</value>
+      <webElementGuid>60e6f785-cd9f-4c2c-8ec7-055c64989a3c</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='To'])[1]/preceding::*[name()='svg'][1]</value>
+      <webElementGuid>2474ec4d-02ea-413e-8174-a3cad88a12d2</webElementGuid>
+   </webElementXpaths>
+</WebElementEntity>

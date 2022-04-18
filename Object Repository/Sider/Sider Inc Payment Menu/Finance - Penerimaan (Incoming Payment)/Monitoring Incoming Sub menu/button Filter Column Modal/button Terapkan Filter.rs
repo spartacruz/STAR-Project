@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>button Terapkan Filter</name>
+   <tag></tag>
+   <elementGuidId>b0804825-65e1-466c-95c5-a799ad71cc70</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>XPATH</key>
+         <value>//button[@type='submit' and text()='Terapkan Filter']</value>
+      </entry>
+      <entry>
+         <key>CSS</key>
+         <value>button.AdvancedFilter_btn-submit__VtFWN</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>XPATH</selectorMethod>
+   <useRalativeImagePath>true</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>tag</name>
+      <type>Main</type>
+      <value>button</value>
+      <webElementGuid>a923a9f9-a1f6-43ed-bd5e-f7b02b769e64</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>class</name>
+      <type>Main</type>
+      <value>AdvancedFilter_btn-submit__VtFWN</value>
+      <webElementGuid>f079b348-8a37-4fcf-8a83-40ac6cbbe8b4</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>type</name>
+      <type>Main</type>
+      <value>submit</value>
+      <webElementGuid>6ab0931b-ea36-4e02-8975-c3de27cdef20</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>text</name>
+      <type>Main</type>
+      <value>Terapkan Filter</value>
+      <webElementGuid>a2e2bb2f-73f9-4155-bc8b-6050e781def1</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath</name>
+      <type>Main</type>
+      <value>id(&quot;root&quot;)/div[1]/div[@class=&quot;ant-modal-root&quot;]/div[@class=&quot;ant-modal-wrap wrapper&quot;]/div[@class=&quot;ant-modal ModalWhite_modal-white__D-a+a BaseModal_base-modal__LLvzx&quot;]/div[@class=&quot;ant-modal-content&quot;]/div[@class=&quot;ant-modal-body&quot;]/div[1]/div[@class=&quot;BaseModal_container__UzhOW&quot;]/div[@class=&quot;AdvancedFilter_content__7Ej67&quot;]/form[@class=&quot;ant-form ant-form-vertical AdvancedFilter_modal-input__a6M2b&quot;]/div[@class=&quot;ant-row AdvancedFilter_btn-wrapper__UzucH&quot;]/div[@class=&quot;ant-col ant-col-12&quot;]/button[@class=&quot;AdvancedFilter_btn-submit__VtFWN&quot;]</value>
+      <webElementGuid>43c29d18-1349-4e8e-82f7-7d6f1af97891</webElementGuid>
+   </webElementProperties>
+   <webElementXpaths>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:attributes</name>
+      <type>Main</type>
+      <value>//button[@type='submit']</value>
+      <webElementGuid>34dd22d2-5daf-4abb-9188-468033c615e0</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:idRelative</name>
+      <type>Main</type>
+      <value>//div[@id='root']/div/div/div[2]/div/div[2]/div/div/div[2]/div/form/div[6]/div[2]/button</value>
+      <webElementGuid>4329d9e5-39ec-4530-b30c-e66334f2d462</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Reset Filter'])[1]/following::button[1]</value>
+      <webElementGuid>92d174bc-dbe7-4d0a-b409-4abc743cc87b</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Deleted'])[1]/following::button[2]</value>
+      <webElementGuid>5f4069eb-3838-439a-91f0-e02f6e124db8</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Click to sort ascending'])[1]/preceding::button[1]</value>
+      <webElementGuid>85d1cb61-d566-43b9-8ff9-432383d0d501</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Click to sort ascending'])[2]/preceding::button[1]</value>
+      <webElementGuid>a094f3cb-4260-4fc8-b23d-d0fb8db4e955</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>//*/text()[normalize-space(.)='Terapkan Filter']/parent::*</value>
+      <webElementGuid>4e3d0057-8ccc-4b01-b077-86842c738d18</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:position</name>
+      <type>Main</type>
+      <value>//div[6]/div[2]/button</value>
+      <webElementGuid>b692a6b3-381b-45d1-a9b7-07e2555cfcca</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:customAttributes</name>
+      <type>Main</type>
+      <value>//button[@type = 'submit' and (text() = 'Terapkan Filter' or . = 'Terapkan Filter')]</value>
+      <webElementGuid>c3fd0b99-9273-43d8-904a-087d2bea5128</webElementGuid>
+   </webElementXpaths>
+</WebElementEntity>

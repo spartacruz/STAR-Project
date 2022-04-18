@@ -17,14 +17,16 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
-WebUI.callTestCase(findTestCase('Scenario/SINC-11811 - Cashier, AFSO, BH - View and Monitoring all transaksi/mod/Open Sub Menu Incoming'), 
+WebUI.callTestCase(findTestCase('Scenario/SINC-11811 - Cashier, AFSO, BH - View and Monitoring all transaksi/TCMSTAR-13381 - Cashier, Use Filter feature'), 
     [:], FailureHandling.STOP_ON_FAILURE)
 
-WebUI.click(findTestObject('Sider/Sider Inc Payment Menu/Finance - Penerimaan (Incoming Payment)/Monitoring Incoming'))
+WebUI.callTestCase(findTestCase('Scenario/SINC-11811 - Cashier, AFSO, BH - View and Monitoring all transaksi/mod/tick Filter Status'), 
+    [('nKeyword') : 'Empty,Posted'], FailureHandling.STOP_ON_FAILURE)
 
-WebUI.callTestCase(findTestCase('VerifyPage/Verify Page Sider/Finance Payment Menu/Finance - Incoming Menu/Fin - Incoming - Monitoring Incoming/verify Monitoring Incoming Page'), 
-    [:], FailureHandling.STOP_ON_FAILURE)
+WebUI.click(findTestObject('Sider/Sider Inc Payment Menu/Finance - Penerimaan (Incoming Payment)/Monitoring Incoming Sub menu/button Filter Column Modal/button Terapkan Filter'))
 
-WebUI.callTestCase(findTestCase('Scenario/SINC-11811 - Cashier, AFSO, BH - View and Monitoring all transaksi/mod/Verify Table Head Monitoring Incoming Table'), 
-    [:], FailureHandling.STOP_ON_FAILURE)
+WebUI.verifyElementNotVisible(findTestObject('Sider/Sider Inc Payment Menu/Finance - Penerimaan (Incoming Payment)/Monitoring Incoming Sub menu/button Filter Column Modal/title Filter Search'))
+
+WebUI.callTestCase(findTestCase('Scenario/SINC-11811 - Cashier, AFSO, BH - View and Monitoring all transaksi/mod/Verify Filter Result - Status'), 
+    [('nfilteredStatus') : 'Empty,Posted'], FailureHandling.STOP_ON_FAILURE)
 

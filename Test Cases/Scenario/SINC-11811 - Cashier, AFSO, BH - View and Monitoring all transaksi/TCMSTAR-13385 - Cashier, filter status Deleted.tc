@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>(+)As a Cashier I want search customer data has status 'Deleted' using filter</description>
+   <name>TCMSTAR-13385 - Cashier, filter status Deleted</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>7b68c98c-9a61-4700-9035-a906243f4413</testCaseGuid>
+</TestCaseEntity>

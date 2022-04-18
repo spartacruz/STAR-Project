@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>(+)As a Cashier I want search customer data by checked all of status on filter window</description>
+   <name>TCMSTAR-13388 - Cashier, filter all 5 status</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>87db350c-9a6f-42c0-a4c6-632dc0e4d18c</testCaseGuid>
+</TestCaseEntity>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>Filter Search Modal Content</name>
+   <tag></tag>
+   <elementGuidId>bc864f60-b6e1-4fbe-a9dd-ec8d24f28061</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>XPATH</key>
+         <value>//div[@class='ant-modal-content']/div[@class='ant-modal-body']</value>
+      </entry>
+      <entry>
+         <key>CSS</key>
+         <value>div.ant-modal-body</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>XPATH</selectorMethod>
+   <useRalativeImagePath>true</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>tag</name>
+      <type>Main</type>
+      <value>div</value>
+      <webElementGuid>d8f75d9e-95cd-4a1b-b633-d0513f79508b</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>class</name>
+      <type>Main</type>
+      <value>ant-modal-body</value>
+      <webElementGuid>aa5556dc-da1e-48db-98d5-248bc516f25b</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>text</name>
+      <type>Main</type>
+      <value>Filter SearchNo.KuitansiToTgl.KuitansiNo.PostingToTgl.PostingStatusEmptyOpenPostedCancelledDeletedReset FilterTerapkan Filter</value>
+      <webElementGuid>938fa92a-eac7-4f2d-b0c3-6e09fc282a21</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath</name>
+      <type>Main</type>
+      <value>id(&quot;root&quot;)/div[1]/div[@class=&quot;ant-modal-root&quot;]/div[@class=&quot;ant-modal-wrap wrapper&quot;]/div[@class=&quot;ant-modal ModalWhite_modal-white__D-a+a BaseModal_base-modal__LLvzx&quot;]/div[@class=&quot;ant-modal-content&quot;]/div[@class=&quot;ant-modal-body&quot;]</value>
+      <webElementGuid>eaed9571-a8b2-4b54-a160-f163904ee9aa</webElementGuid>
+   </webElementProperties>
+   <webElementXpaths>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:idRelative</name>
+      <type>Main</type>
+      <value>//div[@id='root']/div/div/div[2]/div/div[2]/div</value>
+      <webElementGuid>5424aeb6-a3c1-4776-9dfb-b4bb238e39b6</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Rp 22.440.000'])[2]/following::div[11]</value>
+      <webElementGuid>4f248e6b-95bc-4121-9eeb-ffeabc5cda02</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='-'])[13]/following::div[11]</value>
+      <webElementGuid>311f7180-8072-4d04-9bad-e3386d6c0b42</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:position</name>
+      <type>Main</type>
+      <value>//div/div/div/div[2]/div/div[2]/div</value>
+      <webElementGuid>0d59cc4c-8977-4dff-aed9-d78e077a5473</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:customAttributes</name>
+      <type>Main</type>
+      <value>//div[(text() = 'Filter SearchNo.KuitansiToTgl.KuitansiNo.PostingToTgl.PostingStatusEmptyOpenPostedCancelledDeletedReset FilterTerapkan Filter' or . = 'Filter SearchNo.KuitansiToTgl.KuitansiNo.PostingToTgl.PostingStatusEmptyOpenPostedCancelledDeletedReset FilterTerapkan Filter')]</value>
+      <webElementGuid>f997dd1e-79d7-4c1e-b6cf-367b18c94c7a</webElementGuid>
+   </webElementXpaths>
+</WebElementEntity>

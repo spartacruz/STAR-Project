@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TestCaseEntity>
    <description></description>
-   <name>verify Monitoring Incoming</name>
+   <name>Verify Input Search Box Result</name>
    <tag></tag>
    <comment></comment>
-   <testCaseGuid>28be4c1c-661a-4a87-8edb-8c855c0e55fe</testCaseGuid>
+   <testCaseGuid>dcf44c86-db9d-4fb2-a4db-79af5c668898</testCaseGuid>
 </TestCaseEntity>

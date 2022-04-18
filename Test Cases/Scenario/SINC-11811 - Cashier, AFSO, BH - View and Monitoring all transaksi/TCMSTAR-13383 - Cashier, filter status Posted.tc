@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>(+)As a Cashier I want search customer data has status 'Posted' using filter</description>
+   <name>TCMSTAR-13383 - Cashier, filter status Posted</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>2da37b42-a7d7-4534-addd-92921f925fa8</testCaseGuid>
+</TestCaseEntity>

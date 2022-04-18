@@ -1,7 +1,12 @@
+import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
+import org.openqa.selenium.WebElement
+import com.kms.katalon.core.testobject.ConditionType
+import com.kms.katalon.core.testobject.TestObject
+import com.kms.katalon.core.util.KeywordUtil
+import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import static com.kms.katalon.core.checkpoint.CheckpointFactory.findCheckpoint
 import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
 import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
-import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
 import static com.kms.katalon.core.testobject.ObjectRepository.findWindowsObject
 import com.github.kklisura.cdt.protocol.types.runtime.Evaluate as Evaluate
 import com.kms.katalon.core.checkpoint.Checkpoint as Checkpoint
@@ -14,7 +19,6 @@ import com.kms.katalon.core.testng.keyword.TestNGBuiltinKeywords as TestNGKW
 import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.util.KeywordUtil as KeywordUtil
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
-import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys
@@ -23,23 +27,32 @@ import org.openqa.selenium.By as By
 import org.openqa.selenium.WebElement as WebElement
 import com.kms.katalon.core.testobject.ConditionType as ConditionType
 
-WebUI.waitForElementNotPresent(findTestObject('Sider/Sider Inc Payment Menu/Fin - MR - Mon GL Line Item/btn Show Result/span dot spinning_fetching data'), GlobalVariable.waitPresentTimeout, FailureHandling.STOP_ON_FAILURE)
-WebUI.verifyElementNotPresent(findTestObject('Sider/Sider Inc Payment Menu/Fin - MR - Mon GL Line Item/btn Show Result/span dot spinning_fetching data'), 
-    GlobalVariable.waitPresentTimeout)
 
-WebUI.waitForElementNotPresent(findTestObject('Sider/Sider Inc Payment Menu/Fin - MR - Mon GL Line Item/btn Show Result/div no data'), GlobalVariable.waitPresentTimeout, FailureHandling.STOP_ON_FAILURE)
-WebUI.verifyElementNotPresent(findTestObject('Sider/Sider Inc Payment Menu/Fin - MR - Mon GL Line Item/btn Show Result/div no data'),
-	GlobalVariable.waitPresentTimeout)
+import internal.GlobalVariable as GlobalVariable
+
+WebUI.verifyElementNotPresent(findTestObject('Sider/Sider Inc Payment Menu/Fin - MR - Mon GL Line Item/btn Show Result/span dot spinning_fetching data'),
+	GlobalVariable.waitPresentTimeout, FailureHandling.STOP_ON_FAILURE)
+
+
+WebUI.verifyElementNotPresent(findTestObject('Object Repository/Sider/Sider Inc Payment Menu/Finance - Penerimaan (Incoming Payment)/Monitoring Incoming Sub menu/div No Data Shown'),
+	GlobalVariable.waitPresentTimeout, FailureHandling.STOP_ON_FAILURE)
+
 
 String searchQuery = "$nsearchQuery" ?: ''
 String searchFor = "$nsearchFor" ?: ''
-
 Integer countPage = 1
-//row result counter
-List<WebElement> selectorContentGLTableList = tableListGenerator('//table//tbody/tr')
 
-String xpath_nextPage = '//li[@class=\'ant-pagination-next\']/button[@class=\'ant-pagination-item-link\']'
-String xpath_previousPage ='//li[@class=\'ant-pagination-prev\']/button[@class=\'ant-pagination-item-link\']'
+List<WebElement> selectorContentGLTableList = tableListGenerator('//table//tbody/tr')
+println(selectorContentGLTableList.size())
+
+
+TestObject temp_xpath_previousPage = findTestObject('Object Repository/Sider/Sider Inc Payment Menu/Finance - Penerimaan (Incoming Payment)/Monitoring Incoming Sub menu/button Previous Page Enabled')
+String xpath_previousPage = temp_xpath_previousPage.findPropertyValue('xpath')
+println(xpath_previousPage)
+
+TestObject temp_xpath_nextPage = findTestObject('Object Repository/Sider/Sider Inc Payment Menu/Finance - Penerimaan (Incoming Payment)/Monitoring Incoming Sub menu/button Next Page Enabled')
+String xpath_nextPage = temp_xpath_nextPage.findPropertyValue('xpath')
+println(xpath_nextPage)
 
 List<WebElement> buttonNextPageEnabled = tableListGenerator(xpath_nextPage)
 List<WebElement> buttonPreviousPageEnabled = tableListGenerator(xpath_previousPage)
@@ -49,16 +62,15 @@ if (buttonPreviousPageEnabled.size() > 0) {
 	//while previous page can be clicked
 	while (buttonPreviousPageEnabled.size() > 0) {
 		WebUI.callTestCase(findTestCase('Scenario/SINC-12848 - As a Cashier, see Data Document Details (Doc. Overview)/mod/click with javascript'),
-			[('ntestObject') : 'Object Repository/Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/btn Show Result/btn previous page enabled'], FailureHandling.STOP_ON_FAILURE)
+			[('ntestObject') : 'Object Repository/Sider/Sider Inc Payment Menu/Finance - Penerimaan (Incoming Payment)/Monitoring Incoming Sub menu/button Previous Page Enabled'], FailureHandling.STOP_ON_FAILURE)
 		
 		buttonPreviousPageEnabled = tableListGenerator(xpath_previousPage)
 	}
 }
 
-if (selectorContentGLTableList.size() > 2) {
+if (selectorContentGLTableList.size() > 0) {
 	if (searchQuery.equals('')) {
-		//no validation
-		assert true
+		KeywordUtil.markFailedAndStop("Search Box Validation: No string inputed on search box")
 	} else {
 		
 		searchQueryValidation(searchQuery, searchFor, selectorContentGLTableList)
@@ -66,37 +78,28 @@ if (selectorContentGLTableList.size() > 2) {
 		//only checking until page 10 for now
 		while (buttonNextPageEnabled.size() > 0 && countPage < 10) {
 			WebUI.callTestCase(findTestCase('Scenario/SINC-12848 - As a Cashier, see Data Document Details (Doc. Overview)/mod/click with javascript'),
-				[('ntestObject') : 'Object Repository/Sider/Sider Inc Payment Menu/Inc - MR - Mon GL Line Item/btn Show Result/btn next page enabled'], FailureHandling.STOP_ON_FAILURE)
+				[('ntestObject') : 'Object Repository/Sider/Sider Inc Payment Menu/Finance - Penerimaan (Incoming Payment)/Monitoring Incoming Sub menu/button Next Page Enabled'], FailureHandling.STOP_ON_FAILURE)
 			
-			WebUI.waitForElementNotPresent(findTestObject('Sider/Sider Inc Payment Menu/Fin - MR - Mon GL Line Item/btn Show Result/span dot spinning_fetching data'), GlobalVariable.waitPresentTimeout, FailureHandling.STOP_ON_FAILURE)
+			WebUI.waitForElementNotPresent(findTestObject('Sider/Sider Inc Payment Menu/Fin - MR - Mon GL Line Item/btn Show Result/span dot spinning_fetching data'),
+				GlobalVariable.waitPresentTimeout, FailureHandling.STOP_ON_FAILURE)
 			WebUI.verifyElementNotPresent(findTestObject('Sider/Sider Inc Payment Menu/Fin - MR - Mon GL Line Item/btn Show Result/span dot spinning_fetching data'),
-				GlobalVariable.waitPresentTimeout)
+				GlobalVariable.waitPresentTimeout, FailureHandling.STOP_ON_FAILURE)
 			
-			WebUI.waitForElementNotPresent(findTestObject('Sider/Sider Inc Payment Menu/Fin - MR - Mon GL Line Item/btn Show Result/div no data'), GlobalVariable.waitPresentTimeout, FailureHandling.STOP_ON_FAILURE)
-			WebUI.verifyElementNotPresent(findTestObject('Sider/Sider Inc Payment Menu/Fin - MR - Mon GL Line Item/btn Show Result/div no data'),
-				GlobalVariable.waitPresentTimeout)
+			WebUI.waitForElementNotPresent(findTestObject('Object Repository/Sider/Sider Inc Payment Menu/Finance - Penerimaan (Incoming Payment)/Monitoring Incoming Sub menu/div No Data Shown'),
+				GlobalVariable.waitPresentTimeout, FailureHandling.STOP_ON_FAILURE)
+			WebUI.verifyElementNotPresent(findTestObject('Object Repository/Sider/Sider Inc Payment Menu/Finance - Penerimaan (Incoming Payment)/Monitoring Incoming Sub menu/div No Data Shown'),
+				GlobalVariable.waitPresentTimeout, FailureHandling.STOP_ON_FAILURE)
 			
 			selectorContentGLTableList = tableListGenerator('//table//tbody/tr')
+			
 			searchQueryValidation(searchQuery, searchFor, selectorContentGLTableList)
 			
 			countPage = countPage + 1
 			KeywordUtil.logInfo("Iterating page: $countPage")
 			
-			buttonNextPageEnabled = tableListGenerator('//li[@class=\'ant-pagination-next\']/button[@class=\'ant-pagination-item-link\']')
+			buttonNextPageEnabled = tableListGenerator(xpath_nextPage)
 		}
 	}
-}
-
-def tableListGenerator(String xpathLocation) {
-	//count table rows, can be reuse
-	TestObject selectorContentGLTable = new TestObject()
-	selectorContentGLTable.addProperty('xpath', ConditionType.EQUALS, xpathLocation)
-	
-	// find the row header of result table elements
-	List<WebElement> selectorContentGLTableList = WebUI.findWebElements(selectorContentGLTable, 10)
-	
-	println(selectorContentGLTableList.size())
-	return selectorContentGLTableList
 }
 
 public static boolean searchQueryValidation(String paramSearchQuery, String paramSearchFor, List<WebElement> paramSelectorContentGLTableList) {
@@ -104,29 +107,29 @@ public static boolean searchQueryValidation(String paramSearchQuery, String para
 	String for_column = ''
 	String wording_for = ''
 	switch (paramSearchFor) {
-		case 'GLAccount':
+		case 'No.Pelanggan':
 			for_column = '2'
-			wording_for = 'GL Account'
+			wording_for = 'No. Pelanggan'
 			break
 		
-		case 'GLDescription':
+		case 'NamaPelanggan':
 			for_column = '3'
-			wording_for = 'GL Description'
+			wording_for = 'Nama Pelanggan'
 			break
 			
-		case 'postingNumber':
-			for_column = '5'
-			wording_for = 'Posting Number'
+		case 'No.Kuitansi':
+			for_column = '4'
+			wording_for = 'No. Kuitansi'
 			break
-		
-		case 'docReference':
-			wording_for = 'Doc Reference'
-			for_column = '7'
+			
+		case 'No.Posting':
+			wording_for = 'No. Posting'
+			for_column = '6'
 			break
 		
 		case 'expectedNoData':
 			//2 means row table head + blank row on FE aka no row data result
-			if (paramSelectorContentGLTableList.size().equals(2)) {
+			if (paramSelectorContentGLTableList.size().equals(1)) {
 				KeywordUtil.markPassed("Search Box Validation (unexist data): Expected Result and rendered table result are equal")
 				return true
 			} else {
@@ -135,7 +138,7 @@ public static boolean searchQueryValidation(String paramSearchQuery, String para
 			}
 	}
 	
-	for (int i = 2; i <= (paramSelectorContentGLTableList.size()); i++) {
+	for (int i = 1; i <= (paramSelectorContentGLTableList.size()); i++) {
 		String new_xpath = "//table//tbody/tr[$i]/td[$for_column]"
 
 		TestObject dynamicObject = new TestObject('dynamicObject').addProperty('xpath', ConditionType.EQUALS, new_xpath)
@@ -151,3 +154,20 @@ public static boolean searchQueryValidation(String paramSearchQuery, String para
 	return true
 }
 
+def tableListGenerator(String xpathLocation) {
+	//count table rows, can be reuse
+	TestObject selectorContentGLTable = new TestObject()
+	selectorContentGLTable.addProperty('xpath', ConditionType.EQUALS, xpathLocation)
+	
+	// find the row header of result table elements
+	List<WebElement> selectorContentGLTableList = WebUI.findWebElements(selectorContentGLTable, 10)
+	
+	println(selectorContentGLTableList.size())
+	return selectorContentGLTableList
+}
+
+//if (!searchQuery.equals('')) {
+//	searchQueryValidation(searchQuery, searchFor, selectorContentGLTableList)
+//} else {
+//	KeywordUtil.markFailedAndStop("Search Box Validation: No string inputed on search box")
+//}
