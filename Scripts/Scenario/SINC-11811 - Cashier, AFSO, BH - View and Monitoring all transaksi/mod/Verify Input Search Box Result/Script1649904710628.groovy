@@ -34,8 +34,8 @@ WebUI.verifyElementNotPresent(findTestObject('Sider/Sider Inc Payment Menu/Fin -
 	GlobalVariable.waitPresentTimeout, FailureHandling.STOP_ON_FAILURE)
 
 
-WebUI.verifyElementNotPresent(findTestObject('Object Repository/Sider/Sider Inc Payment Menu/Finance - Penerimaan (Incoming Payment)/Monitoring Incoming Sub menu/div No Data Shown'),
-	GlobalVariable.waitPresentTimeout, FailureHandling.STOP_ON_FAILURE)
+//WebUI.verifyElementNotPresent(findTestObject('Object Repository/Sider/Sider Inc Payment Menu/Finance - Penerimaan (Incoming Payment)/Monitoring Incoming Sub menu/div No Data Shown'),
+//	GlobalVariable.waitPresentTimeout, FailureHandling.STOP_ON_FAILURE)
 
 
 String searchQuery = "$nsearchQuery" ?: ''
@@ -85,10 +85,10 @@ if (selectorContentGLTableList.size() > 0) {
 			WebUI.verifyElementNotPresent(findTestObject('Sider/Sider Inc Payment Menu/Fin - MR - Mon GL Line Item/btn Show Result/span dot spinning_fetching data'),
 				GlobalVariable.waitPresentTimeout, FailureHandling.STOP_ON_FAILURE)
 			
-			WebUI.waitForElementNotPresent(findTestObject('Object Repository/Sider/Sider Inc Payment Menu/Finance - Penerimaan (Incoming Payment)/Monitoring Incoming Sub menu/div No Data Shown'),
-				GlobalVariable.waitPresentTimeout, FailureHandling.STOP_ON_FAILURE)
-			WebUI.verifyElementNotPresent(findTestObject('Object Repository/Sider/Sider Inc Payment Menu/Finance - Penerimaan (Incoming Payment)/Monitoring Incoming Sub menu/div No Data Shown'),
-				GlobalVariable.waitPresentTimeout, FailureHandling.STOP_ON_FAILURE)
+//			WebUI.waitForElementNotPresent(findTestObject('Object Repository/Sider/Sider Inc Payment Menu/Finance - Penerimaan (Incoming Payment)/Monitoring Incoming Sub menu/div No Data Shown'),
+//				GlobalVariable.waitPresentTimeout, FailureHandling.STOP_ON_FAILURE)
+//			WebUI.verifyElementNotPresent(findTestObject('Object Repository/Sider/Sider Inc Payment Menu/Finance - Penerimaan (Incoming Payment)/Monitoring Incoming Sub menu/div No Data Shown'),
+//				GlobalVariable.waitPresentTimeout, FailureHandling.STOP_ON_FAILURE)
 			
 			selectorContentGLTableList = tableListGenerator('//table//tbody/tr')
 			
@@ -136,6 +136,12 @@ public static boolean searchQueryValidation(String paramSearchQuery, String para
 				KeywordUtil.markFailedAndStop("Search Box Validation (unexist data): Expected Result and rendered table result NOT equal")
 				return false
 			}
+	}
+	
+	if (!paramSearchFor.equals('expectedNoData')) {
+		WebUI.waitForElementNotPresent(findTestObject('Object Repository/Sider/Sider Inc Payment Menu/Finance - Penerimaan (Incoming Payment)/Monitoring Incoming Sub menu/div No Data Shown'),
+			GlobalVariable.waitPresentTimeout, FailureHandling.STOP_ON_FAILURE)
+		WebUI.verifyElementNotPresent(findTestObject('Object Repository/Sider/Sider Inc Payment Menu/Finance - Penerimaan (Incoming Payment)/Monitoring Incoming Sub menu/div No Data Shown'),GlobalVariable.waitPresentTimeout, FailureHandling.STOP_ON_FAILURE)
 	}
 	
 	for (int i = 1; i <= (paramSelectorContentGLTableList.size()); i++) {
