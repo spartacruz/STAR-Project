@@ -129,6 +129,8 @@ public static boolean searchQueryValidation(String paramSearchQuery, String para
 		
 		case 'expectedNoData':
 			//2 means row table head + blank row on FE aka no row data result
+			WebUI.verifyElementPresent(findTestObject('Object Repository/Sider/Sider Inc Payment Menu/Finance - Penerimaan (Incoming Payment)/Monitoring Incoming Sub menu/div No Data Shown'),GlobalVariable.waitPresentTimeout, FailureHandling.STOP_ON_FAILURE)
+			
 			if (paramSelectorContentGLTableList.size().equals(1)) {
 				KeywordUtil.markPassed("Search Box Validation (unexist data): Expected Result and rendered table result are equal")
 				return true
