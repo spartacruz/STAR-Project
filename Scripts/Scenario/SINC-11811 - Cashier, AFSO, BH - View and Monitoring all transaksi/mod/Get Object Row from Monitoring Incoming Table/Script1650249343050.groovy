@@ -71,6 +71,10 @@ def getAttribRow(String defrow, String defwhichColumn) {
 		case 'Nilai':
 			for_column = 11
 			break
+		
+		case 'DetailTransaction':
+			for_column = 12
+			break
     }
     
     String new_xpath = "//div[contains(@class, \'ResultMonitoringIncoming\')]//table//tbody/tr[$x1]/td[$for_column]"
