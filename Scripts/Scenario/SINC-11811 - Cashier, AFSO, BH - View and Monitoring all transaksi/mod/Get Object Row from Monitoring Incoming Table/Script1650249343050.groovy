@@ -73,7 +73,7 @@ def getAttribRow(String defrow, String defwhichColumn) {
 			break
     }
     
-    String new_xpath = "//table//tbody/tr[$x1]/td[$for_column]"
+    String new_xpath = "//div[contains(@class, \'ResultMonitoringIncoming\')]//table//tbody/tr[$x1]/td[$for_column]"
 
     TestObject dynamicObject = new TestObject('dynamicObject').addProperty('xpath', ConditionType.EQUALS, new_xpath)
 
