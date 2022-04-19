@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>(+)As a Cashier I want search customer data using all filter displayed</description>
+   <name>TCMSTAR-13401 - Cashier, search customer data using all filter displayed</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>b88ff679-a6b4-49ad-8d6d-95908727bf59</testCaseGuid>
+</TestCaseEntity>
