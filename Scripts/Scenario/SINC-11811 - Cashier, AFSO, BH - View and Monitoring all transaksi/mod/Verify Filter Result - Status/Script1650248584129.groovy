@@ -42,7 +42,7 @@ String filteredStatus = "$nfilteredStatus" ?: ''
 filteredStatus = filteredStatus.toUpperCase()
 Integer countPage = 1
 
-List<WebElement> selectorContentGLTableList = tableListGenerator('//table//tbody/tr')
+List<WebElement> selectorContentGLTableList = tableListGenerator('//div[contains(@class, \'ResultMonitoringIncoming\')]//table//tbody/tr')
 println(selectorContentGLTableList.size())
 
 TestObject temp_xpath_previousPage = findTestObject('Object Repository/Sider/Sider Inc Payment Menu/Finance - Penerimaan (Incoming Payment)/Monitoring Incoming Sub menu/button Previous Page Enabled')
@@ -91,7 +91,7 @@ if (selectorContentGLTableList.size() > 0) {
 			WebUI.verifyElementNotPresent(findTestObject('Object Repository/Sider/Sider Inc Payment Menu/Finance - Penerimaan (Incoming Payment)/Monitoring Incoming Sub menu/div No Data Shown'),
 				GlobalVariable.waitPresentTimeout, FailureHandling.STOP_ON_FAILURE)
 			
-			selectorContentGLTableList = tableListGenerator('//table//tbody/tr')
+			selectorContentGLTableList = tableListGenerator('//div[contains(@class, \'ResultMonitoringIncoming\')]//table//tbody/tr')
 			
 			///put the function here
 			filterResultStatusValidation(filteredStatus, selectorContentGLTableList)
