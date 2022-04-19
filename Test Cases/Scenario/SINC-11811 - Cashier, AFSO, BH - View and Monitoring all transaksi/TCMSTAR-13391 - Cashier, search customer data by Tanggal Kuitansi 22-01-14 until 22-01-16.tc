@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>(+)As a Cashier I want search customer data from Tanggal Kuitansi 14 Jan 2021 until 16 Jan 2022</description>
+   <name>TCMSTAR-13391 - Cashier, search customer data by Tanggal Kuitansi 22-01-14 until 22-01-16</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>a236764d-709f-470a-840b-d7741db29a95</testCaseGuid>
+</TestCaseEntity>
