@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>(+)As a Cashier I want search customer data from Nomor Posting H383-I-22000002 until H383-I-22000003</description>
+   <name>TCMSTAR-13394 - Cashier, filter by No Posting H383-I-22000002 to H383-I-22000003</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>cefc2b46-9ae2-4b57-af66-f2b9f9752d9a</testCaseGuid>
+</TestCaseEntity>
