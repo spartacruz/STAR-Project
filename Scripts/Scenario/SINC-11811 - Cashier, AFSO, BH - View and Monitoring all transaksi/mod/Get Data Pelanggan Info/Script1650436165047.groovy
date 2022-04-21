@@ -79,8 +79,8 @@ WebUI.click(objDetailTransaction)
 
 WebUI.waitForElementNotPresent(findTestObject('Object Repository/Sider/Sider Inc Payment Menu/Finance - Penerimaan (Incoming Payment)/Monitoring Incoming Sub menu/_Transaction Detail Pelanggan/loading spinning Data Pelanggan'), GlobalVariable.waitPresentTimeout, FailureHandling.STOP_ON_FAILURE)
 
-//WebUI.callTestCase(findTestCase('Scenario/SINC-11811 - Cashier, AFSO, BH - View and Monitoring all transaksi/mod/Verify Transaction Detail Page'),
-//	[:], FailureHandling.STOP_ON_FAILURE)
+WebUI.callTestCase(findTestCase('Scenario/SINC-11811 - Cashier, AFSO, BH - View and Monitoring all transaksi/mod/Verify Transaction Detail Page'),
+	[:], FailureHandling.STOP_ON_FAILURE)
 
 WebUI.callTestCase(findTestCase('Scenario/SINC-11811 - Cashier, AFSO, BH - View and Monitoring all transaksi/mod/Verify Transaction Detail Data'), 
     [('nparamMonitoringDetailInfo') : monitoringDetailInfo], FailureHandling.STOP_ON_FAILURE)
