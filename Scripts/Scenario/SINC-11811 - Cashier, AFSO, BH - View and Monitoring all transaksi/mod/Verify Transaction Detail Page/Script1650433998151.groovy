@@ -105,7 +105,7 @@ WebUI.verifyElementPresent(findTestObject('Sider/Sider Inc Payment Menu/Finance 
     GlobalVariable.waitPresentTimeout, FailureHandling.STOP_ON_FAILURE)
 
 WebUI.verifyElementPresent(findTestObject('Sider/Sider Inc Payment Menu/Finance - Penerimaan (Incoming Payment)/Monitoring Incoming Sub menu/_Transaction Detail Pelanggan/h3 Riwayat Pembayaran'), 
-    GlobalVariable.waitPresentTimeout, FailureHandling.STOP_ON_FAILURE)
+    GlobalVariable.waitPresentTimeout, FailureHandling.OPTIONAL)
 
 WebUI.verifyElementPresent(findTestObject('Sider/Sider Inc Payment Menu/Finance - Penerimaan (Incoming Payment)/Monitoring Incoming Sub menu/_Transaction Detail Pelanggan/h3 Penerimaan Pembayaran'), 
     GlobalVariable.waitPresentTimeout, FailureHandling.STOP_ON_FAILURE)

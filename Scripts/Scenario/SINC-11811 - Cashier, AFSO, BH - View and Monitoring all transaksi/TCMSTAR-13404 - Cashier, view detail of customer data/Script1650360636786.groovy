@@ -22,32 +22,27 @@ WebUI.callTestCase(findTestCase('Scenario/SINC-11811 - Cashier, AFSO, BH - View 
     [:], FailureHandling.STOP_ON_FAILURE)
 
 Boolean isOk = false
-String num = ''
+String num = '1'
 String temp = ''
 
 
-while (isOk.equals(false)) {
-	num = randomNum().toString()
-	TestObject objNoKuitansi = WebUI.callTestCase(findTestCase('Scenario/SINC-11811 - Cashier, AFSO, BH - View and Monitoring all transaksi/mod/Get Object Row from Monitoring Incoming Table'),
-		[('nrow') : num, ('nwhichColumn') : 'DetailTransaction'], FailureHandling.STOP_ON_FAILURE)
-
-	temp = WebUI.getText(objNoKuitansi)
-	
-	//escaping broken dataseeder
-	if ( !( (temp.contains("20229999")) || (temp.contains("BKU")) ) ) {
-		isOk = true
-	}
-}
+//while (isOk.equals(false)) {
+//	num = randomNum().toString()
+//	TestObject objNoKuitansi = WebUI.callTestCase(findTestCase('Scenario/SINC-11811 - Cashier, AFSO, BH - View and Monitoring all transaksi/mod/Get Object Row from Monitoring Incoming Table'),
+//		[('nrow') : num, ('nwhichColumn') : 'DetailTransaction'], FailureHandling.STOP_ON_FAILURE)
+//
+//	temp = WebUI.getText(objNoKuitansi)
+//	
+//	//escaping broken dataseeder
+//	if ( !( (temp.contains("20229999")) || (temp.contains("BKU")) ) ) {
+//		isOk = true
+//	}
+//}
 
 println(num)
 
 WebUI.waitForElementNotPresent(findTestObject('Object Repository/Sider/Sider Inc Payment Menu/Finance - Penerimaan (Incoming Payment)/Monitoring Incoming Sub menu/div loading spin'), 
     GlobalVariable.waitPresentTimeout, FailureHandling.STOP_ON_FAILURE)
-
-//WebUI.click(findTestObject('Sider/Sider Inc Payment Menu/Finance - Penerimaan (Incoming Payment)/Monitoring Incoming Sub menu/button Next Page Enabled'))
-//
-//WebUI.waitForElementNotPresent(findTestObject('Object Repository/Sider/Sider Inc Payment Menu/Finance - Penerimaan (Incoming Payment)/Monitoring Incoming Sub menu/div loading spin'), 
-//    GlobalVariable.waitPresentTimeout, FailureHandling.STOP_ON_FAILURE)
 
 WebUI.callTestCase(findTestCase('Scenario/SINC-11811 - Cashier, AFSO, BH - View and Monitoring all transaksi/mod/Get Data Pelanggan Info'), 
     [('nrow') : num], FailureHandling.STOP_ON_FAILURE)
