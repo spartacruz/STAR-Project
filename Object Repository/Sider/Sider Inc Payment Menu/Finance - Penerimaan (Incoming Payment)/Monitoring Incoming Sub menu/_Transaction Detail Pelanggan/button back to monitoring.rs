@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>button back to monitoring</name>
+   <tag></tag>
+   <elementGuidId>45bec413-f14c-48e0-ab43-849aabfa3258</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>XPATH</key>
+         <value>//button[contains(@class, 'PaymentReceiptDetailsHeader')]</value>
+      </entry>
+      <entry>
+         <key>CSS</key>
+         <value>button.ant-btn.ant-btn-circle.ant-btn-icon-only.PaymentReceiptDetailsHeader_icon-wrapper__NjtLY</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>XPATH</selectorMethod>
+   <useRalativeImagePath>true</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>tag</name>
+      <type>Main</type>
+      <value>button</value>
+      <webElementGuid>b5e79c88-0a23-4f19-b9c6-3d2129c7ecf3</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>type</name>
+      <type>Main</type>
+      <value>button</value>
+      <webElementGuid>65acb2cb-c534-4fc1-b6b9-ece0c66d70f5</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>class</name>
+      <type>Main</type>
+      <value>ant-btn ant-btn-circle ant-btn-icon-only PaymentReceiptDetailsHeader_icon-wrapper__NjtLY</value>
+      <webElementGuid>1ea44933-4782-4f1c-a88e-b30013d1a427</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath</name>
+      <type>Main</type>
+      <value>id(&quot;root&quot;)/section[@class=&quot;ant-layout&quot;]/div[@class=&quot;Layout_layout-content__UoFx4&quot;]/section[@class=&quot;ant-layout Layout_layout-transition__tp-4e Layout_collapsed__Z9C94&quot;]/section[@class=&quot;ant-layout Layout_content__95Ydx&quot;]/main[@class=&quot;ant-layout-content&quot;]/div[1]/div[@class=&quot;layout-wrapper&quot;]/div[@class=&quot;PaymentReceiptDetailsHeader_style-header-wrapper__6-Vm-&quot;]/div[@class=&quot;ant-row ant-row-middle&quot;]/div[@class=&quot;ant-col ant-col-1&quot;]/button[@class=&quot;ant-btn ant-btn-circle ant-btn-icon-only PaymentReceiptDetailsHeader_icon-wrapper__NjtLY&quot;]</value>
+      <webElementGuid>3b19585a-4082-4f89-8912-87ac3e493d70</webElementGuid>
+   </webElementProperties>
+   <webElementXpaths>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:attributes</name>
+      <type>Main</type>
+      <value>(//button[@type='button'])[2]</value>
+      <webElementGuid>b8d6cdb5-e120-4841-b127-b6b5389e44fd</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:idRelative</name>
+      <type>Main</type>
+      <value>//div[@id='root']/section/div/section/section/main/div/div/div/div/div/button</value>
+      <webElementGuid>7e85f9c2-fd56-49d2-b0ee-47874a7aee6d</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Example'])[1]/following::button[1]</value>
+      <webElementGuid>f59fa4e6-b252-4e2c-b699-983bdc26dcbe</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Photo Produk'])[1]/following::button[1]</value>
+      <webElementGuid>069cb362-92b3-47ce-8dd2-c8eb2ade1fc8</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='No. Kuitansi'])[1]/preceding::button[2]</value>
+      <webElementGuid>f7921a31-be41-4d1d-b27c-4e4dc09b3036</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='H383-2022000005'])[1]/preceding::button[2]</value>
+      <webElementGuid>fcd3ec2c-cc49-4c3a-a265-516d1a07f82c</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:position</name>
+      <type>Main</type>
+      <value>//div/div/div/button</value>
+      <webElementGuid>78a3e22f-330c-4b55-b05f-9594ceb8bcb7</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:customAttributes</name>
+      <type>Main</type>
+      <value>//button[@type = 'button']</value>
+      <webElementGuid>604f70ce-4ad7-4ed1-bd10-edfb6c41715f</webElementGuid>
+   </webElementXpaths>
+</WebElementEntity>

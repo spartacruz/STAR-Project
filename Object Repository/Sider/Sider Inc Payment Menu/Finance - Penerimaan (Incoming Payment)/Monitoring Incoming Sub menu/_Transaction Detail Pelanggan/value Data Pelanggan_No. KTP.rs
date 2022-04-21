@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>value Data Pelanggan_No. KTP</name>
+   <tag></tag>
+   <elementGuidId>a1c7f739-94f9-40e3-8af9-ee840f33eab2</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>XPATH</key>
+         <value>//h3[(text() = 'Data Pelanggan' or . = 'Data Pelanggan')]/following-sibling::table//td[6]</value>
+      </entry>
+      <entry>
+         <key>CSS</key>
+         <value></value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>XPATH</selectorMethod>
+   <useRalativeImagePath>true</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>tag</name>
+      <type>Main</type>
+      <value>td</value>
+      <webElementGuid>3bec7d69-d750-40b8-a6ad-8c7918cad0b3</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>text</name>
+      <type>Main</type>
+      <value>9234567890123456</value>
+      <webElementGuid>6456c267-6d78-43bf-bc34-3bc8a1631ab6</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath</name>
+      <type>Main</type>
+      <value>id(&quot;root&quot;)/section[@class=&quot;ant-layout&quot;]/div[@class=&quot;Layout_layout-content__UoFx4&quot;]/section[@class=&quot;ant-layout Layout_layout-transition__tp-4e Layout_collapsed__Z9C94&quot;]/section[@class=&quot;ant-layout Layout_content__95Ydx&quot;]/main[@class=&quot;ant-layout-content&quot;]/div[1]/div[@class=&quot;layout-wrapper&quot;]/div[2]/div[@class=&quot;ant-row&quot;]/div[@class=&quot;ant-col ant-col-17&quot;]/div[@class=&quot;IncomingMonitoringDetails_content-wrapper__TOOEB&quot;]/div[@class=&quot;ReferenceDocument_consumer-data--wrapper__hi937&quot;]/div[1]/table[@class=&quot;ReferenceDocument_consumer-data--table__IEtZD&quot;]/tbody[1]/tr[1]/td[6]</value>
+      <webElementGuid>44ab4f26-9a57-4def-b855-e245a8cc92a2</webElementGuid>
+   </webElementProperties>
+   <webElementXpaths>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:idRelative</name>
+      <type>Main</type>
+      <value>//div[@id='root']/section/div/section/section/main/div/div/div[2]/div/div/div/div/div/table/tbody/tr/td[6]</value>
+      <webElementGuid>0fc7b497-fa42-4920-9aaf-28284f3d1f64</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Jakarta Selatan'])[1]/following::td[2]</value>
+      <webElementGuid>09454115-6795-4274-a598-731c0af88df1</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Jl. Gunung Sahari'])[1]/following::td[3]</value>
+      <webElementGuid>c1d84b60-1638-498f-b0a8-dcaa441493dc</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Riwayat Pembayaran'])[1]/preceding::td[2]</value>
+      <webElementGuid>86068f7d-1c2e-46fa-a180-12c0c0082072</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='No.'])[1]/preceding::td[2]</value>
+      <webElementGuid>d4d1f050-d64c-45e3-a675-1d02486413f1</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>//*/text()[normalize-space(.)='9234567890123456']/parent::*</value>
+      <webElementGuid>026ea5c9-4eed-4cec-9073-3262f26df464</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:position</name>
+      <type>Main</type>
+      <value>//td[6]</value>
+      <webElementGuid>4136541d-0e2b-49b4-9c46-94fa04e97e43</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:customAttributes</name>
+      <type>Main</type>
+      <value>//td[(text() = '9234567890123456' or . = '9234567890123456')]</value>
+      <webElementGuid>f07abc19-938b-433b-87ef-d41fe22b9abc</webElementGuid>
+   </webElementXpaths>
+</WebElementEntity>

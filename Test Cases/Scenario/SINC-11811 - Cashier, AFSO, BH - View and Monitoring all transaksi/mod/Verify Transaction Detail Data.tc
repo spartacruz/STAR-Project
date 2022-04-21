@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TestCaseEntity>
    <description></description>
-   <name>Verify Transaction Detail</name>
+   <name>Verify Transaction Detail Data</name>
    <tag></tag>
    <comment></comment>
-   <testCaseGuid>0e00dbc9-7034-4fd7-b655-fbfd28daa20f</testCaseGuid>
+   <testCaseGuid>c8b2f0a0-a3ea-46b1-a9b5-6a3a2e178a21</testCaseGuid>
 </TestCaseEntity>

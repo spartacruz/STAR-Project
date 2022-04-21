@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>value Data Pelanggan_Nama Pelanggan</name>
+   <tag></tag>
+   <elementGuidId>603db9d2-a283-4104-b570-17e644328197</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>XPATH</key>
+         <value>//h3[(text() = 'Data Pelanggan' or . = 'Data Pelanggan')]/following-sibling::table//td[2]</value>
+      </entry>
+      <entry>
+         <key>CSS</key>
+         <value></value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>XPATH</selectorMethod>
+   <useRalativeImagePath>true</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>tag</name>
+      <type>Main</type>
+      <value>td</value>
+      <webElementGuid>7e1d47ea-7a0e-46ee-a130-6102749c58a1</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>text</name>
+      <type>Main</type>
+      <value>Sukardi</value>
+      <webElementGuid>54d70a29-8323-48bc-a6ab-d274cc24472c</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath</name>
+      <type>Main</type>
+      <value>id(&quot;root&quot;)/section[@class=&quot;ant-layout&quot;]/div[@class=&quot;Layout_layout-content__UoFx4&quot;]/section[@class=&quot;ant-layout Layout_layout-transition__tp-4e Layout_collapsed__Z9C94&quot;]/section[@class=&quot;ant-layout Layout_content__95Ydx&quot;]/main[@class=&quot;ant-layout-content&quot;]/div[1]/div[@class=&quot;layout-wrapper&quot;]/div[2]/div[@class=&quot;ant-row&quot;]/div[@class=&quot;ant-col ant-col-17&quot;]/div[@class=&quot;IncomingMonitoringDetails_content-wrapper__TOOEB&quot;]/div[@class=&quot;ReferenceDocument_consumer-data--wrapper__hi937&quot;]/div[1]/table[@class=&quot;ReferenceDocument_consumer-data--table__IEtZD&quot;]/tbody[1]/tr[1]/td[2]</value>
+      <webElementGuid>ee5b8cea-7bde-48c8-b16d-7c40588ebbf3</webElementGuid>
+   </webElementProperties>
+   <webElementXpaths>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:idRelative</name>
+      <type>Main</type>
+      <value>//div[@id='root']/section/div/section/section/main/div/div/div[2]/div/div/div/div/div/table/tbody/tr/td[2]</value>
+      <webElementGuid>29068910-97f8-45de-9c74-eae55725f8c2</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='No. NPWP'])[1]/following::td[2]</value>
+      <webElementGuid>4f684d8a-8e5d-4c29-9a72-06d78510fdca</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='No. KTP'])[1]/following::td[2]</value>
+      <webElementGuid>58b69edf-0a16-49ca-945c-ce64b8d841ae</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Jl. Gunung Sahari'])[1]/preceding::td[1]</value>
+      <webElementGuid>a961bfe9-30e3-4dd4-afdd-8542ef39cbe6</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Jakarta Selatan'])[1]/preceding::td[2]</value>
+      <webElementGuid>06e348e1-c87a-4068-becc-91cc0f120ef0</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>//*/text()[normalize-space(.)='Sukardi']/parent::*</value>
+      <webElementGuid>afb41906-b6b1-4162-a609-9dc2f886a43b</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:position</name>
+      <type>Main</type>
+      <value>//td[2]</value>
+      <webElementGuid>fe4e0e98-e7df-4b4c-b583-ab42f7ffcbe8</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:customAttributes</name>
+      <type>Main</type>
+      <value>//td[(text() = 'Sukardi' or . = 'Sukardi')]</value>
+      <webElementGuid>6d68b67c-be78-4098-849e-fb2bbebc15ca</webElementGuid>
+   </webElementXpaths>
+</WebElementEntity>

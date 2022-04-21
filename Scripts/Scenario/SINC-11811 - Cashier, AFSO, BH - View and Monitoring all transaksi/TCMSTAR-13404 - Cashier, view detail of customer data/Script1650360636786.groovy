@@ -16,21 +16,51 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
-import java.util.Random
-
+import java.util.Random as Random
 
 WebUI.callTestCase(findTestCase('Scenario/SINC-11811 - Cashier, AFSO, BH - View and Monitoring all transaksi/TCMSTAR-13355 - Cashier, go to submenu Monitoring'), 
     [:], FailureHandling.STOP_ON_FAILURE)
-/*
-Random rand = new Random();
-int upperbound = 10;
 
-//generate random values from 0-10
-int int_random = rand.nextInt(upperbound)
-if (int_random == 0) {
-	int_random = 1
-}*/
+Boolean isOk = false
+String num = ''
+String temp = ''
 
-WebUI.callTestCase(findTestCase('Scenario/SINC-11811 - Cashier, AFSO, BH - View and Monitoring all transaksi/mod/Verify Transaction Detail'),
-	[('nrow') : '1'], FailureHandling.STOP_ON_FAILURE)
+
+while (isOk.equals(false)) {
+	num = randomNum().toString()
+	TestObject objNoKuitansi = WebUI.callTestCase(findTestCase('Scenario/SINC-11811 - Cashier, AFSO, BH - View and Monitoring all transaksi/mod/Get Object Row from Monitoring Incoming Table'),
+		[('nrow') : num, ('nwhichColumn') : 'DetailTransaction'], FailureHandling.STOP_ON_FAILURE)
+
+	temp = WebUI.getText(objNoKuitansi)
+	
+	//escaping broken dataseeder
+	if ( !( (temp.contains("20229999")) || (temp.contains("BKU")) ) ) {
+		isOk = true
+	}
+}
+
+println(num)
+
+WebUI.waitForElementNotPresent(findTestObject('Object Repository/Sider/Sider Inc Payment Menu/Finance - Penerimaan (Incoming Payment)/Monitoring Incoming Sub menu/div loading spin'), 
+    GlobalVariable.waitPresentTimeout, FailureHandling.STOP_ON_FAILURE)
+
+//WebUI.click(findTestObject('Sider/Sider Inc Payment Menu/Finance - Penerimaan (Incoming Payment)/Monitoring Incoming Sub menu/button Next Page Enabled'))
+//
+//WebUI.waitForElementNotPresent(findTestObject('Object Repository/Sider/Sider Inc Payment Menu/Finance - Penerimaan (Incoming Payment)/Monitoring Incoming Sub menu/div loading spin'), 
+//    GlobalVariable.waitPresentTimeout, FailureHandling.STOP_ON_FAILURE)
+
+WebUI.callTestCase(findTestCase('Scenario/SINC-11811 - Cashier, AFSO, BH - View and Monitoring all transaksi/mod/Get Data Pelanggan Info'), 
+    [('nrow') : num], FailureHandling.STOP_ON_FAILURE)
+
+def randomNum() {
+	Random rand = new Random();
+	int upperbound = 10;
+	
+	//generate random values from 0-10
+	int int_random = rand.nextInt(upperbound)
+	if (int_random == 0) {
+		int_random = 1
+	}
+	return int_random
+}
 

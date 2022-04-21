@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>value NoKuitansi</name>
+   <tag></tag>
+   <elementGuidId>8f786bae-5689-4ee4-8839-c4f6927ab131</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>XPATH</key>
+         <value>//span[(text() = 'No. Kuitansi' and contains(@class, 'PaymentReceiptDetailsHeaderItem'))]/following-sibling::div</value>
+      </entry>
+      <entry>
+         <key>CSS</key>
+         <value></value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>XPATH</selectorMethod>
+   <useRalativeImagePath>true</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>tag</name>
+      <type>Main</type>
+      <value>div</value>
+      <webElementGuid>48e422c8-21b7-4149-aa14-c8714138fb16</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>class</name>
+      <type>Main</type>
+      <value>ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line PaymentReceiptDetailsHeaderItem_styles-header-value-sm__CgZ+Q</value>
+      <webElementGuid>3537f0c4-cb2a-4fd1-8d0b-92a1f985505d</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>text</name>
+      <type>Main</type>
+      <value>H383-2022000006</value>
+      <webElementGuid>f27d09b3-2cad-484d-bb36-45d1ba1e4822</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath</name>
+      <type>Main</type>
+      <value>id(&quot;root&quot;)/section[@class=&quot;ant-layout&quot;]/div[@class=&quot;Layout_layout-content__UoFx4&quot;]/section[@class=&quot;ant-layout Layout_layout-transition__tp-4e Layout_collapsed__Z9C94&quot;]/section[@class=&quot;ant-layout Layout_content__95Ydx&quot;]/main[@class=&quot;ant-layout-content&quot;]/div[1]/div[@class=&quot;layout-wrapper&quot;]/div[@class=&quot;PaymentReceiptDetailsHeader_style-header-wrapper__6-Vm-&quot;]/div[@class=&quot;ant-row ant-row-middle&quot;]/div[@class=&quot;ant-col&quot;]/div[1]/div[1]/div[@class=&quot;ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line PaymentReceiptDetailsHeaderItem_styles-header-value-sm__CgZ+Q&quot;]</value>
+      <webElementGuid>52f21a7a-a057-442e-9cf3-6e1e5768e04b</webElementGuid>
+   </webElementProperties>
+   <webElementXpaths>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:idRelative</name>
+      <type>Main</type>
+      <value>//div[@id='root']/section/div/section/section/main/div/div/div/div/div[2]/div/div/div</value>
+      <webElementGuid>721f8190-27be-47c2-9b09-a9c9d1e14f58</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='No. Kuitansi'])[1]/following::div[1]</value>
+      <webElementGuid>29324f5b-7fa4-4345-974a-601e226ad8a2</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Example'])[1]/following::div[30]</value>
+      <webElementGuid>92ba234d-7347-4fe6-914f-f67dbddbc0b7</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Tgl. Kuitansi'])[1]/preceding::div[1]</value>
+      <webElementGuid>b93eb05a-76dc-4652-ab76-898ab5f773d9</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='No. Posting'])[1]/preceding::div[5]</value>
+      <webElementGuid>5c12e802-0125-440b-84a3-32acd186997d</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>//*/text()[normalize-space(.)='H383-2022000006']/parent::*</value>
+      <webElementGuid>89df5a02-1e26-499c-982b-556ea6128dfd</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:position</name>
+      <type>Main</type>
+      <value>//div/div/div/div[2]/div/div/div</value>
+      <webElementGuid>3659ab91-6c65-4127-870e-2fb3530ee186</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:customAttributes</name>
+      <type>Main</type>
+      <value>//div[(text() = 'H383-2022000006' or . = 'H383-2022000006')]</value>
+      <webElementGuid>2787fd35-b628-4802-b7a1-23e2f2f0d67f</webElementGuid>
+   </webElementXpaths>
+</WebElementEntity>
