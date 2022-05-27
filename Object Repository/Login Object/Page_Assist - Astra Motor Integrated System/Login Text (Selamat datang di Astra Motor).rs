@@ -7,7 +7,7 @@
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//p[(text() = 'Selamat datang di Astra Motor Integrated System (Assist) ' or . = 'Selamat datang di Astra Motor Integrated System (Assist) ')]</value>
+         <value>//p[contains(text(), 'Selamat datang di System Terintegrasi Astra Motor (STAR)')]</value>
       </entry>
       <entry>
          <key>CSS</key>
@@ -22,6 +22,7 @@
       <name>tag</name>
       <type>Main</type>
       <value>p</value>
+      <webElementGuid>274db99b-a4f8-4739-b44c-487bc5628152</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
@@ -29,6 +30,7 @@
       <name>class</name>
       <type>Main</type>
       <value>Login_title__36hzb</value>
+      <webElementGuid>2e03cab6-88d3-49ee-94db-5124762e43d9</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>
@@ -36,6 +38,7 @@
       <name>text</name>
       <type>Main</type>
       <value>Selamat datang di Astra Motor Integrated System (Assist) </value>
+      <webElementGuid>b8aeb807-22b8-4aa2-a156-648f540d2625</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
@@ -43,6 +46,7 @@
       <name>xpath</name>
       <type>Main</type>
       <value>id(&quot;root&quot;)/div[@class=&quot;ant-row&quot;]/div[@class=&quot;ant-col ant-col-xs-24 ant-col-sm-8 ant-col-md-8 ant-col-lg-8&quot;]/p[@class=&quot;Login_title__36hzb&quot;]</value>
+      <webElementGuid>625e9025-8276-48ff-8ab4-82f13e5248ac</webElementGuid>
    </webElementProperties>
    <webElementXpaths>
       <isSelected>true</isSelected>
@@ -50,6 +54,7 @@
       <name>xpath:idRelative</name>
       <type>Main</type>
       <value>//div[@id='root']/div/div[2]/p</value>
+      <webElementGuid>916794c2-fb4e-4dd5-9e29-d828ba487fa2</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -57,6 +62,7 @@
       <name>xpath:neighbor</name>
       <type>Main</type>
       <value>(.//*[normalize-space(text()) and normalize-space(.)='Login Sales Office'])[1]/preceding::p[2]</value>
+      <webElementGuid>98035e5d-d2fb-4ad2-b0f0-4e7cd3b27b26</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -64,6 +70,7 @@
       <name>xpath:neighbor</name>
       <type>Main</type>
       <value>(.//*[normalize-space(text()) and normalize-space(.)='Login Dealer'])[1]/preceding::p[2]</value>
+      <webElementGuid>f3269cd1-5c3b-4a0f-bea7-65c817f14884</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -71,6 +78,7 @@
       <name>xpath:neighbor</name>
       <type>Main</type>
       <value>//*/text()[normalize-space(.)='Selamat datang di Astra Motor Integrated System (Assist)']/parent::*</value>
+      <webElementGuid>fd2c2f80-987b-41b4-a692-fadc3ca319f1</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -78,6 +86,7 @@
       <name>xpath:position</name>
       <type>Main</type>
       <value>//p</value>
+      <webElementGuid>e7dca074-a48c-4d89-aca7-8dff2903dcff</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -85,5 +94,6 @@
       <name>xpath:customAttributes</name>
       <type>Main</type>
       <value>//p[(text() = 'Selamat datang di Astra Motor Integrated System (Assist) ' or . = 'Selamat datang di Astra Motor Integrated System (Assist) ')]</value>
+      <webElementGuid>c31a30f4-3254-46df-8f4f-92eab8b973e8</webElementGuid>
    </webElementXpaths>
 </WebElementEntity>
