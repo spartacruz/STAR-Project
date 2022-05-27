@@ -18,20 +18,20 @@ import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
 WebUI.waitForElementPresent(findTestObject('Login Object/Page_Micro Frontend/Login Text (Selamat datang Astra)'), GlobalVariable.waitPresentTimeout, 
-    FailureHandling.CONTINUE_ON_FAILURE)
+    FailureHandling.OPTIONAL)
 
 WebUI.waitForElementPresent(findTestObject('Login Object/Page_Micro Frontend/Login Logo Astra'), GlobalVariable.waitPresentTimeout, 
-    FailureHandling.CONTINUE_ON_FAILURE)
+    FailureHandling.OPTIONAL)
 
 WebUI.waitForElementPresent(findTestObject('Login Object/Page_Micro Frontend/input Username'), GlobalVariable.waitPresentTimeout, 
-    FailureHandling.CONTINUE_ON_FAILURE)
+    FailureHandling.STOP_ON_FAILURE)
 
 WebUI.waitForElementPresent(findTestObject('Login Object/Page_Micro Frontend/input Password'), GlobalVariable.waitPresentTimeout, 
-    FailureHandling.CONTINUE_ON_FAILURE)
+    FailureHandling.STOP_ON_FAILURE)
 
 WebUI.waitForElementPresent(findTestObject('Login Object/Page_Micro Frontend/button Sign in'), GlobalVariable.waitPresentTimeout, 
-    FailureHandling.CONTINUE_ON_FAILURE)
+    FailureHandling.STOP_ON_FAILURE)
 
 WebUI.waitForElementPresent(findTestObject('Login Object/Page_Micro Frontend/button Forgot Password'), GlobalVariable.waitPresentTimeout, 
-    FailureHandling.CONTINUE_ON_FAILURE)
+    FailureHandling.OPTIONAL)
 
