@@ -6,11 +6,11 @@
    <elementGuidId>9622bcfa-7893-4820-9ab6-a4b581f38c55</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>XPATH</key>
-         <value>//div[@href = '/incomingpayment#' and (text() = 'Cash Opname' or . = 'Cash Opname')]</value>
+         <key>CSS</key>
       </entry>
       <entry>
-         <key>CSS</key>
+         <key>XPATH</key>
+         <value>//div[contains(@href, '/') and (text() = 'Cash Opname' or . = 'Cash Opname')]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>
@@ -21,6 +21,7 @@
       <name>tag</name>
       <type>Main</type>
       <value>div</value>
+      <webElementGuid>b9153f55-c14b-415e-9982-2d4aa29deb04</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
@@ -28,6 +29,7 @@
       <name>class</name>
       <type>Main</type>
       <value>CardMenu_card-wrapper__1XGYf</value>
+      <webElementGuid>089e0353-4a69-4bfe-9c42-85dadd53c30f</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>
@@ -35,6 +37,7 @@
       <name>href</name>
       <type>Main</type>
       <value>/incomingpayment#</value>
+      <webElementGuid>b8d51c99-6642-4476-a84f-8bf74b764557</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>
@@ -42,6 +45,7 @@
       <name>text</name>
       <type>Main</type>
       <value>Cash Opname</value>
+      <webElementGuid>efe90e52-41b2-4131-b5ae-23c2a3e277b4</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
@@ -49,6 +53,7 @@
       <name>xpath</name>
       <type>Main</type>
       <value>id(&quot;root&quot;)/section[@class=&quot;ant-layout&quot;]/section[@class=&quot;ant-layout&quot;]/div[@class=&quot;Layout_with-topbar__2Adk4&quot;]/section[@class=&quot;ant-layout&quot;]/section[@class=&quot;ant-layout Layout_content__1pwzV Layout_with-sidebar__2iT5R&quot;]/main[@class=&quot;ant-layout-content&quot;]/div[1]/div[@class=&quot;layout-wrapper&quot;]/div[@class=&quot;MainMenu_menu-wrapper__2AsqS&quot;]/div[@class=&quot;ant-row CardMenu_container-menu__2hIGY&quot;]/div[@class=&quot;ant-col ant-col-6&quot;]/div[@class=&quot;CardMenu_card-wrapper__1XGYf&quot;]</value>
+      <webElementGuid>aa775341-c115-4edf-883d-2548e2096e20</webElementGuid>
    </webElementProperties>
    <webElementXpaths>
       <isSelected>true</isSelected>
@@ -56,6 +61,7 @@
       <name>xpath:idRelative</name>
       <type>Main</type>
       <value>//div[@id='root']/section/section/div/section/section/main/div/div/div/div/div[5]/div</value>
+      <webElementGuid>64a8e044-371e-4c7e-8d5b-7f74f973e972</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -63,6 +69,7 @@
       <name>xpath:neighbor</name>
       <type>Main</type>
       <value>(.//*[normalize-space(text()) and normalize-space(.)='Penagihan'])[1]/following::div[2]</value>
+      <webElementGuid>c9ddd0cb-4fc0-4be9-a4e2-2b1074c44974</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -70,6 +77,7 @@
       <name>xpath:neighbor</name>
       <type>Main</type>
       <value>(.//*[normalize-space(text()) and normalize-space(.)='Pembebanan'])[1]/following::div[5]</value>
+      <webElementGuid>614e0bc9-0221-47a3-a8f9-0b2a88760706</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -77,6 +85,7 @@
       <name>xpath:neighbor</name>
       <type>Main</type>
       <value>(.//*[normalize-space(text()) and normalize-space(.)='Monitoring &amp; Report'])[1]/preceding::div[3]</value>
+      <webElementGuid>baea536c-f97b-48b7-a76c-cd57e98bd900</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -84,6 +93,7 @@
       <name>xpath:position</name>
       <type>Main</type>
       <value>//div[5]/div</value>
+      <webElementGuid>43fcd80e-fdd1-4ff8-bf4a-8f7a2b0b775e</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -91,5 +101,6 @@
       <name>xpath:customAttributes</name>
       <type>Main</type>
       <value>//div[@href = '/incomingpayment#' and (text() = 'Cash Opname' or . = 'Cash Opname')]</value>
+      <webElementGuid>84642b20-2109-494b-a815-e091a8c5b2bf</webElementGuid>
    </webElementXpaths>
 </WebElementEntity>
