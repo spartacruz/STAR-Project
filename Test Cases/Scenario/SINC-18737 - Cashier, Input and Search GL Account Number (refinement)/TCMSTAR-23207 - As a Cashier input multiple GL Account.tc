@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>(+)As a Cashier, I want to select multiple GL Account in one box</description>
+   <name>TCMSTAR-23207 - As a Cashier input multiple GL Account</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>67adcb26-38d8-439e-a94f-1e961582f2b4</testCaseGuid>
+</TestCaseEntity>
