@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>(+)As a Cashier, I want to Input and Search GL Account Number by typing 3 lower case character and that character is exist on GL Description</description>
+   <name>TCMSTAR-23198 - Input 3 Lower Case n System Give Recomendation</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>6beff09b-4147-4149-9dc0-71a8b90fc230</testCaseGuid>
+</TestCaseEntity>
