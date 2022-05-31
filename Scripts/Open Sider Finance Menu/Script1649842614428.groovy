@@ -21,14 +21,16 @@ WebUI.callTestCase(findTestCase('Login as/Login As'), [:], FailureHandling.STOP_
 
 WebUI.mouseOver(findTestObject('Home - Dashboard/Sider/Sider home icon'))
 
-WebUI.delay(3)
+WebUI.delay(2)
 
-WebUI.scrollToPosition(0, 9999)
+WebUI.scrollToElement(findTestObject('Home - Dashboard/Sider/Sider sub Finance'), 3)
 
-WebUI.callTestCase(findTestCase('click with javascript'), [('ntestObject') : 'Object Repository/Home - Dashboard/Sider/Sider Incoming Payment'], 
+WebUI.delay(2)
+
+WebUI.mouseOver(findTestObject('Home - Dashboard/Sider/Sider sub Finance'))
+
+WebUI.callTestCase(findTestCase('click with javascript'), [('ntestObject') : 'Object Repository/Home - Dashboard/Sider/Sider Sub menu Finance'], 
     FailureHandling.STOP_ON_FAILURE)
-
-WebUI.click(findTestObject('Home - Dashboard/Sider/Sider Incoming Payment'))
 
 WebUI.callTestCase(findTestCase('VerifyPage/Verify Page Sider/Finance Payment Menu/VerifyFinancePaymentMenu'), [:], FailureHandling.STOP_ON_FAILURE)
 
