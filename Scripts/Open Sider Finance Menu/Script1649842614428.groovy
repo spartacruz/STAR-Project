@@ -25,6 +25,9 @@ WebUI.delay(3)
 
 WebUI.scrollToPosition(0, 9999)
 
+WebUI.callTestCase(findTestCase('click with javascript'), [('ntestObject') : 'Object Repository/Home - Dashboard/Sider/Sider Incoming Payment'], 
+    FailureHandling.STOP_ON_FAILURE)
+
 WebUI.click(findTestObject('Home - Dashboard/Sider/Sider Incoming Payment'))
 
 WebUI.callTestCase(findTestCase('VerifyPage/Verify Page Sider/Finance Payment Menu/VerifyFinancePaymentMenu'), [:], FailureHandling.STOP_ON_FAILURE)
