@@ -61,7 +61,7 @@
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>10</initValue>
+      <initValue>5</initValue>
       <name>waitPresentTimeout</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>

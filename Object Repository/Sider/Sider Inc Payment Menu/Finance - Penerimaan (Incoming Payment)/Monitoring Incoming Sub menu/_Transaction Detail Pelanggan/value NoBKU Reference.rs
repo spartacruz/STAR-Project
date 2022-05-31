@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>value NoBKU Reference</name>
+   <tag></tag>
+   <elementGuidId>190485c7-b02b-497f-8190-835d9544eafc</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>XPATH</key>
+         <value>//span[(text() = 'No. Kuitansi' and contains(@class, 'PaymentReceiptDetailsHeaderItem'))]/following-sibling::div</value>
+      </entry>
+      <entry>
+         <key>CSS</key>
+         <value></value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>XPATH</selectorMethod>
+   <useRalativeImagePath>true</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>tag</name>
+      <type>Main</type>
+      <value>div</value>
+      <webElementGuid>1cbe0aeb-fd99-41f4-93ac-8ee937f80f31</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>class</name>
+      <type>Main</type>
+      <value>ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line PaymentReceiptDetailsHeaderItem_styles-header-value-sm__CgZ+Q</value>
+      <webElementGuid>fca3d58b-03af-419a-9a12-7bb925ba7740</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>text</name>
+      <type>Main</type>
+      <value>H383-2022900007</value>
+      <webElementGuid>3b57050e-ebdc-4642-b3a4-2ddd20365060</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath</name>
+      <type>Main</type>
+      <value>id(&quot;root&quot;)/section[@class=&quot;ant-layout&quot;]/div[@class=&quot;Layout_layout-content__UoFx4&quot;]/section[@class=&quot;ant-layout Layout_layout-transition__tp-4e Layout_collapsed__Z9C94&quot;]/section[@class=&quot;ant-layout Layout_content__95Ydx&quot;]/main[@class=&quot;ant-layout-content&quot;]/div[1]/div[@class=&quot;layout-wrapper&quot;]/div[@class=&quot;PaymentReceiptDetailsHeader_style-header-wrapper__6-Vm-&quot;]/div[@class=&quot;ant-row ant-row-middle&quot;]/div[@class=&quot;ant-col&quot;]/div[1]/div[1]/div[@class=&quot;ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line PaymentReceiptDetailsHeaderItem_styles-header-value-sm__CgZ+Q&quot;]</value>
+      <webElementGuid>9def3aa7-59c4-4f75-b151-472d1e408406</webElementGuid>
+   </webElementProperties>
+   <webElementXpaths>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:idRelative</name>
+      <type>Main</type>
+      <value>//div[@id='root']/section/div/section/section/main/div/div/div/div/div[7]/div/div/div</value>
+      <webElementGuid>cdf41f9c-7eea-448e-8701-041def19fcd6</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='No. BKU Reference'])[1]/following::div[1]</value>
+      <webElementGuid>ff2e6c1f-fd37-488d-940a-0f6cdaf1ae23</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Collection'])[1]/following::div[4]</value>
+      <webElementGuid>0d342e8d-ebf2-445e-bbc8-746fa9e6b32c</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='deleted'])[1]/preceding::div[1]</value>
+      <webElementGuid>691e15a8-9ae0-4a3c-b64b-d607df17d18a</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Cashier'])[1]/preceding::div[2]</value>
+      <webElementGuid>499e1f07-bf3f-451d-8c8d-7b5c80df62f2</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>//*/text()[normalize-space(.)='H383-2022900007']/parent::*</value>
+      <webElementGuid>e5a8f29a-cc20-4375-b700-ac66b6ce1854</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:position</name>
+      <type>Main</type>
+      <value>//div[7]/div/div/div</value>
+      <webElementGuid>16eae0ec-01fc-4c46-b2b6-cb97f2aade2d</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:customAttributes</name>
+      <type>Main</type>
+      <value>//div[(text() = 'H383-2022900007' or . = 'H383-2022900007')]</value>
+      <webElementGuid>5aba1718-81e0-4906-ac7f-51596cd73008</webElementGuid>
+   </webElementXpaths>
+</WebElementEntity>

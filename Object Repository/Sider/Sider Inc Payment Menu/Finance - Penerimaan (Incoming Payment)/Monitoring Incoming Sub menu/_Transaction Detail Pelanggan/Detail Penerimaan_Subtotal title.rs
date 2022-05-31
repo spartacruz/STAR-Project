@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>Detail Penerimaan_Subtotal title</name>
+   <tag></tag>
+   <elementGuidId>7e4aa591-1942-46b4-9df8-ab3ad12ee932</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>XPATH</key>
+         <value>//span[contains(@class, 'ReceiptDetails_subtotal-label') and text()='Subtotal']</value>
+      </entry>
+      <entry>
+         <key>CSS</key>
+         <value>span.ant-typography.ReceiptDetails_subtotal-label__ec3Gz</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>XPATH</selectorMethod>
+   <useRalativeImagePath>true</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>tag</name>
+      <type>Main</type>
+      <value>span</value>
+      <webElementGuid>8d8fe0af-716d-408d-8773-ce1bd815503f</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>class</name>
+      <type>Main</type>
+      <value>ant-typography ReceiptDetails_subtotal-label__ec3Gz</value>
+      <webElementGuid>eed01273-b123-4f5d-8eae-d213057b946c</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>text</name>
+      <type>Main</type>
+      <value>Subtotal</value>
+      <webElementGuid>48e0225c-d2bd-4abd-a23a-65825fbdb369</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath</name>
+      <type>Main</type>
+      <value>id(&quot;root&quot;)/section[@class=&quot;ant-layout&quot;]/div[@class=&quot;Layout_layout-content__UoFx4&quot;]/section[@class=&quot;ant-layout Layout_layout-transition__tp-4e Layout_collapsed__Z9C94&quot;]/section[@class=&quot;ant-layout Layout_content__95Ydx&quot;]/main[@class=&quot;ant-layout-content&quot;]/div[1]/div[@class=&quot;layout-wrapper&quot;]/div[2]/div[@class=&quot;ant-row&quot;]/div[@class=&quot;ant-col ant-col-7 IncomingMonitoringDetails_receipt-wrapper__JbMN3&quot;]/div[@class=&quot;ReceiptDetails_details-receipt-wrapper__ZALbL&quot;]/div[@class=&quot;ReceiptDetails_subtotal-receipt-wrapper__WGkeP&quot;]/span[@class=&quot;ant-typography ReceiptDetails_subtotal-label__ec3Gz&quot;]</value>
+      <webElementGuid>296b070c-91f8-472d-b4c9-be9141433d0e</webElementGuid>
+   </webElementProperties>
+   <webElementXpaths>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:idRelative</name>
+      <type>Main</type>
+      <value>//div[@id='root']/section/div/section/section/main/div/div/div[2]/div/div[2]/div/div/span</value>
+      <webElementGuid>38e707bd-e097-4f3c-ae1f-a9cda8fcf839</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Detail Penerimaan'])[1]/following::span[1]</value>
+      <webElementGuid>2ea1b3a0-797d-4283-a6dd-669df3ce81fb</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Total Penerimaan'])[1]/preceding::span[2]</value>
+      <webElementGuid>0e54233d-c4f1-4e9f-ad58-34214fe08b63</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:position</name>
+      <type>Main</type>
+      <value>//div[2]/div/div[2]/div/div/span</value>
+      <webElementGuid>2053ef5f-343d-42fa-9d98-33b29aa726a5</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:customAttributes</name>
+      <type>Main</type>
+      <value>//span[(text() = 'Subtotal' or . = 'Subtotal')]</value>
+      <webElementGuid>34a0c939-aa4a-4785-9c04-63310bcd5ca1</webElementGuid>
+   </webElementXpaths>
+</WebElementEntity>

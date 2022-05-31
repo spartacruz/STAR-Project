@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>(+)As a Cashier I want search customer data using Nomor Kuitansi by typing 'BKU'</description>
+   <name>TCMSTAR-13368 - Cashier, search customer data by No Kuitansi - BKU</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>c50f8640-4890-4aa0-9b39-b33dd482d970</testCaseGuid>
+</TestCaseEntity>

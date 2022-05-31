@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>(-)As a Cashier I cannot search customer data with Nomor Kuitansi abc which is not exist</description>
+   <name>TCMSTAR-13406 - Cashier, search customer data by No Kuitansi not exist - abc</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>c04bfe2d-ab14-4d84-a7bb-2ba87bb35c9b</testCaseGuid>
+</TestCaseEntity>

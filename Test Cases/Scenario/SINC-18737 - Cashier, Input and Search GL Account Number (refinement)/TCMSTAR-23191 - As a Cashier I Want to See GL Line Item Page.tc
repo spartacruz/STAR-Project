@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>TCMSTAR-23191 - As a Cashier I Want to See GL Line Item Page</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>a8a63297-85d8-4ffc-807a-110b8c7b7ba3</testCaseGuid>
+</TestCaseEntity>

@@ -52,7 +52,7 @@ if (!gagalLogin) {
     //    WebUI.waitForElementPresent(findTestObject('Object Repository/Home - Dashboard/Sider/Sider Hubungan dengan Pemakai AHM'), 
     //        GlobalVariable.waitPresentTimeout, FailureHandling.CONTINUE_ON_FAILURE)
     //
-    //    WebUI.waitForElementPresent(findTestObject('Object Repository/Home - Dashboard/Sider/Sider Incoming Payment'), GlobalVariable.waitPresentTimeout, 
+    //    WebUI.waitForElementPresent(findTestObject('Object Repository/Home - Dashboard/Sider/Sider Sub menu Finance'), GlobalVariable.waitPresentTimeout, 
     //        FailureHandling.CONTINUE_ON_FAILURE)
     //
     //    WebUI.waitForElementPresent(findTestObject('Object Repository/Home - Dashboard/Sider/Sider KabupatenKota'), GlobalVariable.waitPresentTimeout, 

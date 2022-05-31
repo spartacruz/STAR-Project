@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>(-)As a Cashier, I want to Input and Search GL Account Number by typing 4 digit number and system not show any sugesstion</description>
+   <name>TCMSTAR-23195 - Input 4 Digit Num n System Give Recomendation</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>ebf4c58a-6cc9-4f83-a51d-b0216163e1e2</testCaseGuid>
+</TestCaseEntity>

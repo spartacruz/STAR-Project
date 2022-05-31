@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>(-)As a Cashier I cannot search customer data named 'Zeha' that does not exist</description>
+   <name>TCMSTAR-13405 - Cashier, search customer data by Nama Pelanggan not exist - zeha</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>ccd98955-d024-463d-8a78-d315709e9adb</testCaseGuid>
+</TestCaseEntity>

@@ -25,6 +25,11 @@ WebUI.click(findTestObject('Sider/Sider Inc Payment Menu/Finance - Penerimaan (I
 WebUI.sendKeys(findTestObject('Sider/Sider Inc Payment Menu/Finance - Penerimaan (Incoming Payment)/Monitoring Incoming Sub menu/input search box'), 
     'Af')
 
+WebUI.waitForElementNotPresent(findTestObject('Sider/Sider Inc Payment Menu/Fin - MR - Mon GL Line Item/btn Show Result/span dot spinning_fetching data'),
+	GlobalVariable.waitPresentTimeout, FailureHandling.STOP_ON_FAILURE)
+WebUI.verifyElementNotPresent(findTestObject('Sider/Sider Inc Payment Menu/Fin - MR - Mon GL Line Item/btn Show Result/span dot spinning_fetching data'),
+	GlobalVariable.waitPresentTimeout, FailureHandling.STOP_ON_FAILURE)
+
 def inputSearchBoxObj = findTestObject('Object Repository/Sider/Sider Inc Payment Menu/Finance - Penerimaan (Incoming Payment)/Monitoring Incoming Sub menu/input search box')
 
 String searchquery = WebUI.getAttribute(inputSearchBoxObj, 'value', FailureHandling.STOP_ON_FAILURE)

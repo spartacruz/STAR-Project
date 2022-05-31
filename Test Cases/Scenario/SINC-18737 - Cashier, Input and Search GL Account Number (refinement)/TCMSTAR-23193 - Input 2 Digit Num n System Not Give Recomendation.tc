@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>(-)As a Cashier, I want to Input and Search GL Account Number by typing 2 digit number and system not show any sugesstion</description>
+   <name>TCMSTAR-23193 - Input 2 Digit Num n System Not Give Recomendation</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>e27e620c-b762-4b63-b89f-a3ef27bff0bd</testCaseGuid>
+</TestCaseEntity>

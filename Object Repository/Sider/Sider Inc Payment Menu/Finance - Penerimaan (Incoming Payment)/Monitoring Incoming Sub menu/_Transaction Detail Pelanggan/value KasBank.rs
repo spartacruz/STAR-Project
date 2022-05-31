@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>value KasBank</name>
+   <tag></tag>
+   <elementGuidId>5c4d4a03-bec6-40d1-88f1-8c5039e98e56</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>XPATH</key>
+         <value>//span[(text() = 'Kas/Bank' and contains(@class, 'PaymentReceiptDetailsHeaderItem'))]/following-sibling::div</value>
+      </entry>
+      <entry>
+         <key>CSS</key>
+         <value></value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>XPATH</selectorMethod>
+   <useRalativeImagePath>true</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>tag</name>
+      <type>Main</type>
+      <value>div</value>
+      <webElementGuid>625acb19-217d-4ec6-997b-0340b5ca0ecf</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>class</name>
+      <type>Main</type>
+      <value>ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line PaymentReceiptDetailsHeaderItem_styles-header-value-sm__CgZ+Q</value>
+      <webElementGuid>d943b26a-85cc-4966-9db8-f74a2b4437ab</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>text</name>
+      <type>Main</type>
+      <value>Collection</value>
+      <webElementGuid>3cb46055-7034-47d0-a8fa-5a2c64072c50</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath</name>
+      <type>Main</type>
+      <value>id(&quot;root&quot;)/section[@class=&quot;ant-layout&quot;]/div[@class=&quot;Layout_layout-content__UoFx4&quot;]/section[@class=&quot;ant-layout Layout_layout-transition__tp-4e Layout_collapsed__Z9C94&quot;]/section[@class=&quot;ant-layout Layout_content__95Ydx&quot;]/main[@class=&quot;ant-layout-content&quot;]/div[1]/div[@class=&quot;layout-wrapper&quot;]/div[@class=&quot;PaymentReceiptDetailsHeader_style-header-wrapper__6-Vm-&quot;]/div[@class=&quot;ant-row ant-row-middle&quot;]/div[@class=&quot;ant-col&quot;]/div[1]/div[1]/div[@class=&quot;ant-typography ant-typography-ellipsis ant-typography-single-line ant-typography-ellipsis-single-line PaymentReceiptDetailsHeaderItem_styles-header-value-sm__CgZ+Q&quot;]</value>
+      <webElementGuid>e3443302-f51d-4b39-b3bf-4b832b80d7f2</webElementGuid>
+   </webElementProperties>
+   <webElementXpaths>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:idRelative</name>
+      <type>Main</type>
+      <value>//div[@id='root']/section/div/section/section/main/div/div/div/div/div[6]/div/div/div</value>
+      <webElementGuid>c12f903f-6f28-42f6-b282-25ac2de37d97</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Kas/Bank'])[1]/following::div[1]</value>
+      <webElementGuid>78be74ef-6357-4fb8-abaa-58e52c2c26da</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Tgl. Posting'])[1]/following::div[5]</value>
+      <webElementGuid>61ebf1d9-7eef-4c8a-93bc-33ce6f50d062</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='posted'])[1]/preceding::div[1]</value>
+      <webElementGuid>1044574b-441b-45a4-b9b1-6f65799fb596</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Cashier'])[1]/preceding::div[2]</value>
+      <webElementGuid>9955046a-58fc-405c-a875-6511fda88194</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>//*/text()[normalize-space(.)='Collection']/parent::*</value>
+      <webElementGuid>320bfeb3-9bdb-4ab1-9cc6-1a4f12f28c29</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:position</name>
+      <type>Main</type>
+      <value>//div/div[6]/div/div/div</value>
+      <webElementGuid>d63c9311-6f69-4f52-98cf-00c0d4842ffd</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:customAttributes</name>
+      <type>Main</type>
+      <value>//div[(text() = 'Collection' or . = 'Collection')]</value>
+      <webElementGuid>2f4777e2-8191-4af6-8a76-a0b980e47649</webElementGuid>
+   </webElementXpaths>
+</WebElementEntity>
