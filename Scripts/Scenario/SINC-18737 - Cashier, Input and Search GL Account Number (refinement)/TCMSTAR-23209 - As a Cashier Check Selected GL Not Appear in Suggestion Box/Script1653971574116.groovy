@@ -17,16 +17,16 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
-WebUI.callTestCase(findTestCase('Scenario/SINC-11862 - As a Cashier Input n Search GL Account/TCMSTAR-14121 - Input 4 Digit (exist) and Select The Sugesstion'), 
+WebUI.callTestCase(findTestCase('Scenario/SINC-18737 - Cashier, Input and Search GL Account Number (refinement)/TCMSTAR-23205 - Input 4 Digit (exist) and Select The Sugesstion'), 
     [:], FailureHandling.STOP_ON_FAILURE)
 
 WebUI.click(findTestObject('Sider/Sider Inc Payment Menu/Fin - MR - Mon GL Line Item/input GL Account'))
-
+String inputedStr = "1002"
 WebUI.setText(findTestObject('Sider/Sider Inc Payment Menu/Fin - MR - Mon GL Line Item/input GL Account'), GlobalVariable.InputFourDigit)
 
 WebUI.callTestCase(findTestCase('Scenario/SINC-11862 - As a Cashier Input n Search GL Account/mod/verifyGLSugesstion'), 
-    [('nKeyword') : GlobalVariable.InputFourDigit], FailureHandling.STOP_ON_FAILURE)
+    [('nKeyword') : inputedStr], FailureHandling.STOP_ON_FAILURE)
 
-WebUI.verifyElementNotPresent(findTestObject('Sider/Sider Inc Payment Menu/Fin - MR - Mon GL Line Item/option select Account 1080101000 - AR Trade NewUnit-AffCo'), 
+WebUI.verifyElementNotPresent(findTestObject('Sider/Sider Inc Payment Menu/Fin - MR - Mon GL Line Item/option select Account 1002100000 - Cash on Hand IDR Indonesian Rupiah'), 
     GlobalVariable.waitPresentTimeout)
 

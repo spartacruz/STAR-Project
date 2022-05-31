@@ -21,9 +21,9 @@ WebUI.callTestCase(findTestCase('Scenario/SINC-11862 - As a Cashier Input n Sear
     [:], FailureHandling.STOP_ON_FAILURE)
 
 WebUI.click(findTestObject('Sider/Sider Inc Payment Menu/Fin - MR - Mon GL Line Item/input GL Account'))
-
-WebUI.setText(findTestObject('Sider/Sider Inc Payment Menu/Fin - MR - Mon GL Line Item/input GL Account'), GlobalVariable.InputOneDigit)
+String inputedStr = "1"
+WebUI.setText(findTestObject('Sider/Sider Inc Payment Menu/Fin - MR - Mon GL Line Item/input GL Account'), inputedStr)
 
 WebUI.callTestCase(findTestCase('Scenario/SINC-11862 - As a Cashier Input n Search GL Account/mod/verifyGLSugesstion'), 
-    [('nKeyword') : GlobalVariable.InputOneDigit], FailureHandling.STOP_ON_FAILURE)
+    [('nKeyword') : inputedStr], FailureHandling.STOP_ON_FAILURE)
 
