@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>TCMSTAR-23987 - Cashier, check that no prefix AT, IO, IR listed on GL Account Sugesstion</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>95945256-e772-4fdb-b3db-5e4f10c21952</testCaseGuid>
+</TestCaseEntity>

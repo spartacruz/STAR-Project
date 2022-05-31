@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>TCMSTAR-23211 - Cashier, Search GL Account Number by typing 4 digit number and show the result</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>65ad19e0-6fb9-48b8-b25c-97c571cf970d</testCaseGuid>
+</TestCaseEntity>
